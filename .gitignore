@@ -1,0 +1,53 @@
+# Unreal Engine generated folders
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.vscode/
+.idea/
+
+# Unreal project generated data under nested project folder
+Unreal/**/Binaries/
+Unreal/**/DerivedDataCache/
+Unreal/**/Intermediate/
+Unreal/**/Saved/
+
+# IDE / build artifacts
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.xcodeproj
+*.xcworkspace
+*.code-workspace
+
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs / temp
+*.log
+*.tmp
+*.temp
+
+# Packaged builds
+Build/
+Builds/
+Dist/
+
+# Local developer overrides
+.env
+.env.*
+!.env.example
+
+# Unreal autosaves / crash data
+**/Autosaves/
+**/Crashes/
+
+# NOTE:
+# .uasset and .umap files are intentionally NOT ignored.
+# When large binary assets are introduced, configure Git LFS before committing production-scale content.

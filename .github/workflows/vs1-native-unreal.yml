@@ -17,7 +17,7 @@ on:
 
 jobs:
   native-build:
-    runs-on: [self-hosted, windows, x64]
+    runs-on: [self-hosted, windows, x64, dao-vo-tan-3d]
     timeout-minutes: 60
     steps:
       - name: Checkout

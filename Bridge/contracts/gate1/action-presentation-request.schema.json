@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dao-vo-tan:gate1:action-presentation-request:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actionInstanceId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actorRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "snapshotRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "kind": {
+      "enum": [
+        "idle",
+        "walk",
+        "run",
+        "jump_start",
+        "air_loop",
+        "land",
+        "dodge",
+        "attack_a",
+        "attack_b",
+        "parry",
+        "cast",
+        "hit",
+        "death",
+        "meditation_enter",
+        "meditation_loop",
+        "meditation_exit"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "queued",
+        "windup",
+        "active",
+        "recovery",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "targetRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "direction": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "z": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    "visualDurationSeconds": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 120
+    },
+    "playbackRate": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 3
+    },
+    "authority": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "enum": [
+            "offline_mock",
+            "simulation"
+          ]
+        },
+        "outcomeRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "nonAuthoritative": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "outcomeRefs",
+        "nonAuthoritative"
+      ]
+    },
+    "cosmeticCues": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cueId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "footstep",
+              "trail_start",
+              "trail_stop",
+              "camera_impulse",
+              "local_sound",
+              "aura_start",
+              "aura_stop"
+            ]
+          },
+          "offsetSeconds": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "cueId",
+          "kind",
+          "offsetSeconds"
+        ]
+      },
+      "maxItems": 32
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "requestId",
+    "actionInstanceId",
+    "actorRef",
+    "sequence",
+    "snapshotRevision",
+    "kind",
+    "phase",
+    "visualDurationSeconds",
+    "playbackRate",
+    "authority",
+    "cosmeticCues"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "authority": {
+            "properties": {
+              "source": {
+                "const": "offline_mock"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authority": {
+            "properties": {
+              "nonAuthoritative": {
+                "const": true
+              },
+              "outcomeRefs": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

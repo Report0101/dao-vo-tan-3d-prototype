@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dao-vo-tan:gate1:appearance-recipe:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "actorRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recipeId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cosmeticSeed": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cosmeticVersion": {
+      "const": "gate1-v1"
+    },
+    "rigFamily": {
+      "const": "humanoid_gate1_v1"
+    },
+    "modules": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "string",
+          "minLength": 1
+        },
+        "head": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hair": {
+          "type": "string",
+          "minLength": 1
+        },
+        "garment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accessory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weaponVisual": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "body",
+        "head",
+        "hair",
+        "garment",
+        "accessory",
+        "weaponVisual"
+      ]
+    },
+    "palette": {
+      "type": "string",
+      "minLength": 1
+    },
+    "factionInsignia": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agePresentation": {
+      "enum": [
+        "adult",
+        "mature",
+        "elder"
+      ]
+    },
+    "scarPresentation": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 8
+    },
+    "auraVariant": {
+      "enum": [
+        "quiet_mist",
+        "leaf_current",
+        "ember_warning"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "actorRef",
+    "recipeId",
+    "revision",
+    "cosmeticSeed",
+    "cosmeticVersion",
+    "rigFamily",
+    "modules",
+    "palette",
+    "factionInsignia",
+    "agePresentation",
+    "scarPresentation",
+    "auraVariant"
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "schemaVersion": 1,
+    "requestId": "preview_req_0",
+    "actionInstanceId": "preview_meditation_1",
+    "actorRef": "preview_player",
+    "sequence": 0,
+    "snapshotRevision": 0,
+    "kind": "meditation_enter",
+    "phase": "windup",
+    "visualDurationSeconds": 1.2,
+    "playbackRate": 1,
+    "authority": {
+      "source": "offline_mock",
+      "outcomeRefs": [],
+      "nonAuthoritative": true
+    },
+    "cosmeticCues": []
+  },
+  {
+    "schemaVersion": 1,
+    "requestId": "preview_req_1",
+    "actionInstanceId": "preview_meditation_1",
+    "actorRef": "preview_player",
+    "sequence": 1,
+    "snapshotRevision": 0,
+    "kind": "meditation_loop",
+    "phase": "active",
+    "visualDurationSeconds": 8,
+    "playbackRate": 1,
+    "authority": {
+      "source": "offline_mock",
+      "outcomeRefs": [],
+      "nonAuthoritative": true
+    },
+    "cosmeticCues": [
+      {
+        "cueId": "preview_cue_1",
+        "kind": "aura_start",
+        "offsetSeconds": 0
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "requestId": "preview_req_2",
+    "actionInstanceId": "preview_meditation_1",
+    "actorRef": "preview_player",
+    "sequence": 2,
+    "snapshotRevision": 0,
+    "kind": "meditation_exit",
+    "phase": "recovery",
+    "visualDurationSeconds": 1.1,
+    "playbackRate": 1,
+    "authority": {
+      "source": "offline_mock",
+      "outcomeRefs": [],
+      "nonAuthoritative": true
+    },
+    "cosmeticCues": [
+      {
+        "cueId": "preview_cue_2",
+        "kind": "aura_stop",
+        "offsetSeconds": 0
+      }
+    ]
+  }
+]

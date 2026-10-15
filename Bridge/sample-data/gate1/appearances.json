@@ -1,0 +1,68 @@
+[
+  {
+    "schemaVersion": 1,
+    "actorRef": "preview_player",
+    "recipeId": "gate1_recipe_0",
+    "revision": 1,
+    "cosmeticSeed": "cosmetic-only-0",
+    "cosmeticVersion": "gate1-v1",
+    "rigFamily": "humanoid_gate1_v1",
+    "modules": {
+      "body": "body_01",
+      "head": "head_01",
+      "hair": "hair_01",
+      "garment": "robe_01",
+      "accessory": "none",
+      "weaponVisual": "sword_01"
+    },
+    "palette": "stone_blue",
+    "factionInsignia": "none",
+    "agePresentation": "adult",
+    "scarPresentation": [],
+    "auraVariant": "quiet_mist"
+  },
+  {
+    "schemaVersion": 1,
+    "actorRef": "preview_npc_a",
+    "recipeId": "gate1_recipe_1",
+    "revision": 1,
+    "cosmeticSeed": "cosmetic-only-1",
+    "cosmeticVersion": "gate1-v1",
+    "rigFamily": "humanoid_gate1_v1",
+    "modules": {
+      "body": "body_01",
+      "head": "head_02",
+      "hair": "hair_02",
+      "garment": "robe_02",
+      "accessory": "sash_01",
+      "weaponVisual": "sword_01"
+    },
+    "palette": "pine_gray",
+    "factionInsignia": "none",
+    "agePresentation": "adult",
+    "scarPresentation": [],
+    "auraVariant": "quiet_mist"
+  },
+  {
+    "schemaVersion": 1,
+    "actorRef": "preview_npc_b",
+    "recipeId": "gate1_recipe_2",
+    "revision": 1,
+    "cosmeticSeed": "cosmetic-only-2",
+    "cosmeticVersion": "gate1-v1",
+    "rigFamily": "humanoid_gate1_v1",
+    "modules": {
+      "body": "body_01",
+      "head": "head_03",
+      "hair": "hair_03",
+      "garment": "robe_03",
+      "accessory": "pack_01",
+      "weaponVisual": "sword_01"
+    },
+    "palette": "ochre_charcoal",
+    "factionInsignia": "none",
+    "agePresentation": "adult",
+    "scarPresentation": [],
+    "auraVariant": "quiet_mist"
+  }
+]

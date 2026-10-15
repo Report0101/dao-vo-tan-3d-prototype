@@ -1,13 +1,15 @@
-# Asset provenance
+# Gate 1 asset provenance
 
-Date: 2026-10-15. **No external production asset has been imported.** This register is intentionally empty rather than listing planned module keys as acquired assets.
+External content is limited to installed Epic Examples and referenced engine primitives. No QCBH content, unknown-license content, marketplace download or paid generation was used.
 
-| Name | Source | License | Commercial use | Modification | Redistribution constraints | Date acquired | Status |
-|---|---|---|---|---|---|---|---|
-| None | N/A | N/A | N/A | N/A | N/A | N/A | No asset imported |
+| Asset | Source | License | Purpose | Status |
+|---|---|---|---|---|
+| SKM_Manny_Simple, SKM_Quinn_Simple, SK_Mannequin; associated materials, textures and rig resources | Local UE 5.8.3 Templates/TemplateResources/High/Characters/Content/Mannequins | [Unreal Engine EULA](https://www.unrealengine.com/eula/unreal), Examples under section 1; development use section 2; Examples distribution section 5(b) | Shared temporary humanoid family for all three characters | Temporary Epic Examples |
+| BS_Idle_Walk_Run, MM_Idle, unarmed walk/jog/jump and attack clips; accompanying ABP_Unarmed | Same installed Templates location, Anims/Unarmed | Same EULA Examples terms | Locomotion and temporary arm-swing sword action; ABP is included but runtime uses single-node animation | Temporary Epic Examples |
+| Engine basic cube, sphere, cylinder and cone; engine font, sky and atmosphere | Referenced from installed engine; not copied into repository | Unreal Engine EULA Licensed Technology | Original blockout sword, garment modules, rocks, conifers, gate, altar, UI and lighting | Temporary primitive-based art |
+| AS_MeditationEnter/Loop/Exit | Generated locally by Gate1AuthorCommandlet from Manny rig and Epic idle pose, with original kneeling/breathing key adjustments | Project-authored modifications to Epic Examples, subject to EULA | Meditation pipeline proof on the same skeleton | Temporary derived animation |
+| StillwaterValley landscape/height data, layout, M_Color/M_Aura/M_Ground/M_Rock/M_Stone/M_Wood/M_Leaf/M_Gold/M_Steel, DA_Player/DA_NPC_A/DA_NPC_B | Original local C++ authoring in this repository | Project-authored content; engine use remains subject to Unreal EULA | Valley, palettes, wardrobe/accessory configuration and original reusable aura | Original prototype content |
 
-The three actor/aura fixtures are original text authored for this task, not artwork, rigs or motion assets. Module keys describe future target capacity; they do not prove licensed bytes exist.
+The per-file manifest `template-assets.manifest.json` records each copied template file, source, SHA-256, size, purpose and temporary status. No engine binary or engine source is vendored. Preserve Epic notices and applicable license terms; the project is not granting a new unrestricted license to Epic assets. EULA checked 2026-10-16. No license acceptance was automated.
 
-Admission checklist for each future external asset: stable name, vendor/source URL, exact license/version and retained license text, commercial-use permission, modification permission, standalone/source/binary redistribution constraints, acquisition date, file/package hashes, source author, permitted engine/project usage and canonical package receipt. Unknown license: DO NOT IMPORT. No credentials or paid-provider jobs were used. No QCBH content is admitted, traced, reconstructed or listed as reusable material.
-
-Unreal/third-party template assets are not assumed imported merely because they might be available with an engine install. A future engine/template/library choice must retain its actual provenance and terms. Reference screenshots/marketing art are not automatically production sources.
+The rig resources and imported ABP are supporting template files, not separately authored project pipelines. Manny/Quinn are temporary neutral silhouettes; bespoke cultivation clothing/head/hair/skinned wardrobe is deferred. Current garment and accessory modules are rigid bone attachments, not a claimed production skinned modular character system.

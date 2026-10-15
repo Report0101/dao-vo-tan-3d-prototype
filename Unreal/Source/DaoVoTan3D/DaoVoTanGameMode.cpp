@@ -8,7 +8,6 @@
 #include "Engine/World.h"
 #include "GameFramework/PlayerController.h"
 #include "Kismet/GameplayStatics.h"
-#include "UObject/ConstructorHelpers.h"
 
 ADaoVoTanGameMode::ADaoVoTanGameMode()
 {
@@ -41,7 +40,6 @@ void ADaoVoTanGameMode::EnsurePrototypeWorld()
         {
             Ground->GetStaticMeshComponent()->SetStaticMesh(CubeMesh);
             Ground->SetActorScale3D(FVector(50.0f, 50.0f, 1.0f));
-            Ground->SetActorLabel(TEXT("VS1_Ground"));
         }
 
         const FVector MarkerLocations[] =
@@ -59,25 +57,14 @@ void ADaoVoTanGameMode::EnsurePrototypeWorld()
             {
                 Marker->GetStaticMeshComponent()->SetStaticMesh(CubeMesh);
                 Marker->SetActorScale3D(FVector(2.0f + Index, 2.0f + Index, 2.0f + Index));
-                Marker->SetActorLabel(FString::Printf(TEXT("VS1_Landmark_%d"), Index + 1));
             }
         }
     }
 
     FActorSpawnParameters LightParams;
     LightParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-
-    ADirectionalLight* Sun = World->SpawnActor<ADirectionalLight>(FVector::ZeroVector, FRotator(-48.0f, -35.0f, 0.0f), LightParams);
-    if (Sun)
-    {
-        Sun->SetActorLabel(TEXT("VS1_Sun"));
-    }
-
-    AExponentialHeightFog* Fog = World->SpawnActor<AExponentialHeightFog>(FVector::ZeroVector, FRotator::ZeroRotator, LightParams);
-    if (Fog)
-    {
-        Fog->SetActorLabel(TEXT("VS1_Fog"));
-    }
+    World->SpawnActor<ADirectionalLight>(FVector::ZeroVector, FRotator(-48.0f, -35.0f, 0.0f), LightParams);
+    World->SpawnActor<AExponentialHeightFog>(FVector::ZeroVector, FRotator::ZeroRotator, LightParams);
 }
 
 void ADaoVoTanGameMode::EnsurePlayerPawn()

@@ -2,9 +2,12 @@
 
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Engine/StaticMesh.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "UObject/ConstructorHelpers.h"
 
 ADaoVoTanCharacter::ADaoVoTanCharacter()
 {
@@ -19,6 +22,18 @@ ADaoVoTanCharacter::ADaoVoTanCharacter()
     GetCharacterMovement()->JumpZVelocity = 620.0f;
     GetCharacterMovement()->AirControl = 0.35f;
     GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+
+    PrototypeBody = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PrototypeBody"));
+    PrototypeBody->SetupAttachment(RootComponent);
+    PrototypeBody->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    PrototypeBody->SetRelativeScale3D(FVector(0.38f, 0.38f, 0.9f));
+    PrototypeBody->SetRelativeLocation(FVector(0.0f, 0.0f, -5.0f));
+
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> BodyMesh(TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
+    if (BodyMesh.Succeeded())
+    {
+        PrototypeBody->SetStaticMesh(BodyMesh.Object);
+    }
 
     CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
     CameraBoom->SetupAttachment(RootComponent);

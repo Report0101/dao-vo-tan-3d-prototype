@@ -1,0 +1,98 @@
+[
+  {
+    "asset": "Unreal/Content/DaoVoTan/Animation/AS_MeditationEnter.uasset",
+    "sha256": "512893798236067f8ff8776f275fd916e2490cb09e1a780b224cb93fb33fdb16",
+    "bytes": 195051,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Animation/AS_MeditationExit.uasset",
+    "sha256": "7d4593126426b6d0ea935368f0d03ed12a30d91f5b805eed3bf15d8fe3b73a43",
+    "bytes": 195047,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Animation/AS_MeditationLoop.uasset",
+    "sha256": "9d6c07a9a805acdf5d6d18ace17b3d95f74a4cc519820d461f62efae2a09ac8d",
+    "bytes": 175975,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Data/DA_NPC_A.uasset",
+    "sha256": "20b36e67c9cf99f2ae0dc11fee334e3953d59e8a07e1d774bc52122016c13384",
+    "bytes": 2116,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Data/DA_NPC_B.uasset",
+    "sha256": "30a9503d17d53dbd2dabf64ee9490056627e91f200178c4640f3a06f1d2cc9df",
+    "bytes": 2079,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Data/DA_Player.uasset",
+    "sha256": "5a6e7c157e982da78d85f199eb580fac85d6fdaa662966dfcc1fb1d6b94fa4aa",
+    "bytes": 1996,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Maps/StillwaterValley.umap",
+    "sha256": "a6e6f96ce69cc1b496432df9a77413206e9e0fecddbc4ef9a9c6533beebeec67",
+    "bytes": 397588,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Aura.uasset",
+    "sha256": "160a922841327e75c5aef87f24fad5c7cd8a1be24341f0af3fdbcc6bf43c2bc8",
+    "bytes": 7134,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Color.uasset",
+    "sha256": "3f64b6850496f0557f96e43954d8af7b6901ec1948ec52b49e159e69b57beed3",
+    "bytes": 5872,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Gold.uasset",
+    "sha256": "56b4448341cdeb4b3d5007f7fd420bd4bb9642c76780203951de82fb2c5203d0",
+    "bytes": 5896,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Ground.uasset",
+    "sha256": "52b26b65472a8713384aec944bfd1ef588d94dcb19e791efee140a64cc88cbcd",
+    "bytes": 5877,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Leaf.uasset",
+    "sha256": "fc31d6cdd5db0b654c3022eea67da5b8da10d5aebf24c0dc9e5080d2f0120b17",
+    "bytes": 5867,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Rock.uasset",
+    "sha256": "b6334b1c93598d23fbf2bca1a1fc3842dea2aaf8f1166f9fb6efda2da8008d62",
+    "bytes": 5867,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Steel.uasset",
+    "sha256": "e9d40762372353433347cdf7081bb769084d6bdef3d964a59ab8922b76891130",
+    "bytes": 5901,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Stone.uasset",
+    "sha256": "05678219a47c56585f494c0d348d08861999f1e6c5998c64009574a006086536",
+    "bytes": 5872,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  },
+  {
+    "asset": "Unreal/Content/DaoVoTan/Materials/M_Wood.uasset",
+    "sha256": "f9475e8c4c0d861b11d284bef0b722b6c7812bd8c1829029d9b58c86407216fa",
+    "bytes": 5867,
+    "source": "Gate1AuthorCommandlet original or Epic-derived; see ASSET_PROVENANCE.md"
+  }
+]

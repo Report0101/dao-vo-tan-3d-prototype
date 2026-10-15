@@ -45,8 +45,8 @@ function Resolve-UnrealEngineRoot {
 
     foreach ($root in $roots) {
         if (-not (Test-Path $root)) { continue }
-        $candidate = Get-ChildItem $root -Directory -ErrorAction SilentlyContinue |
-            Where-Object { $_.Name -like "UE_*" } |
+        $candidate = Get-ChildItem $root -ErrorAction SilentlyContinue |
+            Where-Object { $_.PSIsContainer -and $_.Name -like "UE_*" } |
             Sort-Object Name -Descending |
             Select-Object -First 1
         if ($candidate) { return $candidate.FullName }
@@ -55,12 +55,44 @@ function Resolve-UnrealEngineRoot {
     throw "Unreal Engine installation not found. Set UE_ROOT to the engine root, e.g. C:\Program Files\Epic Games\UE_5.5"
 }
 
+function Invoke-ProjectFileGeneration {
+    param(
+        [Parameter(Mandatory=$true)][string]$EngineRoot,
+        [Parameter(Mandatory=$true)][string]$Project
+    )
+
+    $generateBat = Join-Path $EngineRoot "Engine\Build\BatchFiles\GenerateProjectFiles.bat"
+    if (Test-Path $generateBat) {
+        Write-Host "Generating project files with GenerateProjectFiles.bat..."
+        & $generateBat -project="$Project" -game -engine
+        if ($LASTEXITCODE -ne 0) { throw "GenerateProjectFiles failed with exit code $LASTEXITCODE" }
+        return
+    }
+
+    $ubtExe = Join-Path $EngineRoot "Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe"
+    if (Test-Path $ubtExe) {
+        Write-Host "GenerateProjectFiles.bat not present. Using UnrealBuildTool.exe -ProjectFiles..."
+        & $ubtExe -ProjectFiles -Project="$Project" -Game -Rocket -Progress
+        if ($LASTEXITCODE -ne 0) { throw "UnrealBuildTool project generation failed with exit code $LASTEXITCODE" }
+        return
+    }
+
+    $ubtDll = Join-Path $EngineRoot "Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll"
+    if (Test-Path $ubtDll) {
+        Write-Host "Using dotnet UnrealBuildTool.dll -ProjectFiles..."
+        & dotnet $ubtDll -ProjectFiles -Project="$Project" -Game -Rocket -Progress
+        if ($LASTEXITCODE -ne 0) { throw "UnrealBuildTool.dll project generation failed with exit code $LASTEXITCODE" }
+        return
+    }
+
+    throw "No supported project-file generator found under $EngineRoot"
+}
+
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $project = (Resolve-Path (Join-Path $repoRoot $ProjectPath)).Path
 $engineRoot = Resolve-UnrealEngineRoot
 
 $buildBat = Join-Path $engineRoot "Engine\Build\BatchFiles\Build.bat"
-$generateBat = Join-Path $engineRoot "Engine\Build\BatchFiles\GenerateProjectFiles.bat"
 $editorCmd = Join-Path $engineRoot "Engine\Binaries\Win64\UnrealEditor-Cmd.exe"
 
 Write-Host "UE_ROOT=$engineRoot"
@@ -69,11 +101,10 @@ Write-Host "PROJECT=$project"
 if (-not (Test-Path $buildBat)) { throw "Build.bat not found: $buildBat" }
 
 if (-not $SkipGenerateProjectFiles) {
-    if (-not (Test-Path $generateBat)) { throw "GenerateProjectFiles.bat not found: $generateBat" }
-    & $generateBat -project="$project" -game -engine
-    if ($LASTEXITCODE -ne 0) { throw "GenerateProjectFiles failed with exit code $LASTEXITCODE" }
+    Invoke-ProjectFileGeneration -EngineRoot $engineRoot -Project $project
 }
 
+Write-Host "Building $Target ($Configuration, Win64)..."
 & $buildBat $Target Win64 $Configuration -Project="$project" -WaitMutex -NoHotReloadFromIDE
 if ($LASTEXITCODE -ne 0) { throw "Unreal build failed with exit code $LASTEXITCODE" }
 

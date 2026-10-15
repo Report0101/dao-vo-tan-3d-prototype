@@ -1,0 +1,56 @@
+name: VS1 source guard
+
+on:
+  push:
+    branches:
+      - main
+      - 'vs1/**'
+  pull_request:
+
+jobs:
+  source-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required Unreal bootstrap files
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            "Unreal/DaoVoTan3D.uproject"
+            "Unreal/Config/DefaultEngine.ini"
+            "Unreal/Config/DefaultInput.ini"
+            "Unreal/Source/DaoVoTan3D.Target.cs"
+            "Unreal/Source/DaoVoTan3DEditor.Target.cs"
+            "Unreal/Source/DaoVoTan3D/DaoVoTan3D.Build.cs"
+            "Unreal/Source/DaoVoTan3D/DaoVoTanCharacter.h"
+            "Unreal/Source/DaoVoTan3D/DaoVoTanCharacter.cpp"
+            "Unreal/Source/DaoVoTan3D/DaoVoTanGameMode.h"
+            "Unreal/Source/DaoVoTan3D/DaoVoTanGameMode.cpp"
+            "Docs/VS1_ACCEPTANCE.md"
+          )
+          for path in "${required[@]}"; do
+            test -f "$path" || { echo "Missing required file: $path"; exit 1; }
+          done
+
+      - name: Guard simulation boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE 'tu-ti-n/(src|package)|from[[:space:]]+["'"'"'].*tu-ti-n|require\(.*tu-ti-n' Unreal --exclude='*.md'; then
+            echo "Direct dependency on tu-ti-n detected. Use the Bridge contract instead."
+            exit 1
+          fi
+
+      - name: Reject generated Unreal directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          for dir in Unreal/Binaries Unreal/DerivedDataCache Unreal/Intermediate Unreal/Saved; do
+            if [ -e "$dir" ]; then
+              echo "Generated Unreal directory must not be committed: $dir"
+              exit 1
+            fi
+          done

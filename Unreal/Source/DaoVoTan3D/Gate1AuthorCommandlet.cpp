@@ -48,6 +48,7 @@ static UMaterial *Material(const TCHAR *Name, FLinearColor Color, bool Glow = fa
 {
     FString Package = FString(TEXT("/Game/DaoVoTan/Materials/")) + Name;
     auto *P = CreatePackage(*Package);
+    P->FullyLoad();
     auto *M = NewObject<UMaterial>(P, Name, RF_Public | RF_Standalone);
     auto *C = NewObject<UMaterialExpressionVectorParameter>(M);
     C->ParameterName = TEXT("Tint");
@@ -86,7 +87,8 @@ static UMaterial *Material(const TCHAR *Name, FLinearColor Color, bool Glow = fa
 static void Meditation(const TCHAR *Name, USkeletalMesh *Mesh, UAnimSequence *Idle, int32 Mode)
 {
     FString Package = FString(TEXT("/Game/DaoVoTan/Animation/")) + Name;
-    auto *A = NewObject<UAnimSequence>(CreatePackage(*Package), Name, RF_Public | RF_Standalone);
+    auto *AnimPackage = CreatePackage(*Package); AnimPackage->FullyLoad();
+    auto *A = NewObject<UAnimSequence>(AnimPackage, Name, RF_Public | RF_Standalone);
     A->SetSkeleton(Mesh->GetSkeleton());
     auto &Ctrl = A->GetController();
     Ctrl.OpenBracket(FText::FromString(TEXT("Original meditation pose")), false);
@@ -240,7 +242,7 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
     PP->Settings.bOverride_AutoExposureMethod = true;
     PP->Settings.AutoExposureMethod = AEM_Manual;
     PP->Settings.bOverride_AutoExposureBias = true;
-    PP->Settings.AutoExposureBias = 0;
+    PP->Settings.AutoExposureBias = 1;
     PP->Settings.bOverride_AutoExposureApplyPhysicalCameraExposure = true;
     PP->Settings.AutoExposureApplyPhysicalCameraExposure = false;
     if (!UEditorLoadingAndSavingUtils::SaveMap(W, TEXT("/Game/DaoVoTan/Maps/StillwaterValley")))
@@ -252,6 +254,7 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
     return 1;
 #endif
 }
+
 
 
 

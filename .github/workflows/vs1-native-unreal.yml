@@ -1,0 +1,46 @@
+name: VS1 native Unreal build
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'Unreal/**'
+      - 'Scripts/Build-Unreal.ps1'
+      - '.github/workflows/vs1-native-unreal.yml'
+  push:
+    branches:
+      - 'vs1/**'
+    paths:
+      - 'Unreal/**'
+      - 'Scripts/Build-Unreal.ps1'
+      - '.github/workflows/vs1-native-unreal.yml'
+
+jobs:
+  native-build:
+    runs-on: [self-hosted, windows, x64]
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show runner context
+        shell: powershell
+        run: |
+          Write-Host "Runner: $env:RUNNER_NAME"
+          Write-Host "Workspace: $env:GITHUB_WORKSPACE"
+          Write-Host "UE_ROOT: $env:UE_ROOT"
+
+      - name: Build DaoVoTan3DEditor and smoke boot
+        shell: powershell
+        run: |
+          ./Scripts/Build-Unreal.ps1
+
+      - name: Upload Unreal logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vs1-unreal-logs-${{ github.run_id }}
+          if-no-files-found: ignore
+          path: |
+            Unreal/Saved/Logs/**
+            Unreal/Intermediate/ProjectFiles/**

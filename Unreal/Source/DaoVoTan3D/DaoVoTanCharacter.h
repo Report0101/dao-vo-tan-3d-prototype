@@ -6,6 +6,7 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+class UStaticMeshComponent;
 
 UCLASS()
 class DAOVOTAN3D_API ADaoVoTanCharacter : public ACharacter
@@ -19,6 +20,9 @@ protected:
     virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
 private:
+    UPROPERTY(VisibleAnywhere, Category="Visual")
+    UStaticMeshComponent* PrototypeBody;
+
     UPROPERTY(VisibleAnywhere, Category="Camera")
     USpringArmComponent* CameraBoom;
 

@@ -39,8 +39,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RInE 'tu-ti-n/(src|package)|from[[:space:]]+["'"'"'].*tu-ti-n|require\(.*tu-ti-n' Unreal --exclude='*.md'; then
-            echo "Direct dependency on tu-ti-n detected. Use the Bridge contract instead."
+          if grep -RIn "tu-ti-n" Unreal --exclude='*.md'; then
+            echo "Direct tu-ti-n reference detected inside Unreal source/config. Use the Bridge contract instead."
             exit 1
           fi
 

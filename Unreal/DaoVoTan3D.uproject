@@ -1,0 +1,12 @@
+{
+  "FileVersion": 3,
+  "Category": "Games",
+  "Description": "Dao Vo Tan 3D vertical slice prototype",
+  "Modules": [
+    {
+      "Name": "DaoVoTan3D",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

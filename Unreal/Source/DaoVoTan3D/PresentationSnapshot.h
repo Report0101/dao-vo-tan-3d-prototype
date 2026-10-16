@@ -21,5 +21,6 @@ struct FWorldPresentationSnapshot
 };
 namespace SnapshotV1
 {
+bool ValidateEntityId(const FString &Id, const FString &World, const TCHAR *Kind);
 DAOVOTAN3D_API bool Parse(const FString &Json, FWorldPresentationSnapshot &Out, FString &Error);
-}
+} // namespace SnapshotV1

@@ -189,7 +189,8 @@ bool USnapshotPresentationAdapter::ApplyJson(const FString &Json, bool bResync, 
             continue;
         }
         SeenCues.Add(C.EventId, C.ActorId + TEXT("/") + LexToString(C.Tick));
-        Pending.Add(C);
+        if (!CommandPreviewActors.Contains(C.ActorId))
+            Pending.Add(C);
         ++UniqueCueCount;
     }
     LastApplyMs = (FPlatformTime::Seconds() - ApplyStart) * 1000;

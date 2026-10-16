@@ -168,3 +168,8 @@ bool SnapshotV1::Parse(const FString &Json, FWorldPresentationSnapshot &Out, FSt
     Error.Empty();
     return true;
 }
+
+bool SnapshotV1::ValidateEntityId(const FString &Value, const FString &World, const TCHAR *Kind)
+{
+    return Match(World, TEXT("[a-z][a-z0-9_-]*")) && Id(Value, World, Kind);
+}

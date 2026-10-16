@@ -24,7 +24,8 @@ void AGateGameMode::BeginPlay()
     TArray<AGateCharacter *> NPCSlots;
     const bool Integration = FParse::Param(FCommandLine::Get(), TEXT("SnapshotIntegrationTest")) ||
                              FParse::Param(FCommandLine::Get(), TEXT("SnapshotIntegration")) ||
-                             FString(FCommandLine::Get()).Contains(TEXT("SnapshotFile="));
+                             (FString(FCommandLine::Get()).Contains(TEXT("SnapshotFile=")) ||
+                              FString(FCommandLine::Get()).Contains(TEXT("CultivationBridgeDir=")));
     for (int32 I = 0; I < Count; ++I)
     {
         auto *R = LoadObject<UPresentationRecipe>(nullptr, I % 2 ? TEXT("/Game/DaoVoTan/Data/DA_NPC_B")

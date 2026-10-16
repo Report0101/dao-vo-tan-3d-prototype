@@ -1,5 +1,8 @@
 #include "GateHUD.h"
 #include "SnapshotPresentationAdapter.h"
+#include "CultivationCommandAdapter.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 #include "GameFramework/GameModeBase.h"
 #include "Engine/Canvas.h"
 #include "Engine/Engine.h"
@@ -44,18 +47,34 @@ void AGateHUD::DrawHUD()
                      (C->Recipe ? C->Recipe->RealmLabel.ToString() : TEXT("No realm")),
                  FLinearColor(.6f, .76f, .72f), 47, 109, GEngine->GetSmallFont());
     }
+    auto *Commands = GetOwningPlayerController()
+                         ? GetOwningPlayerController()->FindComponentByClass<UCultivationCommandAdapter>()
+                         : nullptr;
+    if (Commands)
+    {
+        DrawRect(FLinearColor(.01f, .02f, .025f, .85f), 28, 202, W - 56, 62);
+        DrawText(FParse::Param(FCommandLine::Get(), TEXT("GateDeveloperPreview"))
+                     ? TEXT("DEVELOPER PREVIEW ONLY / [E / M] cosmetic meditation; no command")
+                     : FString::Printf(TEXT("[E / M] CULTIVATE %d strategic day(s) / [+ / -] choose 1..30"),
+                                       Commands->SelectedDays),
+                 FLinearColor(.7f, .9f, .8f), 46, 214, GEngine->GetSmallFont());
+        DrawText(Commands->Feedback, FLinearColor(.9f, .8f, .55f), 46, 238, GEngine->GetSmallFont());
+    }
     DrawRect(FLinearColor(.01f, .02f, .025f, .8f), 28, H - 86, W - 56, 58);
-    DrawText(TEXT("WASD  Move    Shift  Walk/Run    Space  Jump    LMB  Sword    E / M  Meditate    1  Aura "
+    DrawText(TEXT("WASD  Move    Shift  Walk/Run    Space  Jump    LMB  Sword    E / M  Cultivate    1  Aura "
                   "preset"),
              FLinearColor(.86f, .86f, .8f), 46, H - 72, GEngine->GetSmallFont(), 1.05f);
-    DrawText(State ? TEXT("READ-ONLY SIM SNAPSHOT / local controls are cosmetic; no commands sent")
+    DrawText(State ? TEXT("SIMULATION OWNS CULTIVATION / movement, sword and aura presets are cosmetic")
                    : TEXT("OFFLINE PRESENTATION FIXTURE / No simulation outcomes"),
              FLinearColor(.55f, .68f, .66f), 46, H - 49, GEngine->GetSmallFont());
     if (C->Actions->IsMeditating())
     {
         FString Label =
             C->Actions->GetPhase() == EPresentationPhase::MeditationLoop
-                ? (State ? TEXT("COSMETIC MEDITATION PREVIEW") : TEXT("CULTIVATING...   [E] Rise"))
+                ? (Commands && (Commands->Receipt.Status == TEXT("accepted") ||
+                                Commands->Receipt.Status == TEXT("completed"))
+                       ? TEXT("CULTIVATION / cosmetic playback")
+                       : (State ? TEXT("COSMETIC MEDITATION PREVIEW") : TEXT("DEVELOPER MEDITATION PREVIEW")))
                 : TEXT("Settling / rising...");
         DrawText(Label, FLinearColor(.5f, 1, .8f), W * .5f - 130, H * .72f, GEngine->GetMediumFont(), 1.2f);
     }

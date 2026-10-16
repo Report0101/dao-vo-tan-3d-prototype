@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cultivation Receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "worldId",
+    "requestId",
+    "actorId",
+    "status",
+    "rejectionCode",
+    "actionInstanceId",
+    "acceptedEventId",
+    "resultEventIds",
+    "startTick",
+    "dueTick",
+    "resolvedTick",
+    "cultivationSessionEventId"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "worldId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{0,127}$"
+    },
+    "requestId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,80}$"
+    },
+    "actorId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*:agent:[0-9]{8,}$"
+    },
+    "status": {
+      "enum": [
+        "rejected",
+        "accepted",
+        "completed",
+        "interrupted"
+      ]
+    },
+    "rejectionCode": {
+      "enum": [
+        null,
+        "BAD_SCHEMA",
+        "WRONG_WORLD",
+        "WRONG_ACTOR",
+        "NOT_CONTROLLED",
+        "ACTOR_DEAD",
+        "ACTION_BUSY",
+        "PREREQUISITE_FAILED",
+        "INCOMPATIBLE_STATE",
+        "REQUEST_CONFLICT",
+        "SESSION_FULL"
+      ]
+    },
+    "actionInstanceId": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:action:[0-9]{8,}$"
+        }
+      ]
+    },
+    "acceptedEventId": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:event:[0-9]{8,}$"
+        }
+      ]
+    },
+    "cultivationSessionEventId": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:event:[0-9]{8,}$"
+        }
+      ]
+    },
+    "resultEventIds": {
+      "type": "array",
+      "maxItems": 64,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]*:event:[0-9]{8,}$"
+      }
+    },
+    "startTick": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      ]
+    },
+    "dueTick": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      ]
+    },
+    "resolvedTick": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      ]
+    }
+  },
+  "$comment": "Runtime validates status-dependent nullability, due/resolve relation, matching actor/action/event worlds, result references; max 65536 bytes."
+}

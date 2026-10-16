@@ -16,6 +16,8 @@
 #include "InputMappingContext.h"
 #include "InputModifiers.h"
 #include "PresentationActions.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 AGateCharacter::AGateCharacter()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -132,8 +134,10 @@ void AGateCharacter::SetupPlayerInputComponent(UInputComponent *Input)
     Button(EKeys::SpaceBar, &AGateCharacter::TryJump);
     Button(EKeys::LeftShift, &AGateCharacter::ToggleRun);
     Button(EKeys::LeftMouseButton, &AGateCharacter::SwordAction);
-    Button(EKeys::E, &AGateCharacter::ToggleMeditation);
-    Button(EKeys::M, &AGateCharacter::ToggleMeditation);
+    if(FParse::Param(FCommandLine::Get(),TEXT("GateDeveloperPreview"))){
+        Button(EKeys::E, &AGateCharacter::ToggleMeditation);
+        Button(EKeys::M, &AGateCharacter::ToggleMeditation);
+    }
     Button(EKeys::One, &AGateCharacter::CycleAura);
     if (auto *S = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
         S->AddMappingContext(InputContext, 0);

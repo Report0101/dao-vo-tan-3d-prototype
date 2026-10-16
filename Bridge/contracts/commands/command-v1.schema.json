@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cultivation Command Envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "worldId",
+    "requestId",
+    "actorId",
+    "command"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "worldId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{0,127}$"
+    },
+    "requestId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,80}$"
+    },
+    "actorId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*:agent:[0-9]{8,}$"
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "days"
+      ],
+      "properties": {
+        "type": {
+          "const": "cultivate"
+        },
+        "days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      }
+    }
+  },
+  "$comment": "Runtime additionally validates safe entity sequence and matching actor/world identity; at most 16384 UTF-8 bytes."
+}

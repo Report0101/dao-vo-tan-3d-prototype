@@ -6,6 +6,11 @@ UCLASS()
 class DAOVOTAN3D_API AGatePlayerController : public APlayerController
 {
     GENERATED_BODY()
+  public:
+    AGatePlayerController();
+    UPROPERTY(VisibleAnywhere) TObjectPtr<class UCultivationCommandAdapter> CultivationCommands;
+
   protected:
     virtual void BeginPlay() override;
+    virtual void SetupInputComponent() override;
 };

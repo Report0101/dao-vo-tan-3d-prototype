@@ -15,6 +15,13 @@ class DAOVOTAN3D_API USnapshotPresentationAdapter : public UActorComponent
     virtual void TickComponent(float Dt, ELevelTick Tick, FActorComponentTickFunction *Fn) override;
     const FSnapshotActorState *StateFor(const AGateCharacter *Actor) const;
     AGateCharacter *ActorFor(const FString &Id) const;
+    void SetCommandPreviewActor(const FString &Id, bool Owned)
+    {
+        if (Owned)
+            CommandPreviewActors.Add(Id);
+        else
+            CommandPreviewActors.Remove(Id);
+    }
     int32 BindingCount() const
     {
         return Bindings.Num();
@@ -36,6 +43,7 @@ class DAOVOTAN3D_API USnapshotPresentationAdapter : public UActorComponent
     FWorldPresentationSnapshot Current;
     TMap<FString, FString> SeenCues;
     TSet<FString> RetiredStreams;
+    TSet<FString> CommandPreviewActors;
     TArray<FSnapshotCue> Pending;
     TMap<FString, float> Playing;
     FString FilePath, LastFileContent;

@@ -17,6 +17,7 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
     GENERATED_BODY()
   public:
     UPresentationActions();
+    void ResetToLocomotionPresentation(){SetPhase(EPresentationPhase::Locomotion);}
     UFUNCTION(BlueprintCallable) void StartMeditationPresentation();
     UFUNCTION(BlueprintCallable) void StopMeditationPresentation();
     UFUNCTION(BlueprintCallable) void PlaySwordPresentation();

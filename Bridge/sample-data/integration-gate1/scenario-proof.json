@@ -1,0 +1,29 @@
+{
+  "worldId": "bridge1",
+  "actorIds": [
+    "bridge1:agent:00000001",
+    "bridge1:agent:00000002",
+    "bridge1:agent:00000003"
+  ],
+  "controlledActorId": "bridge1:agent:00000001",
+  "completionEventIds": [
+    "bridge1:event:00000037",
+    "bridge1:event:00000038"
+  ],
+  "sameEventsResent": [
+    "bridge1:event:00000037",
+    "bridge1:event:00000038"
+  ],
+  "afterAcknowledgementActions": 0,
+  "resyncActions": 0,
+  "appearanceStable": true,
+  "bytes": {
+    "initial": 1675,
+    "completion": 2113,
+    "resend": 2113,
+    "acknowledged": 1675,
+    "resync": 1677
+  },
+  "parseValidationMeanMs": 0.033909599999999984,
+  "parseIterations": 1000
+}

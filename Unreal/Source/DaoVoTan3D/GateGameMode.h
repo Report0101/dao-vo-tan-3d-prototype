@@ -8,5 +8,6 @@ class DAOVOTAN3D_API AGateGameMode : public AGameModeBase
     GENERATED_BODY()
   public:
     AGateGameMode();
+    UPROPERTY(VisibleAnywhere) TObjectPtr<class USnapshotPresentationAdapter> SnapshotAdapter;
     virtual void BeginPlay() override;
 };

@@ -82,6 +82,8 @@ bool CultivationProtocol::ParseReceipt(const FString &Json, FCultivationReceipt 
         !Tick(O, TEXT("startTick"), S.StartTick) || !Tick(O, TEXT("dueTick"), S.DueTick) ||
         !Tick(O, TEXT("resolvedTick"), S.ResolvedTick))
         return Fail();
+    if (Pattern(S.RequestId.ToLower(), TEXT("(con|prn|aux|nul|com[0-9]+|lpt[0-9]+)")))
+        return Fail();
     const TSet<FString> Codes = {TEXT("BAD_SCHEMA"),          TEXT("WRONG_WORLD"),
                                  TEXT("WRONG_ACTOR"),         TEXT("NOT_CONTROLLED"),
                                  TEXT("ACTOR_DEAD"),          TEXT("ACTION_BUSY"),

@@ -20,7 +20,7 @@
     },
     "requestId": {
       "type": "string",
-      "pattern": "^[A-Za-z0-9_-]{1,80}$"
+      "pattern": "^(?!(?:[cC][oO][nN]|[pP][rR][nN]|[aA][uU][xX]|[nN][uU][lL]|[cC][oO][mM][0-9]+|[lL][pP][tT][0-9]+)$)[A-Za-z0-9_-]{1,80}$"
     },
     "actorId": {
       "type": "string",

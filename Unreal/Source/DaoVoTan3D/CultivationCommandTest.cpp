@@ -232,7 +232,8 @@ bool FCultivationReceiptValidation::RunTest(const FString &Params)
     TestTrue(TEXT("Valid completed receipt"), CultivationProtocol::ParseReceipt(Valid, R, Error));
     const FString Original = R.RequestId;
     for (const auto &Bad :
-         {Valid.Replace(TEXT("\"schemaVersion\":1"), TEXT("\"schemaVersion\":2")),
+         {Valid.Replace(TEXT("\"requestId\":\"fixture\""), TEXT("\"requestId\":\"CON\"")),
+          Valid.Replace(TEXT("\"schemaVersion\":1"), TEXT("\"schemaVersion\":2")),
           Valid.Replace(TEXT("\"resolvedTick\":12"), TEXT("\"resolvedTick\":11")),
           Valid.Replace(TEXT("\"completed\""), TEXT("\"magic\"")),
           Valid.Replace(TEXT("\"dueTick\":12"), TEXT("\"dueTick\":9007199254740992")), FString(TEXT("{"))})

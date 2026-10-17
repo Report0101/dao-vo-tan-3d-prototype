@@ -26,8 +26,10 @@
 #include "PresentationActions.h"
 #include "Tests/AutomationEditorCommon.h"
 #include "UnrealClient.h"
+#include "PresentationEvidence.h"
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGate1PIETest, "DaoVoTan.Gate1.PlayableSlice",
-                                 EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+                                 EAutomationTestFlags::EditorContext |
+                                     EAutomationTestFlags::EngineFilter)
 class FGate1Exercise : public IAutomationLatentCommand
 {
     FAutomationTestBase *Test;
@@ -53,8 +55,8 @@ class FGate1Exercise : public IAutomationLatentCommand
     }
     void Shot(const TCHAR *Name)
     {
-        FScreenshotRequest::RequestScreenshot(FPaths::Combine(Dir(), Name), false, false, false, FIntRect(),
-                                              true);
+        if (!CapturePIEEvidence(FPaths::Combine(Dir(), Name)))
+            Test->AddError(TEXT("PIE evidence capture failed"));
     }
     void Next()
     {
@@ -66,14 +68,17 @@ class FGate1Exercise : public IAutomationLatentCommand
         auto *PC = Cast<APlayerController>(C->GetController());
         if (!PC || !PC->GetLocalPlayer())
             return;
-        auto *S = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer());
+        auto *S =
+            ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer());
         auto *Context = C->GetPresentationInputContext();
         if (!S || !Context)
             return;
         for (auto &M : Context->GetMappings())
             if (M.Key == Key)
             {
-                TArray<UInputModifier*> Modifiers; for (auto Modifier : M.Modifiers) Modifiers.Add(Modifier.Get());
+                TArray<UInputModifier *> Modifiers;
+                for (auto Modifier : M.Modifiers)
+                    Modifiers.Add(Modifier.Get());
                 S->InjectInputForAction(M.Action, FInputActionValue(V), Modifiers, {});
                 break;
             }
@@ -105,6 +110,10 @@ class FGate1Exercise : public IAutomationLatentCommand
         case 0:
             if (T < 4)
                 return false;
+            // The movement assertions below use world X. Physical mouse look
+            // must not rotate that reference during injected input playback.
+            PC->SetIgnoreLookInput(true);
+            PC->SetControlRotation(FRotator(-12, 0, 0));
             Test->TestTrue(TEXT("PIE world is running"), W->HasBegunPlay());
             Test->TestNotNull(TEXT("HUD"), Cast<AGateHUD>(PC->GetHUD()));
             Test->TestTrue(TEXT("Camera collision probe enabled"), C->Boom->bDoCollisionTest);
@@ -151,7 +160,8 @@ class FGate1Exercise : public IAutomationLatentCommand
         case 3:
             if (T > .2f)
             {
-                Test->TestTrue(TEXT("Jump becomes airborne"), C->GetCharacterMovement()->IsFalling());
+                Test->TestTrue(TEXT("Jump becomes airborne"),
+                               C->GetCharacterMovement()->IsFalling());
                 Shot(TEXT("03-jump.png"));
                 Next();
             }
@@ -222,6 +232,7 @@ class FGate1Exercise : public IAutomationLatentCommand
                 Test->TestTrue(TEXT("Movement restored on exit"),
                                C->GetCharacterMovement()->MovementMode == MOVE_Walking);
                 Test->TestFalse(TEXT("Aura stopped on exit"), C->Aura->IsEmitting());
+                PC->SetControlRotation(FRotator(-12, 0, 0));
                 Initial = C->GetActorLocation();
                 Next();
             }
@@ -249,20 +260,26 @@ class FGate1Exercise : public IAutomationLatentCommand
             if (T > 8)
             {
                 FString Summary = FString::Printf(
-                    TEXT("mode=EditorPIE\nframes=%d\nfps=%.2f\nframe_ms=%.3f\ngame_thread_ms=%.3f\ngpu_ms=%."
-                         "3f\nNiagara_systems=0\naura_backend=original_instanced_mesh_field\n"),
-                    Frames, Frames * 1000 / SumFrame, SumFrame / Frames, SumGame / FMath::Max(Samples, 1),
-                    SumGPU / FMath::Max(Samples, 1));
-                int32 Actors = 0, Visible = 0;
+                    TEXT("mode=EditorPIE\nframes=%d\nfps=%.2f\nframe_ms=%.3f\ngame_thread_ms=%."
+                         "3f\ngpu_ms=%."
+                         "3f\naura_backend=Niagara_shared_system\n"),
+                    Frames, Frames * 1000 / SumFrame, SumFrame / Frames,
+                    SumGame / FMath::Max(Samples, 1), SumGPU / FMath::Max(Samples, 1));
+                int32 Actors = 0, Visible = 0, ActiveAura = 0;
                 for (TActorIterator<AGateCharacter> I(W); I; ++I)
                 {
                     ++Actors;
-                    if (I->GetMesh()->WasRecentlyRendered(.3f))
+                    if (I->Appearance->Garment && I->Appearance->Garment->WasRecentlyRendered(.3f))
                         ++Visible;
+                    if (I->Aura->IsEmitting())
+                        ++ActiveAura;
                 }
-                Summary += FString::Printf(TEXT("skeletal_actors=%d\nrecently_rendered_skeletal_actors=%d\n"),
-                                           Actors, Visible);
-                FFileHelper::SaveStringToFile(Summary, *FPaths::Combine(Dir(), TEXT("performance.txt")));
+                Summary += FString::Printf(
+                    TEXT("skeletal_actors=%d\nrecently_rendered_skeletal_actors=%d\n"), Actors,
+                    Visible);
+                Summary += FString::Printf(TEXT("active_Niagara_instances=%d\n"), ActiveAura);
+                FFileHelper::SaveStringToFile(Summary,
+                                              *FPaths::Combine(Dir(), TEXT("performance.txt")));
                 Test->AddInfo(Summary);
                 Shot(TEXT("08-after-exit.png"));
                 Next();
@@ -284,4 +301,3 @@ bool FGate1PIETest::RunTest(const FString &Params)
     return true;
 }
 #endif
-

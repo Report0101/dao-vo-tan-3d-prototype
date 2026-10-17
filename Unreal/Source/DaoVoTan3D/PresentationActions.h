@@ -17,7 +17,10 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
     GENERATED_BODY()
   public:
     UPresentationActions();
-    void ResetToLocomotionPresentation(){SetPhase(EPresentationPhase::Locomotion);}
+    void ResetToLocomotionPresentation()
+    {
+        SetPhase(EPresentationPhase::Locomotion);
+    }
     UFUNCTION(BlueprintCallable) void StartMeditationPresentation();
     UFUNCTION(BlueprintCallable) void StopMeditationPresentation();
     UFUNCTION(BlueprintCallable) void PlaySwordPresentation();
@@ -27,7 +30,8 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
     }
     bool IsMeditating() const
     {
-        return Phase == EPresentationPhase::MeditationEnter || Phase == EPresentationPhase::MeditationLoop ||
+        return Phase == EPresentationPhase::MeditationEnter ||
+               Phase == EPresentationPhase::MeditationLoop ||
                Phase == EPresentationPhase::MeditationExit;
     }
     virtual void BeginPlay() override;
@@ -37,10 +41,12 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
     EPresentationPhase Phase = EPresentationPhase::Locomotion;
     float PhaseAge = 0;
     bool bFalling = false;
+    bool bArmedIdle = false;
     void SetPhase(EPresentationPhase Next);
     UPROPERTY() TObjectPtr<UAnimationAsset> Locomotion;
     UPROPERTY() TObjectPtr<class UAnimSequence> Fall;
     UPROPERTY() TObjectPtr<class UAnimSequence> Sword;
+    UPROPERTY() TObjectPtr<class UAnimSequence> SwordIdle;
     UPROPERTY() TObjectPtr<class UAnimSequence> Enter;
     UPROPERTY() TObjectPtr<class UAnimSequence> Loop;
     UPROPERTY() TObjectPtr<class UAnimSequence> Exit;

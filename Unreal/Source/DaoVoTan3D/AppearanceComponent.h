@@ -10,6 +10,11 @@ class DAOVOTAN3D_API UAppearanceComponent : public UActorComponent
   public:
     UFUNCTION(BlueprintCallable) void Apply(UPresentationRecipe *InRecipe);
     UPROPERTY(Transient) TObjectPtr<UPresentationRecipe> Recipe;
+    UPROPERTY(Transient) TObjectPtr<class USkeletalMeshComponent> Garment;
+    int32 ModuleCount() const
+    {
+        return Modules.Num();
+    }
 
   private:
     UPROPERTY(Transient) TArray<TObjectPtr<UStaticMeshComponent>> Modules;

@@ -15,9 +15,10 @@
 #include "InputAction.h"
 #include "InputMappingContext.h"
 #include "InputModifiers.h"
-#include "PresentationActions.h"
 #include "Misc/CommandLine.h"
 #include "Misc/Parse.h"
+#include "PortraitComponent.h"
+#include "PresentationActions.h"
 AGateCharacter::AGateCharacter()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -29,25 +30,31 @@ AGateCharacter::AGateCharacter()
     GetCharacterMovement()->bRunPhysicsWithNoController = true;
     GetCharacterMovement()->JumpZVelocity = 500;
     GetCharacterMovement()->AirControl = .3f;
+    GetCharacterMovement()->MaxSimulationIterations =
+        16; // Keep 50ms substeps during cold PIE hitches.
     GetMesh()->SetRelativeLocation(FVector(0, 0, -92));
     GetMesh()->SetRelativeRotation(FRotator(0, -90, 0));
     Boom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
     Boom->SetupAttachment(RootComponent);
-    Boom->TargetArmLength = 420;
-    Boom->SocketOffset = FVector(0, 55, 65);
+    Boom->TargetArmLength = 360;
+    Boom->SocketOffset = FVector(0, 42, 58);
     Boom->bUsePawnControlRotation = true;
     Boom->bEnableCameraLag = true;
-    Boom->CameraLagSpeed = 9;
-    Boom->ProbeSize = 16;
+    Boom->CameraLagSpeed = 11;
+    Boom->CameraLagMaxDistance = 35;
+    Boom->bUseCameraLagSubstepping = true;
+    Boom->ProbeSize = 12;
     Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
     Camera->SetupAttachment(Boom);
-    Camera->FieldOfView = 75;
+    Camera->FieldOfView = 66;
     Appearance = CreateDefaultSubobject<UAppearanceComponent>(TEXT("Appearance"));
     Actions = CreateDefaultSubobject<UPresentationActions>(TEXT("PresentationActions"));
     Aura = CreateDefaultSubobject<UAuraComponent>(TEXT("Aura"));
+    Portrait = CreateDefaultSubobject<UPortraitComponent>(TEXT("Portrait"));
     Aura->SetupAttachment(RootComponent);
     WeaponSocket = CreateDefaultSubobject<USceneComponent>(TEXT("WeaponSocket"));
-    WeaponSocket->SetupAttachment(GetMesh(), TEXT("hand_r"));
+    WeaponSocket->SetupAttachment(
+        GetMesh()); // Assign mesh before resolving the hand socket in BeginPlay.
     WeaponSocket->SetRelativeRotation(FRotator(0, 0, 90));
     Blade = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SwordBlade"));
     Blade->SetupAttachment(WeaponSocket);
@@ -72,12 +79,14 @@ void AGateCharacter::BeginPlay()
     if (!Recipe)
         Recipe = LoadObject<UPresentationRecipe>(nullptr, TEXT("/Game/DaoVoTan/Data/DA_Player"));
     Appearance->Apply(Recipe);
-    Blade->SetStaticMesh(LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Cube.Cube")));
-    Guard->SetStaticMesh(Blade->GetStaticMesh());
-    Blade->SetMaterial(0, LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/DaoVoTan/Materials/M_Steel")));
-    Guard->SetMaterial(0, LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/DaoVoTan/Materials/M_Gold")));
+    WeaponSocket->AttachToComponent(
+        GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("hand_r"));
+    WeaponSocket->SetRelativeRotation(FRotator(0, 0, 90));
+    Blade->SetStaticMesh(LoadObject<UStaticMesh>(nullptr, TEXT("/Game/DaoVoTan/Visual11/SM_Jian")));
+    Blade->SetRelativeLocation(FVector::ZeroVector);
+    Blade->SetRelativeScale3D(FVector::OneVector);
     Blade->SetVisibility(Recipe && Recipe->bSword);
-    Guard->SetVisibility(Recipe && Recipe->bSword);
+    Guard->SetVisibility(false);
     if (Recipe)
     {
         Aura->Configure(Recipe->Aura);
@@ -89,9 +98,9 @@ void AGateCharacter::Tick(float Dt)
 {
     Super::Tick(Dt);
     if (Actions->IsMeditating())
-        Boom->TargetArmLength = FMath::FInterpTo(Boom->TargetArmLength, 330, Dt, 2);
+        Boom->TargetArmLength = FMath::FInterpTo(Boom->TargetArmLength, 285, Dt, 2);
     else
-        Boom->TargetArmLength = FMath::FInterpTo(Boom->TargetArmLength, 420, Dt, 2);
+        Boom->TargetArmLength = FMath::FInterpTo(Boom->TargetArmLength, 360, Dt, 2);
     if (auto *PC = GetWorld()->GetFirstPlayerController())
         if (PC->PlayerCameraManager)
             Nameplate->SetWorldRotation(
@@ -134,27 +143,29 @@ void AGateCharacter::SetupPlayerInputComponent(UInputComponent *Input)
     Button(EKeys::SpaceBar, &AGateCharacter::TryJump);
     Button(EKeys::LeftShift, &AGateCharacter::ToggleRun);
     Button(EKeys::LeftMouseButton, &AGateCharacter::SwordAction);
-    if(FParse::Param(FCommandLine::Get(),TEXT("GateDeveloperPreview"))){
+    if (FParse::Param(FCommandLine::Get(), TEXT("GateDeveloperPreview")))
+    {
         Button(EKeys::E, &AGateCharacter::ToggleMeditation);
         Button(EKeys::M, &AGateCharacter::ToggleMeditation);
     }
     Button(EKeys::One, &AGateCharacter::CycleAura);
-    if (auto *S = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+    if (auto *S =
+            ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
         S->AddMappingContext(InputContext, 0);
 }
 void AGateCharacter::MoveForward(const FInputActionValue &V)
 {
     if (!Actions->IsMeditating())
-        AddMovementInput(
-            FRotationMatrix(FRotator(0, Controller->GetControlRotation().Yaw, 0)).GetUnitAxis(EAxis::X),
-            V.Get<float>());
+        AddMovementInput(FRotationMatrix(FRotator(0, Controller->GetControlRotation().Yaw, 0))
+                             .GetUnitAxis(EAxis::X),
+                         V.Get<float>());
 }
 void AGateCharacter::MoveRight(const FInputActionValue &V)
 {
     if (!Actions->IsMeditating())
-        AddMovementInput(
-            FRotationMatrix(FRotator(0, Controller->GetControlRotation().Yaw, 0)).GetUnitAxis(EAxis::Y),
-            V.Get<float>());
+        AddMovementInput(FRotationMatrix(FRotator(0, Controller->GetControlRotation().Yaw, 0))
+                             .GetUnitAxis(EAxis::Y),
+                         V.Get<float>());
 }
 void AGateCharacter::LookYaw(const FInputActionValue &V)
 {

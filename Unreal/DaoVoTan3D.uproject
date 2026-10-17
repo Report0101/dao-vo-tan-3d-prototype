@@ -3,5 +3,6 @@
   "EngineAssociation": "5.8",
   "Category": "Games",
   "Description": "Dao Vo Tan presentation client. Simulation authority remains external.",
-  "Modules": [{ "Name": "DaoVoTan3D", "Type": "Runtime", "LoadingPhase": "Default" }]
+  "Modules": [{ "Name": "DaoVoTan3D", "Type": "Runtime", "LoadingPhase": "Default" }],
+  "Plugins": [{"Name":"Niagara","Enabled":true}]
 }

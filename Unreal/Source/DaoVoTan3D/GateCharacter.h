@@ -16,6 +16,7 @@ class DAOVOTAN3D_API AGateCharacter : public ACharacter
     UPROPERTY(VisibleAnywhere) TObjectPtr<class UAppearanceComponent> Appearance;
     UPROPERTY(VisibleAnywhere) TObjectPtr<class UPresentationActions> Actions;
     UPROPERTY(VisibleAnywhere) TObjectPtr<class UAuraComponent> Aura;
+    UPROPERTY(VisibleAnywhere) TObjectPtr<class UPortraitComponent> Portrait;
     UPROPERTY(EditAnywhere) TObjectPtr<class UPresentationRecipe> Recipe;
     UPROPERTY(VisibleAnywhere) TObjectPtr<class USceneComponent> WeaponSocket;
     UPROPERTY(VisibleAnywhere) TObjectPtr<class UStaticMeshComponent> Blade;

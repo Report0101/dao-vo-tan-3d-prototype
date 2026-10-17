@@ -1,6 +1,8 @@
 #include "AppearanceComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Engine/SkeletalMesh.h"
+#include "Engine/StaticMesh.h"
 #include "GameFramework/Character.h"
 #include "Materials/MaterialInstanceDynamic.h"
 void UAppearanceComponent::Apply(UPresentationRecipe *R)
@@ -12,33 +14,58 @@ void UAppearanceComponent::Apply(UPresentationRecipe *R)
         if (M)
             M->DestroyComponent();
     Modules.Empty();
+    if (Garment)
+        Garment->DestroyComponent();
     Recipe = R;
-    C->GetMesh()->SetSkeletalMeshAsset(R->Body.LoadSynchronous());
-    auto Add = [&](const TCHAR *Shape, FName Bone, FVector Offset, FVector Scale, FLinearColor Color)
+    C->GetMesh()->SetSkeletalMeshAsset(LoadObject<USkeletalMesh>(
+        nullptr, TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple")));
+    C->GetMesh()->SetVisibility(false, false);
+    C->GetMesh()->VisibilityBasedAnimTickOption =
+        EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones;
+    auto Tint = [](UMeshComponent *M, int32 Slot, const TCHAR *Path, FLinearColor Color)
+    {
+        auto *MID =
+            UMaterialInstanceDynamic::Create(LoadObject<UMaterialInterface>(nullptr, Path), M);
+        MID->SetVectorParameterValue(TEXT("Tint"), Color);
+        M->SetMaterial(Slot, MID);
+    };
+    Garment = NewObject<USkeletalMeshComponent>(C);
+    C->AddInstanceComponent(Garment);
+    Garment->SetSkeletalMeshAsset(LoadObject<USkeletalMesh>(
+        nullptr, *FString::Printf(TEXT("/Game/DaoVoTan/Visual11/SK_Robe%d"),
+                                  FMath::Clamp(R->GarmentVariant, 0, 2))));
+    Garment->SetupAttachment(C->GetMesh());
+    Garment->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    Garment->RegisterComponent();
+    Garment->SetLeaderPoseComponent(C->GetMesh());
+    Garment->SetLightingChannels(true, true, false);
+    Tint(Garment, 0, TEXT("/Game/DaoVoTan/Visual11/M_Robe"), R->GarmentColor);
+    Tint(Garment, 1, TEXT("/Game/DaoVoTan/Visual11/M_Embroidery"), R->FactionColor);
+    Tint(Garment, 2, TEXT("/Game/DaoVoTan/Visual11/M_Skin"), R->SkinColor);
+    auto Add = [&](const FString &Path, FName Bone, FVector Offset)
     {
         auto *M = NewObject<UStaticMeshComponent>(C);
         C->AddInstanceComponent(M);
-        M->SetStaticMesh(LoadObject<UStaticMesh>(nullptr, Shape));
+        M->SetStaticMesh(LoadObject<UStaticMesh>(nullptr, *Path));
         M->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-        M->AttachToComponent(C->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, Bone);
+        M->SetupAttachment(C->GetMesh(), Bone);
         M->SetRelativeLocation(Offset);
-        M->SetRelativeScale3D(Scale);
+        M->SetLightingChannels(true, true, false);
         M->RegisterComponent();
-        auto *Mat = UMaterialInstanceDynamic::Create(
-            LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/DaoVoTan/Materials/M_Color")), M);
-        Mat->SetVectorParameterValue(TEXT("Tint"), Color);
-        M->SetMaterial(0, Mat);
         Modules.Add(M);
+        return M;
     };
-    // Rigid garment/accessory proof on a shared rig, not a final skinned wardrobe.
-    Add(TEXT("/Engine/BasicShapes/Cylinder.Cylinder"), TEXT("pelvis"), FVector(0, 0, 0),
-        FVector(.44f, .44f, .46f), R->GarmentColor);
-    Add(TEXT("/Engine/BasicShapes/Sphere.Sphere"), TEXT("spine_03"), FVector(0, 0, 0),
-        FVector(.45f, .31f, .4f), R->GarmentColor);
-    if (R->bHeadwear)
-        Add(TEXT("/Engine/BasicShapes/Cylinder.Cylinder"), TEXT("head"), FVector(0, 0, 13),
-            FVector(.52f, .52f, .06f), R->TrimColor);
+    auto *Head = Add(FString::Printf(TEXT("/Game/DaoVoTan/Visual11/SM_Head%d"),
+                                     FMath::Clamp(R->HeadVariant, 0, 2)),
+                     TEXT("head"), FVector::ZeroVector);
+    Tint(Head, 0, TEXT("/Game/DaoVoTan/Visual11/M_Skin"), R->SkinColor);
+    auto *Hair = Add(FString::Printf(TEXT("/Game/DaoVoTan/Visual11/SM_Hair%d"),
+                                     FMath::Clamp(R->HairVariant, 0, 3)),
+                     TEXT("head"), FVector::ZeroVector);
+    Tint(Hair, 0, TEXT("/Game/DaoVoTan/Visual11/M_Hair"), R->HairColor);
+    Tint(Hair, 1, TEXT("/Game/DaoVoTan/Visual11/M_Embroidery"), R->FactionColor);
     if (R->bAccessory)
-        Add(TEXT("/Engine/BasicShapes/Sphere.Sphere"), TEXT("pelvis"), FVector(0, 28, 0),
-            FVector(.15f, .15f, .22f), R->TrimColor);
+        Add(FString::Printf(TEXT("/Game/DaoVoTan/Visual11/SM_Accessory%d"),
+                            FMath::Clamp(R->AccessoryVariant, 0, 1)),
+            TEXT("pelvis"), FVector(0, 22, -8));
 }

@@ -1,6 +1,7 @@
 #include "AuraComponent.h"
-#include "Components/InstancedStaticMeshComponent.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "NiagaraComponent.h"
+#include "NiagaraSystem.h"
 UAuraComponent::UAuraComponent()
 {
     PrimaryComponentTick.bCanEverTick = true;
@@ -8,16 +9,16 @@ UAuraComponent::UAuraComponent()
 void UAuraComponent::BeginPlay()
 {
     Super::BeginPlay();
-    Motes = NewObject<UInstancedStaticMeshComponent>(GetOwner());
+    Motes = NewObject<UNiagaraComponent>(GetOwner());
     GetOwner()->AddInstanceComponent(Motes);
     Motes->SetupAttachment(this);
-    Motes->SetStaticMesh(LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Sphere.Sphere")));
-    Motes->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    Motes->SetAutoActivate(false);
+    Motes->SetAsset(
+        LoadObject<UNiagaraSystem>(nullptr, TEXT("/Game/DaoVoTan/Visual11/NS_CultivationAura")));
     Motes->SetCastShadow(false);
     Motes->RegisterComponent();
     Material = UMaterialInstanceDynamic::Create(
-        LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/DaoVoTan/Materials/M_Aura")), this);
-    Motes->SetMaterial(0, Material);
+        LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/DaoVoTan/Visual11/M_QiSprite")), this);
     Configure(Style);
     SetEmitting(bEmitting);
 }
@@ -26,19 +27,33 @@ void UAuraComponent::Configure(const FAuraStyle &S)
     Style = S;
     Style.Density = FMath::Clamp(S.Density, 8, 96);
     Style.Radius = FMath::Clamp(S.Radius, 30.f, 250.f);
-    if (!Motes)
+    if (!Motes || !Material)
         return;
-    Motes->ClearInstances();
-    for (int32 I = 0; I < Style.Density; ++I)
-        Motes->AddInstance(FTransform::Identity);
     Material->SetVectorParameterValue(TEXT("Tint"), Style.Color);
     Material->SetScalarParameterValue(TEXT("Intensity"), FMath::Clamp(Style.Intensity, 0.f, 5.f));
+    Motes->SetVariableMaterial(TEXT("User.AuraMaterial"), Material);
+    Motes->SetVariableLinearColor(TEXT("User.Color"), Style.Color);
+    Motes->SetVariableFloat(TEXT("User.Density"), float(Style.Density));
+    Motes->SetVariableFloat(TEXT("User.Radius"), Style.Radius);
+    Motes->SetVariableFloat(TEXT("User.VerticalMotion"), Style.VerticalMotion);
+    Motes->SetVariableFloat(TEXT("User.Intensity"), Style.Intensity);
+    Motes->SetVariableFloat(TEXT("User.Pulse"), Style.PulseSpeed);
+    Motes->SetRelativeScale3D(FVector(1, 1, .85f));
 }
 void UAuraComponent::SetEmitting(bool B)
 {
+    const bool Changed = bEmitting != B;
     bEmitting = B;
     if (Motes)
-        Motes->SetVisibility(B);
+    {
+        if (B)
+        {
+            if (Changed || !Motes->IsActive())
+                Motes->Activate(true);
+        }
+        else
+            Motes->DeactivateImmediate();
+    }
     SetComponentTickEnabled(B);
 }
 void UAuraComponent::TickComponent(float Dt, ELevelTick Tick, FActorComponentTickFunction *Fn)
@@ -47,16 +62,10 @@ void UAuraComponent::TickComponent(float Dt, ELevelTick Tick, FActorComponentTic
     if (!Motes || !bEmitting)
         return;
     Age += Dt;
-    for (int32 I = 0; I < Style.Density; ++I)
-    {
-        float Phase = I * 2.39996f + Age * (.25f + Style.PulseSpeed * .25f);
-        float R = Style.Radius * (.85f + .1f * FMath::Sin(Age * Style.PulseSpeed + I));
-        float H = FMath::Fmod(I * 7.3f + Age * 22, 170.f) - 85.f;
-        Motes->UpdateInstanceTransform(
-            I,
-            FTransform(FRotator::ZeroRotator, FVector(FMath::Cos(Phase) * R, FMath::Sin(Phase) * R, H),
-                       FVector(.025f + .015f * FMath::Sin(Phase) * FMath::Sin(Phase))),
-            false, false, true);
-    }
-    Motes->MarkRenderStateDirty();
+    Material->SetScalarParameterValue(
+        TEXT("Intensity"), Style.Intensity * (.78f + .22f * FMath::Sin(Age * Style.PulseSpeed)));
+    // Cosmetic breathing and ground-relative rise; Niagara owns all sprite particles.
+    Motes->SetRelativeLocation(
+        FVector(0, 0, -60 + FMath::Sin(Age * .6f) * Style.VerticalMotion * .2f));
+    Motes->SetRelativeRotation(FRotator(0, Age * 9, 0));
 }

@@ -17,9 +17,17 @@ class DAOVOTAN3D_API UAuraComponent : public USceneComponent
     {
         return bEmitting;
     }
+    class UNiagaraComponent *NiagaraInstance() const
+    {
+        return Motes;
+    }
+    const FAuraStyle &GetStyle() const
+    {
+        return Style;
+    }
 
   private:
-    UPROPERTY() TObjectPtr<class UInstancedStaticMeshComponent> Motes;
+    UPROPERTY() TObjectPtr<class UNiagaraComponent> Motes;
     UPROPERTY() TObjectPtr<class UMaterialInstanceDynamic> Material;
     FAuraStyle Style;
     bool bEmitting = false;

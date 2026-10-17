@@ -1,23 +1,24 @@
 #include "SnapshotPresentationAdapter.h"
-#include "GateCharacter.h"
-#include "GameFramework/PlayerController.h"
 #include "AppearanceComponent.h"
 #include "AuraComponent.h"
-#include "PresentationActions.h"
-#include "PresentationRecipe.h"
-#include "Components/TextRenderComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/TextRenderComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Misc/CommandLine.h"
-#include "Misc/Parse.h"
-#include "Misc/FileHelper.h"
+#include "GameFramework/PlayerController.h"
+#include "GateCharacter.h"
 #include "HAL/FileManager.h"
+#include "Misc/CommandLine.h"
+#include "Misc/FileHelper.h"
+#include "Misc/Parse.h"
+#include "PresentationActions.h"
+#include "PresentationRecipe.h"
 USnapshotPresentationAdapter::USnapshotPresentationAdapter()
 {
     PrimaryComponentTick.bCanEverTick = true;
 }
-void USnapshotPresentationAdapter::SetSlots(AGateCharacter *Player, const TArray<AGateCharacter *> &NPCs)
+void USnapshotPresentationAdapter::SetSlots(AGateCharacter *Player,
+                                            const TArray<AGateCharacter *> &NPCs)
 {
     Slots.Empty();
     Slots.Add(Player);
@@ -42,17 +43,18 @@ const FSnapshotActorState *USnapshotPresentationAdapter::StateFor(const AGateCha
 void USnapshotPresentationAdapter::ApplyAppearance(AGateCharacter *Actor, const FString &Seed)
 {
     const uint32 Token = uint32(FCString::Strtoui64(*Seed.Left(8), nullptr, 16));
-    const TCHAR *Paths[] = {TEXT("/Game/DaoVoTan/Data/DA_Player"), TEXT("/Game/DaoVoTan/Data/DA_NPC_A"),
+    const TCHAR *Paths[] = {TEXT("/Game/DaoVoTan/Data/DA_Player"),
+                            TEXT("/Game/DaoVoTan/Data/DA_NPC_A"),
                             TEXT("/Game/DaoVoTan/Data/DA_NPC_B")};
     auto *Base = LoadObject<UPresentationRecipe>(nullptr, Paths[Token % 3]);
     auto *Recipe = DuplicateObject<UPresentationRecipe>(Base, this);
     Recipe->RealmLabel = FText::FromString(TEXT("Presentation Alias"));
-    Recipe->bAccessory = (Token & 4) != 0;
+    Recipe->ApplyAppearanceSeed(Seed);
     Actor->Recipe = Recipe;
     Actor->Appearance->Apply(Recipe);
     Actor->Aura->Configure(Recipe->Aura);
     Actor->Blade->SetVisibility(Recipe->bSword);
-    Actor->Guard->SetVisibility(Recipe->bSword);
+    Actor->Guard->SetVisibility(false); // Guard is part of the authored jian mesh.
     Actor->Actions->ResetToLocomotionPresentation();
 }
 bool USnapshotPresentationAdapter::ApplyJson(const FString &Json, bool bResync, FString &Error)
@@ -73,7 +75,8 @@ bool USnapshotPresentationAdapter::ApplyJson(const FString &Json, bool bResync, 
     LastParseMs = (FPlatformTime::Seconds() - Start) * 1000;
     const double ApplyStart = FPlatformTime::Seconds();
     if (Next.Actors.Num() > 3 || Slots.Num() != 3)
-        return Reject(TEXT("Adapter requires three prepared fixture slots (max 3 projected actors)"));
+        return Reject(
+            TEXT("Adapter requires three prepared fixture slots (max 3 projected actors)"));
     for (auto *Slot : {Slots[0].Get(), Slots[1].Get(), Slots[2].Get()})
         if (!IsValid(Slot))
             return Reject(TEXT("Fixture slot missing"));
@@ -84,7 +87,8 @@ bool USnapshotPresentationAdapter::ApplyJson(const FString &Json, bool bResync, 
     const bool NewStream = Current.StreamId != Next.StreamId;
     if (NewStream)
     {
-        if (!bResync || Next.Sequence != 1 || Next.Cues.Num() != 0 || RetiredStreams.Contains(Next.StreamId))
+        if (!bResync || Next.Sequence != 1 || Next.Cues.Num() != 0 ||
+            RetiredStreams.Contains(Next.StreamId))
             return Reject(TEXT("New stream needs explicit full resync, sequence 1 and no actions"));
     }
     else if (Next.Sequence <= Current.Sequence || Next.WorldTick < Current.WorldTick)
@@ -195,7 +199,8 @@ bool USnapshotPresentationAdapter::ApplyJson(const FString &Json, bool bResync, 
     }
     LastApplyMs = (FPlatformTime::Seconds() - ApplyStart) * 1000;
     UE_LOG(LogTemp, Display,
-           TEXT("SNAPSHOT accepted stream=%s sequence=%lld bindings=%d unique=%d duplicates=%d parse_ms=%.4f "
+           TEXT("SNAPSHOT accepted stream=%s sequence=%lld bindings=%d unique=%d duplicates=%d "
+                "parse_ms=%.4f "
                 "apply_ms=%.4f"),
            *Current.StreamId, Current.Sequence, Bindings.Num(), UniqueCueCount, DuplicateCueCount,
            LastParseMs, LastApplyMs);
@@ -215,7 +220,8 @@ bool USnapshotPresentationAdapter::LoadSnapshotFile(const FString &Path, bool bR
         UE_LOG(LogTemp, Display, TEXT("SNAPSHOT rejected: %s"), *Error);
     return Accepted;
 }
-void USnapshotPresentationAdapter::TickComponent(float Dt, ELevelTick Tick, FActorComponentTickFunction *Fn)
+void USnapshotPresentationAdapter::TickComponent(float Dt, ELevelTick Tick,
+                                                 FActorComponentTickFunction *Fn)
 {
     Super::TickComponent(Dt, Tick, Fn);
     PollAge += Dt;
@@ -278,8 +284,8 @@ void USnapshotPresentationAdapter::TickComponent(float Dt, ELevelTick Tick, FAct
         A->Actions->StartMeditationPresentation();
         Playing.Add(C.ActorId, 0);
         ++PlayedPreviewCount;
-        UE_LOG(LogTemp, Display, TEXT("SNAPSHOT preview EventId=%s actor=%s cosmetic only"), *C.EventId,
-               *C.ActorId);
+        UE_LOG(LogTemp, Display, TEXT("SNAPSHOT preview EventId=%s actor=%s cosmetic only"),
+               *C.EventId, *C.ActorId);
         Pending.RemoveAt(I);
     }
 }

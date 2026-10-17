@@ -39,12 +39,13 @@ static void SaveAsset(UObject *Asset)
     FSavePackageArgs A;
     A.TopLevelFlags = RF_Public | RF_Standalone;
     A.SaveFlags = SAVE_None;
-    FString Path = FPackageName::LongPackageNameToFilename(Asset->GetOutermost()->GetName(),
-                                                           FPackageName::GetAssetPackageExtension());
+    FString Path = FPackageName::LongPackageNameToFilename(
+        Asset->GetOutermost()->GetName(), FPackageName::GetAssetPackageExtension());
     if (!UPackage::SavePackage(Asset->GetOutermost(), Asset, *Path, A))
         UE_LOG(LogTemp, Error, TEXT("GATE1 save failed %s"), *Path);
 }
-static UMaterial *Material(const TCHAR *Name, FLinearColor Color, bool Glow = false, float Metal = 0)
+static UMaterial *Material(const TCHAR *Name, FLinearColor Color, bool Glow = false,
+                           float Metal = 0)
 {
     FString Package = FString(TEXT("/Game/DaoVoTan/Materials/")) + Name;
     auto *P = CreatePackage(*Package);
@@ -78,7 +79,7 @@ static UMaterial *Material(const TCHAR *Name, FLinearColor Color, bool Glow = fa
         M->GetEditorOnlyData()->EmissiveColor.Expression = Mul;
         M->SetShadingModel(MSM_Unlit);
     }
-    M->bUsedWithInstancedStaticMeshes = true;
+    M->SetMaterialUsage(MATUSAGE_InstancedStaticMeshes);
     M->PreEditChange(nullptr);
     M->PostEditChange();
     SaveAsset(M);
@@ -87,7 +88,8 @@ static UMaterial *Material(const TCHAR *Name, FLinearColor Color, bool Glow = fa
 static void Meditation(const TCHAR *Name, USkeletalMesh *Mesh, UAnimSequence *Idle, int32 Mode)
 {
     FString Package = FString(TEXT("/Game/DaoVoTan/Animation/")) + Name;
-    auto *AnimPackage = CreatePackage(*Package); AnimPackage->FullyLoad();
+    auto *AnimPackage = CreatePackage(*Package);
+    AnimPackage->FullyLoad();
     auto *A = NewObject<UAnimSequence>(AnimPackage, Name, RF_Public | RF_Standalone);
     A->SetSkeleton(Mesh->GetSkeleton());
     auto &Ctrl = A->GetController();
@@ -103,20 +105,21 @@ static void Meditation(const TCHAR *Name, USkeletalMesh *Mesh, UAnimSequence *Id
         FTransform Base = Ref.GetRefBonePose()[B];
         int32 SB = Mesh->GetSkeleton()->GetReferenceSkeleton().FindBoneIndex(Bone);
         if (Idle && SB != INDEX_NONE)
-            Idle->GetBoneTransform(Base, FSkeletonPoseBoneIndex(SB), FAnimExtractContext(0.0f), true);
+            Idle->GetBoneTransform(Base, FSkeletonPoseBoneIndex(SB), FAnimExtractContext(0.0f),
+                                   true);
         TArray<FVector3f> Pos, Scale;
         TArray<FQuat4f> Rot;
         for (int32 F = 0; F <= Frames; ++F)
         {
             float T = float(F) / Frames;
-            float Alpha =
-                Mode == 1 ? 1.f
-                          : (Mode == 0 ? FMath::SmoothStep(0.f, 1.f, T) : 1 - FMath::SmoothStep(0.f, 1.f, T));
+            float Alpha = Mode == 1 ? 1.f
+                                    : (Mode == 0 ? FMath::SmoothStep(0.f, 1.f, T)
+                                                 : 1 - FMath::SmoothStep(0.f, 1.f, T));
             FTransform P = Base;
             FRotator Bend = FRotator::ZeroRotator;
             FString N = Bone.ToString();
-            // Kneeling meditation: hips lower, thighs fold forward, shins tuck back; original local-space
-            // keys.
+            // Kneeling meditation: hips lower, thighs fold forward, shins tuck back; original
+            // local-space keys.
             if (N == TEXT("pelvis"))
                 P.AddToTranslation(FVector(0, 0, -48 * Alpha));
             if (N == TEXT("thigh_l") || N == TEXT("thigh_r"))
@@ -165,10 +168,10 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
     Material(TEXT("M_Leaf"), FLinearColor(.035f, .17f, .12f));
     Material(TEXT("M_Gold"), FLinearColor(.65f, .38f, .09f), false, .65f);
     Material(TEXT("M_Steel"), FLinearColor(.5f, .65f, .68f), false, .9f);
-    auto *Mesh =
-        LoadObject<USkeletalMesh>(nullptr, TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple"));
-    auto *Idle =
-        LoadObject<UAnimSequence>(nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/MM_Idle"));
+    auto *Mesh = LoadObject<USkeletalMesh>(
+        nullptr, TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple"));
+    auto *Idle = LoadObject<UAnimSequence>(
+        nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/MM_Idle"));
     if (!Mesh || !Idle)
         return 2;
     Meditation(TEXT("AS_MeditationEnter"), Mesh, Idle, 0);
@@ -178,7 +181,8 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
     for (int32 I = 0; I < 3; ++I)
     {
         FString P = FString(TEXT("/Game/DaoVoTan/Data/")) + Names[I];
-        auto *R = NewObject<UPresentationRecipe>(CreatePackage(*P), Names[I], RF_Public | RF_Standalone);
+        auto *R =
+            NewObject<UPresentationRecipe>(CreatePackage(*P), Names[I], RF_Public | RF_Standalone);
         R->DisplayName = FText::FromString(I == 0   ? TEXT("Li Wei")
                                            : I == 1 ? TEXT("Shen / Jade Keeper")
                                                     : TEXT("Yun / Ember Pilgrim"));
@@ -212,7 +216,8 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
             float WY = (Y - 126) * 100;
             float Side = FMath::Square(FMath::Max(0.f, FMath::Abs(WY) - 2700)) * 0.000065f;
             float Noise = FMath::Sin(X * .13f) * FMath::Sin(Y * .1f) * 30;
-            H[Y * 253 + X] = FMath::Clamp(FMath::RoundToInt(32768 + (Side + Noise) * 1.28f), 0, 65535);
+            H[Y * 253 + X] =
+                FMath::Clamp(FMath::RoundToInt(32768 + (Side + Noise) * 1.28f), 0, 65535);
         }
     TMap<FGuid, TArray<FLandscapeImportLayerInfo>> Layers;
     Layers.Add(FGuid());
@@ -224,9 +229,11 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
     Start->SetActorRotation(FRotator(0, 0, 0));
     auto *Sun = W->SpawnActor<ADirectionalLight>();
     Sun->SetActorRotation(FRotator(-28, -35, 0));
-    Cast<UDirectionalLightComponent>(Sun->GetLightComponent())->SetMobility(EComponentMobility::Movable);
+    Cast<UDirectionalLightComponent>(Sun->GetLightComponent())
+        ->SetMobility(EComponentMobility::Movable);
     Cast<UDirectionalLightComponent>(Sun->GetLightComponent())->SetIntensity(3.5f);
-    Cast<UDirectionalLightComponent>(Sun->GetLightComponent())->SetLightColor(FLinearColor(1, .86f, .65f));
+    Cast<UDirectionalLightComponent>(Sun->GetLightComponent())
+        ->SetLightColor(FLinearColor(1, .86f, .65f));
     Cast<UDirectionalLightComponent>(Sun->GetLightComponent())->bAtmosphereSunLight = true;
     W->SpawnActor<ASkyAtmosphere>();
     auto *Sky = W->SpawnActor<ASkyLight>();
@@ -248,13 +255,10 @@ int32 UGate1AuthorCommandlet::Main(const FString &Params)
     if (!UEditorLoadingAndSavingUtils::SaveMap(W, TEXT("/Game/DaoVoTan/Maps/StillwaterValley")))
         return 4;
     UE_LOG(LogTemp, Display,
-           TEXT("GATE1 authoring complete: valley + materials + recipes + 3 original meditation sequences."));
+           TEXT("GATE1 authoring complete: valley + materials + recipes + 3 original meditation "
+                "sequences."));
     return 0;
 #else
     return 1;
 #endif
 }
-
-
-
-

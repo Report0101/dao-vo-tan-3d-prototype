@@ -9,6 +9,7 @@ class DAOVOTAN3D_API AValleyStage : public AActor
   public:
     AValleyStage();
     virtual void OnConstruction(const FTransform &T) override;
+    virtual void BeginPlay() override;
 
   private:
     UPROPERTY() TObjectPtr<class UHierarchicalInstancedStaticMeshComponent> Rocks;

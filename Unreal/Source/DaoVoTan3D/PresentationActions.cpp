@@ -1,4 +1,5 @@
 #include "PresentationActions.h"
+#include "PresentationRecipe.h"
 #include "Animation/AnimSequence.h"
 #include "Animation/AnimSingleNodeInstance.h"
 #include "AuraComponent.h"
@@ -14,10 +15,10 @@ void UPresentationActions::BeginPlay()
     Super::BeginPlay();
     Locomotion = LoadObject<UAnimationAsset>(
         nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/BS_Idle_Walk_Run"));
-    Fall = LoadObject<UAnimSequence>(nullptr,
-                                     TEXT("/Game/Characters/Mannequins/Anims/Unarmed/Jump/MM_Fall_Loop"));
-    Sword = LoadObject<UAnimSequence>(nullptr,
-                                      TEXT("/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_01"));
+    Fall = LoadObject<UAnimSequence>(
+        nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/Jump/MM_Fall_Loop"));
+    Sword = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Visual11/AS_SwordAttackA"));
+    SwordIdle = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Visual11/AS_SwordIdle"));
     Enter = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Animation/AS_MeditationEnter"));
     Loop = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Animation/AS_MeditationLoop"));
     Exit = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Animation/AS_MeditationExit"));
@@ -30,6 +31,7 @@ void UPresentationActions::SetPhase(EPresentationPhase Next)
         return;
     Phase = Next;
     PhaseAge = 0;
+    bArmedIdle = false;
     auto *Move = C->GetCharacterMovement();
     if (IsMeditating())
     {
@@ -62,8 +64,8 @@ void UPresentationActions::SetPhase(EPresentationPhase Next)
     }
     C->GetMesh()->PlayAnimation(Clip, Repeat);
     C->Aura->SetEmitting(Phase == EPresentationPhase::MeditationLoop);
-    UE_LOG(LogTemp, Display, TEXT("GATE1 phase actor=%s phase=%d (presentation only)"), *C->GetName(),
-           int32(Phase));
+    UE_LOG(LogTemp, Display, TEXT("GATE1 phase actor=%s phase=%d (presentation only)"),
+           *C->GetName(), int32(Phase));
 }
 void UPresentationActions::StartMeditationPresentation()
 {
@@ -97,12 +99,18 @@ void UPresentationActions::TickComponent(float Dt, ELevelTick Tick, FActorCompon
     if (Phase == EPresentationPhase::Locomotion)
     {
         bool Air = C->GetCharacterMovement()->IsFalling();
-        if (Air != bFalling)
+        const bool ArmedIdle =
+            !Air && C->Recipe && C->Recipe->bSword && C->GetVelocity().Size2D() < 5;
+        if (Air != bFalling || ArmedIdle != bArmedIdle)
         {
             bFalling = Air;
-            C->GetMesh()->PlayAnimation(Air ? Cast<UAnimationAsset>(Fall) : Locomotion.Get(), true);
+            bArmedIdle = ArmedIdle;
+            C->GetMesh()->PlayAnimation(Air         ? Cast<UAnimationAsset>(Fall)
+                                        : ArmedIdle ? Cast<UAnimationAsset>(SwordIdle)
+                                                    : Locomotion.Get(),
+                                        true);
         }
-        if (!Air)
+        if (!Air && !bArmedIdle)
             if (auto *Instance = C->GetMesh()->GetSingleNodeInstance())
                 Instance->SetBlendSpacePosition(FVector(C->GetVelocity().Size2D(), 0, 0));
     }

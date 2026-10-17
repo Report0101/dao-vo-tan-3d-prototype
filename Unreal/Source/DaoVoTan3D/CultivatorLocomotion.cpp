@@ -110,6 +110,7 @@ struct FCultivatorProxy : FAnimInstanceProxy
 {
     FAnimNode_MotionMatching Matching;
     FAnimNode_SequencePlayer_Standalone Action;
+    uint32 AppliedActionRevision = 0;
     FAnimNode_SequencePlayer_Standalone Carry;
     FAnimNode_LayeredBoneBlend CarryLayer;
     FPresentationActionBlend ActionBlend;
@@ -211,10 +212,14 @@ struct FCultivatorProxy : FAnimInstanceProxy
             Carry.SetSequence(State->CarryClip);
         Carry.SetLoopAnimation(true);
         CarryLayer.BlendWeights[0] = State->bHasSword ? 1.f : 0.f;
-        if (Action.GetSequence() != State->ActionClip)
+        if (Action.GetSequence() != State->ActionClip ||
+            AppliedActionRevision != State->ActionRevision)
         {
             Action.SetSequence(State->ActionClip);
             Action.SetAccumulatedTime(0);
+            AppliedActionRevision = State->ActionRevision;
+            UE_LOG(LogTemp, Display, TEXT("INPUT_ACTION sequence_restart revision=%u clip=%s"),
+                   AppliedActionRevision, *GetNameSafe(State->ActionClip));
         }
         Action.SetLoopAnimation(State->bActionLoop);
         ActionBlend.bSword = State->bSwordAction;

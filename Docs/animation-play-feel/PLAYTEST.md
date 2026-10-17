@@ -1,5 +1,15 @@
 # Animation & Play-Feel Gate: human review
 
+## MANUAL INPUT + ACTION RETEST
+
+In normal Editor PIE without the external worker, E/M must visibly show CONFIG UNAVAILABLE with an incrementing input count. This is an error response, not cultivation success. If a bridge directory is configured without a worker lock, the status is WORKER UNAVAILABLE. Unreal never invents a result.
+
+For real Cultivate, start the existing `Tools/RunCultivationCommandDemo.ps1` launcher with the TypeScript repository available. Play StillwaterValley and focus the viewport. Press E, wait for the authoritative receipt and presentation to finish, then press M. E and M are aliases for the same command; M does not cancel an authoritative action. Check the HUD's request/accepted/completed or rejected state.
+
+Click LMB once, wait for recovery, then repeat three more times. Each click after recovery must visibly replay anticipation, slash and recovery. Rapid clicks while the action is active are ignored; there is no queued combo. After sword recovery press E/M; after Cultivate presentation finishes press LMB again. Neither action should retain a permanent lock.
+
+Keep the six play-feel checks below: input fixes must not change sword grip/path, landing, steering, camera or foot IK.
+
 ## PLAY-FEEL CORRECTION RETEST
 
 The original technical gate failed human acceptance. This branch corrects that baseline; it does not begin Visual Gate 2. Use the existing project and StillwaterValley. For the real simulation flow use the existing RunCultivationCommandDemo.ps1 launcher.

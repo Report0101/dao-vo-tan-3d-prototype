@@ -9,6 +9,7 @@ class DAOVOTAN3D_API AGatePlayerController : public APlayerController
   public:
     AGatePlayerController();
     UPROPERTY(VisibleAnywhere) TObjectPtr<class UCultivationCommandAdapter> CultivationCommands;
+    virtual bool InputKey(const FInputKeyEventArgs &Params) override;
 
   protected:
     virtual void BeginPlay() override;

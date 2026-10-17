@@ -44,18 +44,40 @@ void UCultivationCommandAdapter::BindInputs(UEnhancedInputComponent *Input)
     InputContext = NewObject<UInputMappingContext>(this);
     auto Bind = [&](FKey Key, auto Method)
     {
-        auto *Action = NewObject<UInputAction>(this);
+        auto *Action =
+            NewObject<UInputAction>(this, *FString::Printf(TEXT("IA_Command_%s"), *Key.ToString()));
+        Action->ValueType = EInputActionValueType::Boolean;
         InputActions.Add(Action);
         InputContext->MapKey(Action, Key);
         Input->BindAction(Action, ETriggerEvent::Started, this, Method);
     };
-    Bind(EKeys::E, &UCultivationCommandAdapter::RequestCultivate);
-    Bind(EKeys::M, &UCultivationCommandAdapter::RequestCultivate);
+    Bind(EKeys::E, &UCultivationCommandAdapter::CultivateStarted);
+    Bind(EKeys::M, &UCultivationCommandAdapter::CultivateStarted);
+    for (int32 I = 0; I < 2; ++I)
+        Input->BindAction(InputActions[I], ETriggerEvent::Completed, this,
+                          &UCultivationCommandAdapter::CultivateCompleted);
     Bind(EKeys::Equals, &UCultivationCommandAdapter::MoreDays);
     Bind(EKeys::Hyphen, &UCultivationCommandAdapter::FewerDays);
     if (auto *Subsystem =
             ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+    {
         Subsystem->AddMappingContext(InputContext, 10);
+        UE_LOG(LogTemp, Display,
+               TEXT("INPUT_ACTION command_context priority=10 active=%d controller=%s E=%s M=%s"),
+               Subsystem->HasMappingContext(InputContext), *PC->GetName(),
+               *InputActions[0]->GetName(), *InputActions[1]->GetName());
+    }
+}
+void UCultivationCommandAdapter::CultivateStarted(const FInputActionInstance &Instance)
+{
+    UE_LOG(LogTemp, Display, TEXT("INPUT_ACTION EnhancedInput Started action=%s"),
+           *GetNameSafe(Instance.GetSourceAction()));
+    RequestCultivate();
+}
+void UCultivationCommandAdapter::CultivateCompleted(const FInputActionInstance &Instance)
+{
+    UE_LOG(LogTemp, Display, TEXT("INPUT_ACTION EnhancedInput Completed action=%s"),
+           *GetNameSafe(Instance.GetSourceAction()));
 }
 bool UCultivationCommandAdapter::WriteRequest()
 {
@@ -64,17 +86,38 @@ bool UCultivationCommandAdapter::WriteRequest()
     const FString Dir = FPaths::Combine(BridgeDir, TEXT("inbox"));
     IFileManager::Get().MakeDirectory(*Dir, true);
     const FString File = FPaths::Combine(Dir, LastRequestId + TEXT(".json")),
-                  Tmp = File + TEXT(".") + FGuid::NewGuid().ToString(EGuidFormats::Digits) + TEXT(".tmp");
+                  Tmp = File + TEXT(".") + FGuid::NewGuid().ToString(EGuidFormats::Digits) +
+                        TEXT(".tmp");
     return FFileHelper::SaveStringToFile(LastRequestJson, *Tmp,
                                          FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM) &&
            IFileManager::Get().Move(*File, *Tmp, true, true, false, true);
 }
 void UCultivationCommandAdapter::RequestCultivate()
 {
+    ++InputAttempts;
+    InputStatus = TEXT("INPUT RECEIVED");
+    if (!IsConnected())
+    {
+        InputStatus = TEXT("CONFIG UNAVAILABLE");
+        Feedback = TEXT("E/M received. Connect using Tools/RunCultivationCommandDemo.ps1");
+        UE_LOG(LogTemp, Display,
+               TEXT("INPUT_ACTION Cultivate attempt=%d CONFIG_UNAVAILABLE bridge=%s"),
+               InputAttempts, *BridgeDir);
+        return;
+    }
+    if (!FPaths::FileExists(FPaths::Combine(BridgeDir, TEXT("worker.lock"))))
+    {
+        InputStatus = TEXT("WORKER UNAVAILABLE");
+        Feedback = TEXT("E/M received. Start the TypeScript worker with the demo launcher");
+        UE_LOG(LogTemp, Display, TEXT("INPUT_ACTION Cultivate attempt=%d WORKER_UNAVAILABLE"),
+               InputAttempts);
+        return;
+    }
     auto *A = SnapshotAdapter();
     if (!A || A->Snapshot().ControlledActorId.IsEmpty())
     {
-        Feedback = TEXT("No controlled simulation actor bound");
+        InputStatus = TEXT("SIMULATION NOT READY");
+        Feedback = TEXT("E/M received. Waiting for the worker's controlled actor snapshot");
         return;
     }
     SendCultivateForActor(A->Snapshot().ControlledActorId, SelectedDays);
@@ -117,7 +160,8 @@ bool UCultivationCommandAdapter::SendCultivateForActor(const FString &ActorId, i
     LastReceiptJson.Empty();
     Feedback = TEXT("Cultivate request sent / awaiting simulation");
     A->SetCommandPreviewActor(ActorId, true);
-    UE_LOG(LogTemp, Display, TEXT("GATE2 sent request=%s actor=%s days=%d"), *LastRequestId, *ActorId, Days);
+    UE_LOG(LogTemp, Display, TEXT("GATE2 sent request=%s actor=%s days=%d"), *LastRequestId,
+           *ActorId, Days);
     return true;
 }
 bool UCultivationCommandAdapter::ResendLastRequest()
@@ -141,8 +185,8 @@ void UCultivationCommandAdapter::StartPreview()
     Actor->Actions->ResetToLocomotionPresentation();
     Actor->Actions->StartMeditationPresentation();
     ++PreviewStartCount;
-    UE_LOG(LogTemp, Display, TEXT("GATE2 cosmetic preview request=%s action=%s"), *Receipt.RequestId,
-           *Receipt.ActionId);
+    UE_LOG(LogTemp, Display, TEXT("GATE2 cosmetic preview request=%s action=%s"),
+           *Receipt.RequestId, *Receipt.ActionId);
 }
 bool UCultivationCommandAdapter::ConsumeReceipt(const FString &Json, FString &Error)
 {
@@ -185,8 +229,8 @@ bool UCultivationCommandAdapter::ConsumeReceipt(const FString &Json, FString &Er
         ResolvedRequests.Add(Receipt.RequestId);
         ++LogicalResultCount;
         if (Receipt.Status == TEXT("completed"))
-            Feedback = FString::Printf(TEXT("Cultivation committed at tick %lld / %s"), Receipt.ResolvedTick,
-                                       *Receipt.SessionEventId);
+            Feedback = FString::Printf(TEXT("Cultivation committed at tick %lld / %s"),
+                                       Receipt.ResolvedTick, *Receipt.SessionEventId);
         else
         {
             Feedback = Receipt.Status == TEXT("rejected") ? TEXT("Cultivation rejected: ")
@@ -211,7 +255,8 @@ bool UCultivationCommandAdapter::ConsumeReceipt(const FString &Json, FString &Er
            *Receipt.RequestId, *Receipt.Status, *Receipt.ActionId, Receipt.ResultEventIds.Num());
     return true;
 }
-void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick, FActorComponentTickFunction *Fn)
+void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick,
+                                               FActorComponentTickFunction *Fn)
 {
     Super::TickComponent(Dt, Tick, Fn);
     if (VisualActor)
@@ -241,9 +286,10 @@ void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick, FActor
     FString Text, Error;
     if (!LastRequestId.IsEmpty())
     {
-        const FString Path = FPaths::Combine(BridgeDir, TEXT("outbox"), LastRequestId + TEXT(".json"));
-        if (IFileManager::Get().FileSize(*Path) <= 65536 && FFileHelper::LoadFileToString(Text, *Path) &&
-            Text != LastReceiptJson)
+        const FString Path =
+            FPaths::Combine(BridgeDir, TEXT("outbox"), LastRequestId + TEXT(".json"));
+        if (IFileManager::Get().FileSize(*Path) <= 65536 &&
+            FFileHelper::LoadFileToString(Text, *Path) && Text != LastReceiptJson)
         {
             if (ConsumeReceipt(Text, Error))
                 LastReceiptJson = Text;
@@ -251,8 +297,8 @@ void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick, FActor
     }
     const FString Path = FPaths::Combine(BridgeDir, TEXT("snapshot.json"));
     Text.Empty();
-    if (IFileManager::Get().FileSize(*Path) <= 1024 * 1024 && FFileHelper::LoadFileToString(Text, *Path) &&
-        Text != LastSnapshotJson)
+    if (IFileManager::Get().FileSize(*Path) <= 1024 * 1024 &&
+        FFileHelper::LoadFileToString(Text, *Path) && Text != LastSnapshotJson)
     {
         FWorldPresentationSnapshot Next;
         auto *A = SnapshotAdapter();

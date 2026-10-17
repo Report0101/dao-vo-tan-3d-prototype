@@ -37,6 +37,7 @@ class DAOVOTAN3D_API UCultivatorLocomotion : public UAnimInstance
     bool bActionActive = false;
     bool bSwordAction = false;
     float ActionBlendTarget = 1;
+    uint32 ActionRevision = 0;
     FTransformTrajectory Trajectory;
     TSet<FString> SeenDatabases;
     bool UsesCosmeticRootMotion() const

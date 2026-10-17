@@ -21,6 +21,7 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
     UFUNCTION(BlueprintCallable) void StartMeditationPresentation();
     UFUNCTION(BlueprintCallable) void StopMeditationPresentation();
     UFUNCTION(BlueprintCallable) void PlaySwordPresentation();
+    int32 SwordStartCount = 0;
     EPresentationPhase GetPhase() const
     {
         return Phase;

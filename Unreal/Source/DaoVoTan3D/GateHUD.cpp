@@ -53,6 +53,9 @@ void AGateHUD::DrawHUD()
     if (Commands)
     {
         FString Phase = TEXT("DISCONNECTED");
+        if (!Commands->InputStatus.IsEmpty())
+            Phase = FString::Printf(TEXT("%s  /  INPUT #%d"), *Commands->InputStatus,
+                                    Commands->InputAttempts);
         if (Commands->IsConnected())
         {
             Phase = Commands->LastRequestId.IsEmpty()    ? TEXT("READY")
@@ -64,6 +67,10 @@ void AGateHUD::DrawHUD()
                 Phase += TEXT("  /  MEDITATING (visual)");
         }
         const float StatusY = H - 174;
+        if (Commands->InputStatus.Contains(TEXT("UNAVAILABLE")) ||
+            Commands->InputStatus == TEXT("SIMULATION NOT READY"))
+            Phase = FString::Printf(TEXT("%s  /  INPUT #%d"), *Commands->InputStatus,
+                                    Commands->InputAttempts);
         DrawRect(Ink, 22, StatusY, FMath::Min(420.f, W - 175), 87);
         DrawRect(Jade, 22, StatusY, 2, 87);
         Line(Phase, 36, StatusY + 11, Jade, 1.05f);

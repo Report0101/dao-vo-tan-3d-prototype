@@ -16,6 +16,10 @@ class DAOVOTAN3D_API UCultivationCommandAdapter : public UActorComponent
     {
         return InputActions.Num() ? InputActions[0].Get() : nullptr;
     }
+    class UInputMappingContext *CommandInputContext() const
+    {
+        return InputContext;
+    }
     UFUNCTION(BlueprintCallable) void RequestCultivate();
     bool SendCultivateForActor(const FString &ActorId, int32 Days);
     bool ResendLastRequest();
@@ -29,6 +33,8 @@ class DAOVOTAN3D_API UCultivationCommandAdapter : public UActorComponent
     FString Feedback = TEXT("Cultivation simulator not connected"), LastRequestId, LastRequestJson,
             ExpectedActor;
     FCultivationReceipt Receipt;
+    int32 InputAttempts = 0;
+    FString InputStatus;
     bool IsConnected() const
     {
         return bTransportEnabled && !BridgeDir.IsEmpty();
@@ -44,6 +50,8 @@ class DAOVOTAN3D_API UCultivationCommandAdapter : public UActorComponent
     UPROPERTY() TArray<TObjectPtr<class UInputAction>> InputActions;
     class USnapshotPresentationAdapter *SnapshotAdapter() const;
     void StartPreview();
+    void CultivateStarted(const struct FInputActionInstance &Instance);
+    void CultivateCompleted(const struct FInputActionInstance &Instance);
     void MoreDays()
     {
         SelectedDays = FMath::Min(30, SelectedDays + 1);

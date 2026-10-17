@@ -74,6 +74,7 @@ void UPresentationActions::SetPhase(EPresentationPhase Next)
             Animation->bActionLoop = Repeat;
             Animation->bSwordAction = Phase == EPresentationPhase::Sword;
             Animation->ActionBlendTarget = 1;
+            ++Animation->ActionRevision;
         }
         Animation->bActionActive = Phase != EPresentationPhase::Locomotion;
     }
@@ -94,8 +95,13 @@ void UPresentationActions::StopMeditationPresentation()
 }
 void UPresentationActions::PlaySwordPresentation()
 {
+    UE_LOG(LogTemp, Display, TEXT("INPUT_ACTION sword_request actor=%s phase_before=%d ready=%d"),
+           *GetOwner()->GetName(), int32(Phase), Phase == EPresentationPhase::Locomotion);
     if (Phase == EPresentationPhase::Locomotion)
+    {
+        ++SwordStartCount;
         SetPhase(EPresentationPhase::Sword);
+    }
 }
 void UPresentationActions::TickComponent(float Dt, ELevelTick Tick, FActorComponentTickFunction *Fn)
 {

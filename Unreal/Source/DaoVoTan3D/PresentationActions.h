@@ -21,6 +21,17 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
     UFUNCTION(BlueprintCallable) void StartMeditationPresentation();
     UFUNCTION(BlueprintCallable) void StopMeditationPresentation();
     UFUNCTION(BlueprintCallable) void PlaySwordPresentation();
+    static float CultivationVisualSeconds(int32 StrategicDays)
+    {
+        return FMath::Clamp(2.5f + .12f * StrategicDays, 3.f, 6.f);
+    }
+    void BeginCommandMeditation(int32 StrategicDays);
+    void ResolveCommandMeditation(bool Completed);
+    int32 MeditationCompletionCount = 0;
+    float CommandVisualAge() const
+    {
+        return MeditationAge;
+    }
     int32 SwordStartCount = 0;
     EPresentationPhase GetPhase() const
     {
@@ -38,6 +49,8 @@ class DAOVOTAN3D_API UPresentationActions : public UActorComponent
   private:
     EPresentationPhase Phase = EPresentationPhase::Locomotion;
     float PhaseAge = 0;
+    float MeditationAge = 0, MinimumMeditationAge = 0;
+    bool bCommandMeditation = false, bCommandResolved = false, bCommandCompleted = false;
     void SetPhase(EPresentationPhase Next);
     UPROPERTY() TObjectPtr<class UAnimSequence> Sword;
     UPROPERTY() TObjectPtr<class UAnimSequence> Enter;

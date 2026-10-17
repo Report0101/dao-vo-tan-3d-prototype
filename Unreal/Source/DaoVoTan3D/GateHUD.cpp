@@ -75,8 +75,8 @@ void AGateHUD::DrawHUD()
         DrawRect(Jade, 22, StatusY, 2, 87);
         Line(Phase, 36, StatusY + 11, Jade, 1.05f);
         Line(Commands->Feedback, 36, StatusY + 37, Text, .78f);
-        Line(FString::Printf(TEXT("E / M  Cultivate %d strategic days    + / -  duration"),
-                             Commands->SelectedDays),
+        Line(FString::Printf(TEXT("Cultivation Duration: %d strategic days   - / +   E / M"),
+                             Commands->GetSelectedCultivationDays()),
              36, StatusY + 62, Gold, .78f);
     }
     int32 Index = 0;

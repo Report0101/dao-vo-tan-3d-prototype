@@ -91,7 +91,7 @@ class FCommandExercise : public IAutomationLatentCommand
                 !C->CultivateInputAction())
                 return false;
             BeforeTick = A->Snapshot().WorldTick;
-            C->SelectedDays = 7;
+            C->SelectCultivationDays(7);
             auto *Input = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(
                 PC->GetLocalPlayer());
             if (!Input)

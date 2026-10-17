@@ -1,5 +1,13 @@
 # Animation & Play-Feel Gate: human review
 
+## CULTIVATION INTERACTION / BRIDGE STABILIZATION RETEST
+
+Start `Tools/RunCultivationCommandDemo.ps1` once with the existing simulation checkout. Keep that launcher/worker alive while cycling PIE. Start PIE, wait for the fresh authoritative snapshot and READY, then use - / + to select any integer from 1 through 30 strategic days. The HUD reads “Cultivation Duration: N strategic days”. E and M submit that exact selection; they are aliases, not cancellation controls.
+
+Try 1, 7, 17 and 30 days. The authoritative result can arrive immediately; meditation continues for the cosmetic minimum (3 to 6 seconds before exit), without delaying simulation. If the result arrives later, meditation must keep waiting. A rejected command must show its typed error without a normal meditation sequence. Wait for presentation recovery before submitting another command.
+
+Stop PIE and Play again twice without restarting the worker. Each new PIE must bind the controlled actor from a fresh stream, preserve committed world progress, and avoid replaying previous cultivation cues. Repeat Cultivate in all three sessions. Repeat four separate LMB attacks after recovery, Cultivate after sword recovery, and LMB after meditation. Retain the landing, diagonal steering/camera, sword grip/path, robe/hair, aura and portrait checks below. This is technical retest preparation, not Visual Gate 2 acceptance.
+
 ## MANUAL INPUT + ACTION RETEST
 
 In normal Editor PIE without the external worker, E/M must visibly show CONFIG UNAVAILABLE with an incrementing input count. This is an error response, not cultivation success. If a bridge directory is configured without a worker lock, the status is WORKER UNAVAILABLE. Unreal never invents a result.

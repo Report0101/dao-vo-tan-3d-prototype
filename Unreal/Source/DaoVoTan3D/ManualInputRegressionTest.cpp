@@ -226,6 +226,7 @@ class FManualLiveExercise : public IAutomationLatentCommand
 {
     FAutomationTestBase *Test;
     int32 Stage = 0;
+    int32 SwordBaseline = 0;
     double Since = 0, Started = FPlatformTime::Seconds();
     FString ERequest;
     void Next(UWorld *W)
@@ -266,7 +267,7 @@ class FManualLiveExercise : public IAutomationLatentCommand
         case 0:
             if (W->GetTimeSeconds() > 3 && Commands->IsConnected())
             {
-                Commands->SelectedDays = 7;
+                Commands->SelectCultivationDays(7);
                 // Explicit required InputAction injection, still through Enhanced Input's real
                 // binding.
                 S->InjectInputForAction(Commands->CultivateInputAction(), FInputActionValue(true),
@@ -296,6 +297,9 @@ class FManualLiveExercise : public IAutomationLatentCommand
                                                 TEXT("ManualInputEvidence/first-E-session.json")));
                 Test->TestTrue(TEXT("Cultivate releases shared action before sword"),
                                C->Actions->GetPhase() == EPresentationPhase::Locomotion);
+                // PIE focus acquisition may deliver a startup mouse click before the resync.
+                // Assert exact increments for this exercise, without assuming a zero startup count.
+                SwordBaseline = C->Actions->SwordStartCount;
                 Raw(PC, EKeys::LeftMouseButton, IE_Pressed);
                 Next(W);
             }
@@ -305,7 +309,7 @@ class FManualLiveExercise : public IAutomationLatentCommand
             if (T > .3)
             {
                 Test->TestEqual(TEXT("Sword works after completed Cultivate presentation"),
-                                C->Actions->SwordStartCount, 1);
+                                C->Actions->SwordStartCount, SwordBaseline + 1);
                 auto *A = Cast<UCultivatorLocomotion>(C->GetMesh()->GetAnimInstance());
                 Test->TestTrue(TEXT("Sword sequence advances after Cultivate"),
                                A && A->ActionSequenceTime > .1f && A->ActionSequenceTime < 1.f);
@@ -345,7 +349,7 @@ class FManualLiveExercise : public IAutomationLatentCommand
             if (T > .4)
             {
                 Test->TestEqual(TEXT("Second sword works after M presentation"),
-                                C->Actions->SwordStartCount, 2);
+                                C->Actions->SwordStartCount, SwordBaseline + 2);
                 auto *A = Cast<UCultivatorLocomotion>(C->GetMesh()->GetAnimInstance());
                 Test->TestTrue(TEXT("Second sword sequence actually replays"),
                                A && A->ActionSequenceTime > .2f && A->ActionSequenceTime < 1.f);

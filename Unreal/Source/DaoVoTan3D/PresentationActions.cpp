@@ -20,6 +20,7 @@ void UPresentationActions::BeginPlay()
 }
 void UPresentationActions::ResetToLocomotionPresentation()
 {
+    bCommandMeditation = false;
     // An explicit snapshot/receipt reset retains its accepted grounded-preview
     // contract, including when a fresh pawn has not yet settled onto the floor.
     // Ordinary sword transitions below preserve an ongoing fall.
@@ -88,6 +89,21 @@ void UPresentationActions::StartMeditationPresentation()
     if (Phase == EPresentationPhase::Locomotion && C && !C->GetCharacterMovement()->IsFalling())
         SetPhase(EPresentationPhase::MeditationEnter);
 }
+void UPresentationActions::BeginCommandMeditation(int32 StrategicDays)
+{
+    MeditationAge = 0;
+    MinimumMeditationAge = CultivationVisualSeconds(StrategicDays);
+    bCommandResolved = bCommandCompleted = false;
+    bCommandMeditation = true;
+    StartMeditationPresentation();
+}
+void UPresentationActions::ResolveCommandMeditation(bool Completed)
+{
+    if (!bCommandMeditation || bCommandResolved)
+        return;
+    bCommandResolved = true;
+    bCommandCompleted = Completed;
+}
 void UPresentationActions::StopMeditationPresentation()
 {
     if (Phase == EPresentationPhase::MeditationEnter || Phase == EPresentationPhase::MeditationLoop)
@@ -110,6 +126,23 @@ void UPresentationActions::TickComponent(float Dt, ELevelTick Tick, FActorCompon
     if (!C)
         return;
     PhaseAge += Dt;
+    if (bCommandMeditation)
+    {
+        MeditationAge += Dt;
+        if (bCommandResolved && (!bCommandCompleted || MeditationAge >= MinimumMeditationAge) &&
+            Phase == EPresentationPhase::MeditationLoop)
+        {
+            if (bCommandCompleted)
+                ++MeditationCompletionCount;
+            UE_LOG(LogTemp, Display,
+                   TEXT("CULTIVATION visual_exit age=%.3f minimum=%.3f completed=%d count=%d"),
+                   MeditationAge, MinimumMeditationAge, bCommandCompleted,
+                   MeditationCompletionCount);
+            StopMeditationPresentation();
+        }
+        if (Phase == EPresentationPhase::Locomotion)
+            bCommandMeditation = false;
+    }
     if (Phase == EPresentationPhase::Sword && Sword)
         if (auto *Animation = Cast<UCultivatorLocomotion>(C->GetMesh()->GetAnimInstance()))
             Animation->ActionBlendTarget =

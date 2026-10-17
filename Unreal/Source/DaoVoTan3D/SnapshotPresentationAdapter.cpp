@@ -251,10 +251,7 @@ void USnapshotPresentationAdapter::TickComponent(float Dt, ELevelTick Tick,
             I.RemoveCurrent();
             continue;
         }
-        I.Value() += Dt;
-        if (I.Value() > 2.8f)
-            A->Actions->StopMeditationPresentation();
-        if (I.Value() > 4.2f)
+        if (!A->Actions->IsMeditating())
         {
             A->Actions->ResetToLocomotionPresentation();
             I.RemoveCurrent();
@@ -281,7 +278,10 @@ void USnapshotPresentationAdapter::TickComponent(float Dt, ELevelTick Tick,
             continue;
         }
         A->Actions->ResetToLocomotionPresentation();
-        A->Actions->StartMeditationPresentation();
+        // A historical projection cue is already completed. Its cosmetic lifecycle
+        // shares the same centralized minimum; it does not create a command.
+        A->Actions->BeginCommandMeditation(1);
+        A->Actions->ResolveCommandMeditation(true);
         Playing.Add(C.ActorId, 0);
         ++PlayedPreviewCount;
         UE_LOG(LogTemp, Display, TEXT("SNAPSHOT preview EventId=%s actor=%s cosmetic only"),

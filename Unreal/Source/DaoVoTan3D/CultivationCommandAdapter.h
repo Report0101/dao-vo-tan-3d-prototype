@@ -28,7 +28,16 @@ class DAOVOTAN3D_API UCultivationCommandAdapter : public UActorComponent
     {
         bTransportEnabled = Enabled;
     }
-    int32 SelectedDays = 1, PreviewStartCount = 0, LogicalResultCount = 0, RejectedReceiptCount = 0;
+    int32 GetSelectedCultivationDays() const
+    {
+        return SelectedCultivationDays;
+    }
+    void SelectCultivationDays(int32 Days)
+    {
+        SelectedCultivationDays = FMath::Clamp(Days, 1, 30);
+    }
+    FString PresentationSessionId;
+    int32 PreviewStartCount = 0, LogicalResultCount = 0, RejectedReceiptCount = 0;
     double LastParseMs = 0, LastUpdateMs = 0, LastSerializeMs = 0;
     FString Feedback = TEXT("Cultivation simulator not connected"), LastRequestId, LastRequestJson,
             ExpectedActor;
@@ -42,8 +51,10 @@ class DAOVOTAN3D_API UCultivationCommandAdapter : public UActorComponent
 
   private:
     FString BridgeDir, LastSnapshotJson, LastReceiptJson;
+    int32 SelectedCultivationDays = 1;
+    bool bSessionRequested = false;
     bool bTransportEnabled = false, bTerminal = false;
-    float PollAge = 0, VisualAge = 0;
+    float PollAge = 0;
     TSet<FString> PreviewedRequests, ResolvedRequests;
     UPROPERTY() TObjectPtr<class AGateCharacter> VisualActor;
     UPROPERTY() TObjectPtr<class UInputMappingContext> InputContext;
@@ -54,11 +65,11 @@ class DAOVOTAN3D_API UCultivationCommandAdapter : public UActorComponent
     void CultivateCompleted(const struct FInputActionInstance &Instance);
     void MoreDays()
     {
-        SelectedDays = FMath::Min(30, SelectedDays + 1);
+        SelectedCultivationDays = FMath::Min(30, SelectedCultivationDays + 1);
     }
     void FewerDays()
     {
-        SelectedDays = FMath::Max(1, SelectedDays - 1);
+        SelectedCultivationDays = FMath::Max(1, SelectedCultivationDays - 1);
     }
     bool WriteRequest();
 };

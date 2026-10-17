@@ -24,11 +24,17 @@ UCultivationCommandAdapter::UCultivationCommandAdapter()
 void UCultivationCommandAdapter::BeginPlay()
 {
     Super::BeginPlay();
+    PresentationSessionId = FGuid::NewGuid().ToString(EGuidFormats::Digits);
     FParse::Value(FCommandLine::Get(), TEXT("CultivationBridgeDir="), BridgeDir);
-    FParse::Value(FCommandLine::Get(), TEXT("CultivationDays="), SelectedDays);
-    SelectedDays = FMath::Clamp(SelectedDays, 1, 30);
+    FParse::Value(FCommandLine::Get(), TEXT("CultivationDays="), SelectedCultivationDays);
+    SelectedCultivationDays = FMath::Clamp(SelectedCultivationDays, 1, 30);
     bTransportEnabled =
         !BridgeDir.IsEmpty() && !FParse::Param(FCommandLine::Get(), TEXT("CultivationGate2Test"));
+    if (!BridgeDir.IsEmpty())
+    {
+        InputStatus = TEXT("SIMULATION NOT READY");
+        Feedback = TEXT("Waiting for fresh authoritative resync");
+    }
 }
 USnapshotPresentationAdapter *UCultivationCommandAdapter::SnapshotAdapter() const
 {
@@ -120,10 +126,15 @@ void UCultivationCommandAdapter::RequestCultivate()
         Feedback = TEXT("E/M received. Waiting for the worker's controlled actor snapshot");
         return;
     }
-    SendCultivateForActor(A->Snapshot().ControlledActorId, SelectedDays);
+    SendCultivateForActor(A->Snapshot().ControlledActorId, SelectedCultivationDays);
 }
 bool UCultivationCommandAdapter::SendCultivateForActor(const FString &ActorId, int32 Days)
 {
+    if (VisualActor)
+    {
+        Feedback = TEXT("Cultivation presentation finishing; wait for recovery");
+        return false;
+    }
     auto *A = SnapshotAdapter();
     if (!IsConnected() || !A || A->Snapshot().WorldId.IsEmpty())
     {
@@ -181,9 +192,8 @@ void UCultivationCommandAdapter::StartPreview()
         return;
     PreviewedRequests.Add(Receipt.RequestId);
     VisualActor = Actor;
-    VisualAge = 0;
     Actor->Actions->ResetToLocomotionPresentation();
-    Actor->Actions->StartMeditationPresentation();
+    Actor->Actions->BeginCommandMeditation(int32(Receipt.DueTick - Receipt.StartTick));
     ++PreviewStartCount;
     UE_LOG(LogTemp, Display, TEXT("GATE2 cosmetic preview request=%s action=%s"),
            *Receipt.RequestId, *Receipt.ActionId);
@@ -221,6 +231,8 @@ bool UCultivationCommandAdapter::ConsumeReceipt(const FString &Json, FString &Er
     bTerminal = Receipt.Status != TEXT("accepted");
     if (Receipt.Status == TEXT("accepted") || Receipt.Status == TEXT("completed"))
         StartPreview();
+    if (bTerminal && VisualActor)
+        VisualActor->Actions->ResolveCommandMeditation(Receipt.Status == TEXT("completed"));
     if (Receipt.Status == TEXT("accepted"))
         Feedback = FString::Printf(TEXT("Cultivation accepted / strategic tick %lld -> %lld"),
                                    Receipt.StartTick, Receipt.DueTick);
@@ -261,13 +273,10 @@ void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick,
     Super::TickComponent(Dt, Tick, Fn);
     if (VisualActor)
     {
-        VisualAge += Dt;
         auto *A = SnapshotAdapter();
         const auto *State = A ? A->StateFor(VisualActor) : nullptr;
         const bool Dead = State && State->LifeStatus == TEXT("dead");
-        if (Dead || (bTerminal && VisualAge > 2.8f))
-            VisualActor->Actions->StopMeditationPresentation();
-        if (Dead || (bTerminal && VisualAge > 4.2f))
+        if (Dead || !VisualActor->Actions->IsMeditating())
         {
             VisualActor->Actions->ResetToLocomotionPresentation();
             if (Dead)
@@ -279,6 +288,19 @@ void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick,
     }
     if (!IsConnected())
         return;
+    if (!bSessionRequested)
+    {
+        // One connection-local identity per adapter. No world save is touched.
+        const FString Path = FPaths::Combine(BridgeDir, TEXT("presentation-session.json"));
+        const FString Tmp = Path + TEXT(".") + PresentationSessionId + TEXT(".tmp");
+        const FString Request = FString::Printf(TEXT("{\"schemaVersion\":1,\"sessionId\":\"%s\"}"),
+                                                *PresentationSessionId);
+        IFileManager::Get().MakeDirectory(*BridgeDir, true);
+        bSessionRequested =
+            FFileHelper::SaveStringToFile(Request, *Tmp,
+                                          FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM) &&
+            IFileManager::Get().Move(*Path, *Tmp, true, true, false, true);
+    }
     PollAge += Dt;
     if (PollAge < .1f)
         return;
@@ -295,15 +317,30 @@ void UCultivationCommandAdapter::TickComponent(float Dt, ELevelTick Tick,
                 LastReceiptJson = Text;
         }
     }
-    const FString Path = FPaths::Combine(BridgeDir, TEXT("snapshot.json"));
+    auto *CurrentAdapter = SnapshotAdapter();
+    const FString Path =
+        FPaths::Combine(BridgeDir, CurrentAdapter && CurrentAdapter->Snapshot().StreamId.IsEmpty()
+                                       ? TEXT("resync.json")
+                                       : TEXT("snapshot.json"));
     Text.Empty();
     if (IFileManager::Get().FileSize(*Path) <= 1024 * 1024 &&
         FFileHelper::LoadFileToString(Text, *Path) && Text != LastSnapshotJson)
     {
         FWorldPresentationSnapshot Next;
         auto *A = SnapshotAdapter();
-        if (A && SnapshotV1::Parse(Text, Next, Error) &&
+        if (A && SnapshotV1::Parse(Text, Next, Error) && Next.StreamId == PresentationSessionId &&
             A->ApplyJson(Text, A->Snapshot().StreamId != Next.StreamId, Error))
+        {
             LastSnapshotJson = Text;
+            if (InputStatus == TEXT("SIMULATION NOT READY"))
+            {
+                InputStatus.Empty();
+                if (LastRequestId.IsEmpty())
+                    Feedback = TEXT("Controlled actor ready / E or M to Cultivate");
+            }
+            UE_LOG(LogTemp, Display,
+                   TEXT("CULTIVATION session=%s resync_sequence=%lld actor=%s cues=%d"),
+                   *PresentationSessionId, Next.Sequence, *Next.ControlledActorId, Next.Cues.Num());
+        }
     }
 }

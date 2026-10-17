@@ -1,4 +1,5 @@
 #include "AnimationAuthorCommandlet.h"
+#include "PresentationAnimationAuthoring.h"
 #if WITH_EDITOR
 #include "Animation/AnimSequence.h"
 #include "AnimationUtils.h"
@@ -31,7 +32,7 @@ template <class T> T *MakeAsset(const FString &Name)
     Package->FullyLoad();
     return NewObject<T>(Package, *Name, RF_Public | RF_Standalone);
 }
-bool SaveAsset(UObject *Asset)
+bool SaveLocomotionAsset(UObject *Asset)
 {
     // Only newly authored target packages may be persisted. No source package
     // or accepted visual package can pass this guard.
@@ -157,7 +158,7 @@ int32 UAnimationAuthorCommandlet::Main(const FString &Params)
         Schema->AddChannel(Velocity);
     }
     Schema->PostEditChange();
-    if (!SaveAsset(Schema))
+    if (!SaveLocomotionAsset(Schema))
         return 10;
     TMap<FString, UPoseSearchDatabase *> Databases;
     for (const TCHAR *State :
@@ -182,10 +183,12 @@ int32 UAnimationAuthorCommandlet::Main(const FString &Params)
             FAnimationUtils::GetDefaultAnimationCurveCompressionSettings();
         Clip->SetPreviewMesh(nullptr);
         Clip->PostEditChange();
-        if (!SaveAsset(Clip))
+        if (!SaveLocomotionAsset(Clip))
             return 11;
         FPoseSearchDatabaseAnimationAsset Asset;
         Asset.AnimAsset = Clip;
+        if (States.FindChecked(Clip->GetName()) == TEXT("Landing"))
+            Asset.SetSamplingRange(PresentationAnimationAuthoring::LandingImpactRange(Clip));
         Databases[States.FindChecked(Clip->GetName())]->AddAnimationAsset(Asset);
     }
     for (auto &Pair : Databases)
@@ -197,7 +200,7 @@ int32 UAnimationAuthorCommandlet::Main(const FString &Params)
                 ERequestAsyncBuildFlag::NewRequest | ERequestAsyncBuildFlag::WaitForCompletion) !=
             EAsyncBuildIndexResult::Success)
             return 14;
-        if (!SaveAsset(Pair.Value))
+        if (!SaveLocomotionAsset(Pair.Value))
             return 12;
     }
     auto *Table = MakeAsset<UChooserTable>(TEXT("CHT_Locomotion"));
@@ -238,7 +241,7 @@ int32 UAnimationAuthorCommandlet::Main(const FString &Params)
     Column(TEXT("bRunning"),
            {E::MatchAny, E::MatchAny, E::MatchAny, E::MatchTrue, E::MatchFalse, E::MatchAny});
     Table->Compile(true);
-    if (!SaveAsset(Table))
+    if (!SaveLocomotionAsset(Table))
         return 13;
     UE_LOG(LogTemp, Display,
            TEXT("ANIMATION minimum migration: %d retained clips, 6 databases, 1 schema, 1 Chooser. "

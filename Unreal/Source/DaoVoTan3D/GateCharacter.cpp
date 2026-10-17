@@ -19,6 +19,13 @@
 #include "Misc/Parse.h"
 #include "PortraitComponent.h"
 #include "PresentationActions.h"
+FTransform AGateCharacter::JianGripTransform()
+{
+    // Jian blade is +Z, edge width +X; Manny hand +Z points out of the palm.
+    // The hilt spans -5..14 cm: its centre is 4.5 cm along the blade axis.
+    // Place that centre 3 cm into the prototype glove, along hand -X.
+    return FTransform(FQuat::Identity, FVector(-3, 0, -4.5f));
+}
 AGateCharacter::AGateCharacter()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -40,8 +47,9 @@ AGateCharacter::AGateCharacter()
     Boom->SocketOffset = FVector(0, 42, 58);
     Boom->bUsePawnControlRotation = true;
     Boom->bEnableCameraLag = true;
-    Boom->CameraLagSpeed = 11;
-    Boom->CameraLagMaxDistance = 35;
+    Boom->CameraLagSpeed = 16;
+    Boom->CameraLagMaxDistance = 22;
+    Boom->bEnableCameraRotationLag = false; // Direct yaw; positional lag must not delay aim.
     Boom->bUseCameraLagSubstepping = true;
     Boom->ProbeSize = 12;
     Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
@@ -52,14 +60,11 @@ AGateCharacter::AGateCharacter()
     Aura = CreateDefaultSubobject<UAuraComponent>(TEXT("Aura"));
     Portrait = CreateDefaultSubobject<UPortraitComponent>(TEXT("Portrait"));
     Aura->SetupAttachment(RootComponent);
-    WeaponSocket = CreateDefaultSubobject<USceneComponent>(TEXT("WeaponSocket"));
+    WeaponSocket = CreateDefaultSubobject<USceneComponent>(TEXT("SwordGrip_R"));
     WeaponSocket->SetupAttachment(
         GetMesh()); // Assign mesh before resolving the hand socket in BeginPlay.
-    WeaponSocket->SetRelativeRotation(FRotator(0, 0, 90));
     Blade = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SwordBlade"));
     Blade->SetupAttachment(WeaponSocket);
-    Blade->SetRelativeLocation(FVector(0, 0, 55));
-    Blade->SetRelativeScale3D(FVector(.035f, .09f, .95f));
     Blade->SetCollisionEnabled(ECollisionEnabled::NoCollision);
     Guard = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SwordGuard"));
     Guard->SetupAttachment(WeaponSocket);
@@ -81,7 +86,7 @@ void AGateCharacter::BeginPlay()
     Appearance->Apply(Recipe);
     WeaponSocket->AttachToComponent(
         GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("hand_r"));
-    WeaponSocket->SetRelativeRotation(FRotator(0, 0, 90));
+    WeaponSocket->SetRelativeTransform(JianGripTransform());
     Blade->SetStaticMesh(LoadObject<UStaticMesh>(nullptr, TEXT("/Game/DaoVoTan/Visual11/SM_Jian")));
     Blade->SetRelativeLocation(FVector::ZeroVector);
     Blade->SetRelativeScale3D(FVector::OneVector);
@@ -96,6 +101,17 @@ void AGateCharacter::BeginPlay()
 }
 void AGateCharacter::Tick(float Dt)
 {
+    auto *Move = GetCharacterMovement();
+    FVector Facing = Move->GetCurrentAcceleration();
+    if (bStrafing && Controller)
+        Facing = Controller->GetControlRotation().Vector();
+    const float Error = Facing.IsNearlyZero() ? 0.f
+                                              : FMath::Abs(FMath::FindDeltaAngleDegrees(
+                                                    GetActorRotation().Yaw, Facing.Rotation().Yaw));
+    // CharacterMovement still applies rotation. Ease its angular-speed budget
+    // toward intent instead of entering/leaving a flat 500 deg/s turn abruptly.
+    const float DesiredRate = FMath::Clamp(Error * 9.f, 80.f, 500.f);
+    Move->RotationRate.Yaw = FMath::FInterpTo(Move->RotationRate.Yaw, DesiredRate, Dt, 14.f);
     Super::Tick(Dt);
     if (Actions->IsMeditating())
         Boom->TargetArmLength = FMath::FInterpTo(Boom->TargetArmLength, 285, Dt, 2);

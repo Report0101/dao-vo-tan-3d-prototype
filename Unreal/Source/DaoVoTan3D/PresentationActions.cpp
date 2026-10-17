@@ -72,6 +72,8 @@ void UPresentationActions::SetPhase(EPresentationPhase Next)
         {
             Animation->ActionClip = Cast<UAnimSequence>(Clip);
             Animation->bActionLoop = Repeat;
+            Animation->bSwordAction = Phase == EPresentationPhase::Sword;
+            Animation->ActionBlendTarget = 1;
         }
         Animation->bActionActive = Phase != EPresentationPhase::Locomotion;
     }
@@ -102,6 +104,10 @@ void UPresentationActions::TickComponent(float Dt, ELevelTick Tick, FActorCompon
     if (!C)
         return;
     PhaseAge += Dt;
+    if (Phase == EPresentationPhase::Sword && Sword)
+        if (auto *Animation = Cast<UCultivatorLocomotion>(C->GetMesh()->GetAnimInstance()))
+            Animation->ActionBlendTarget =
+                1.f - FMath::SmoothStep(.82f, 1.f, PhaseAge / Sword->GetPlayLength());
     if (Phase == EPresentationPhase::MeditationEnter && PhaseAge >= 1.2f)
         SetPhase(EPresentationPhase::MeditationLoop);
     if (Phase == EPresentationPhase::MeditationExit && PhaseAge >= 1.2f)

@@ -1,5 +1,20 @@
 # Animation & Play-Feel Gate: human review
 
+## PLAY-FEEL CORRECTION RETEST
+
+The original technical gate failed human acceptance. This branch corrects that baseline; it does not begin Visual Gate 2. Use the existing project and StillwaterValley. For the real simulation flow use the existing RunCultivationCommandDemo.ps1 launcher.
+
+Retest only these six items:
+
+1. Hold walk input through jump and landing: compression should remain visible and walking should resume without the old pause.
+2. Hold run input through jump and landing; repeat diagonally and after a longer fall.
+3. Inspect sword idle grip from front, side and rear: hilt inside the glove, blade outside the body. Repeat walk/run/Q strafe/jump.
+4. Attack from idle: inspect anticipation, slash and follow-through for blade-through-body, snapping or teleporting.
+5. Attack while walking/running, then immediately change direction: legs should continue locomotion and the upper-body action should recover without a statue-like pause.
+6. Move diagonally while rotating the camera, including backward diagonals, rapid reversals and Q strafe. Check continuous yaw response, body facing, feet and robe/hair.
+
+Rigid robe panels and hard sleeve joins remain prototype geometry. Report severe clipping or any remaining blade-through-body as a failure. Automated timing/volume checks do not replace this human retest.
+
 Open the existing `Unreal/DaoVoTan3D.uproject` with UE 5.8.3 and Play StillwaterValley. For real Cultivate, use the existing `Tools/RunCultivationCommandDemo.ps1` launcher and its TypeScript worker.
 
 - WASD moves; mouse looks; Shift toggles walk/run; Space jumps.

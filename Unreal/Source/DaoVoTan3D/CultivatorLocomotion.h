@@ -24,11 +24,19 @@ class DAOVOTAN3D_API UCultivatorLocomotion : public UAnimInstance
     UPROPERTY(BlueprintReadOnly) FString SelectedDatabase;
     UPROPERTY(BlueprintReadOnly) FString SelectedAnimation;
     UPROPERTY(BlueprintReadOnly) int32 PoseSelections = 0;
+    // Read-only diagnostics for landing/action recovery and pose sampling.
+    UPROPERTY(BlueprintReadOnly) float SelectedSequenceTime = 0;
+    UPROPERTY(BlueprintReadOnly) float ActionSequenceTime = 0;
+    UPROPERTY(BlueprintReadOnly) float ActionBlendWeight = 0;
     UPROPERTY() TObjectPtr<class UPoseSearchDatabase> Database;
     UPROPERTY() TObjectPtr<class UChooserTable> Chooser;
     UPROPERTY() TObjectPtr<class UAnimSequence> ActionClip;
+    UPROPERTY() TObjectPtr<class UAnimSequence> CarryClip;
+    bool bHasSword = false;
     bool bActionLoop = true;
     bool bActionActive = false;
+    bool bSwordAction = false;
+    float ActionBlendTarget = 1;
     FTransformTrajectory Trajectory;
     TSet<FString> SeenDatabases;
     bool UsesCosmeticRootMotion() const
@@ -46,4 +54,5 @@ class DAOVOTAN3D_API UCultivatorLocomotion : public UAnimInstance
     FTransformTrajectory RawTrajectory;
     float DesiredYawLastUpdate = 0;
     float TurnHoldRemaining = 0;
+    float LandingElapsed = 0;
 };

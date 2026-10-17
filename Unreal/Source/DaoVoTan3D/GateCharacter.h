@@ -36,6 +36,8 @@ class DAOVOTAN3D_API AGateCharacter : public ACharacter
         return bStrafing;
     }
     void TryJump();
+    /** One project-owned hand frame for the +Z-blade jian, shared by every pose. */
+    static FTransform JianGripTransform();
 
   private:
     void MoveForward(const struct FInputActionValue &Value);

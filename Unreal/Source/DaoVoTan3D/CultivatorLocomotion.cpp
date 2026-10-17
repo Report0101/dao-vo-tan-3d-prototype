@@ -1,7 +1,11 @@
 #include "CultivatorLocomotion.h"
 #include "Animation/AnimInstanceProxy.h"
 #include "Animation/AnimNode_SequencePlayer.h"
-#include "AnimNodes/AnimNode_TwoWayBlend.h"
+#include "AnimationRuntime.h"
+#include "Animation/AnimationPoseData.h"
+#include "AnimNodes/AnimNode_LayeredBoneBlend.h"
+#include "GateCharacter.h"
+#include "Components/StaticMeshComponent.h"
 #include "Animation/AnimNodeSpaceConversions.h"
 #include "BoneControllers/AnimNode_ModifyBone.h"
 #include "BoneControllers/AnimNode_CopyBone.h"
@@ -43,11 +47,72 @@ struct FContactSpeedNode : FAnimNode_Base
             Output.Curve.Set(Name, (1.f - FMath::Clamp(Output.Curve.Get(Name), 0.f, 1.f)) * 100.f);
     }
 };
+// One action branch: sword masks retain the locomotion legs; meditation remains full-body.
+struct FPresentationActionBlend : FAnimNode_Base
+{
+    FPoseLink A, B;
+    float Alpha = 0;
+    bool bSword = false;
+    virtual void Initialize_AnyThread(const FAnimationInitializeContext &C) override
+    {
+        A.Initialize(C);
+        B.Initialize(C);
+    }
+    virtual void CacheBones_AnyThread(const FAnimationCacheBonesContext &C) override
+    {
+        A.CacheBones(C);
+        B.CacheBones(C);
+    }
+    virtual void Update_AnyThread(const FAnimationUpdateContext &C) override
+    {
+        // Always update the sole Motion Matching stack, including during an action.
+        A.Update(C);
+        B.Update(C.FractionalWeight(Alpha));
+    }
+    virtual void Evaluate_AnyThread(FPoseContext &Output) override
+    {
+        FPoseContext Base(Output), Action(Output);
+        A.Evaluate(Base);
+        if (Alpha <= ZERO_ANIMWEIGHT_THRESH)
+        {
+            Output = Base;
+            return;
+        }
+        B.Evaluate(Action);
+        const FBoneContainer &Bones = Base.Pose.GetBoneContainer();
+        const FReferenceSkeleton &Ref = Bones.GetReferenceSkeleton();
+        const int32 Spine = Ref.FindBoneIndex(TEXT("spine_01"));
+        const int32 Pelvis = Ref.FindBoneIndex(TEXT("pelvis"));
+        TArray<float> Weights;
+        Weights.SetNum(Base.Pose.GetNumBones());
+        for (const FCompactPoseBoneIndex I : Base.Pose.ForEachBoneIndex())
+        {
+            const int32 Bone = Bones.MakeMeshPoseIndex(I).GetInt();
+            bool Upper = false;
+            for (int32 P = Bone; P != INDEX_NONE; P = Ref.GetParentIndex(P))
+                if (P == Spine)
+                {
+                    Upper = true;
+                    break;
+                }
+            const float Mask = !bSword ? 1.f : Upper ? 1.f : Bone == Pelvis ? .35f : 0.f;
+            Weights[I.GetInt()] = Alpha * Mask;
+        }
+        FAnimationPoseData BaseData(Base), ActionData(Action), ResultData(Output);
+        FAnimationRuntime::BlendTwoPosesTogetherPerBone(BaseData, ActionData, Weights, ResultData);
+        // Sword actions keep the locomotion contact curves with the locomotion legs.
+        if (bSword)
+            Output.Curve = Base.Curve;
+    }
+};
+
 struct FCultivatorProxy : FAnimInstanceProxy
 {
     FAnimNode_MotionMatching Matching;
     FAnimNode_SequencePlayer_Standalone Action;
-    FAnimNode_TwoWayBlend ActionBlend;
+    FAnimNode_SequencePlayer_Standalone Carry;
+    FAnimNode_LayeredBoneBlend CarryLayer;
+    FPresentationActionBlend ActionBlend;
     FContactSpeedNode Contacts;
     FAnimNode_PoseSearchHistoryCollector History;
     FAnimNode_ConvertLocalToComponentSpace ToComponent;
@@ -63,7 +128,15 @@ struct FCultivatorProxy : FAnimInstanceProxy
         FAnimNode_MotionMatching::StaticStruct()->ImportText(
             TEXT("(BlendTime=0.18,PlayRate=(Min=0.85,Max=1.5),SearchThrottleTime=0.033)"),
             &Matching, nullptr, PPF_None, GWarn, TEXT("CultivatorMotionMatching"));
-        ActionBlend.A.SetLinkNode(&Matching);
+        CarryLayer.BasePose.SetLinkNode(&Matching);
+        CarryLayer.BlendPoses.SetNum(1);
+        CarryLayer.BlendPoses[0].SetLinkNode(&Carry);
+        CarryLayer.BlendWeights.Add(1.f);
+        FInputBlendPose CarryMask;
+        CarryMask.BranchFilters.Add(FBranchFilter(TEXT("clavicle_r"), 1));
+        CarryLayer.LayerSetup.Add(CarryMask);
+        CarryLayer.bMeshSpaceRotationBlend = false;
+        ActionBlend.A.SetLinkNode(&CarryLayer);
         ActionBlend.B.SetLinkNode(&Action);
         Contacts.Source.SetLinkNode(&ActionBlend);
         ToComponent.LocalPose.SetLinkNode(&Contacts);
@@ -125,22 +198,29 @@ struct FCultivatorProxy : FAnimInstanceProxy
     }
     virtual void GetCustomNodes(TArray<FAnimNode_Base *> &Nodes) override
     {
-        Nodes = {&Matching, &Action, &ActionBlend, &Contacts, &ToComponent, &Lean,   &CopyL,
-                 &CopyR,    &Feet,   &LegL,        &LegR,     &ToLocal,     &History};
+        Nodes = {&Matching, &Carry,       &CarryLayer, &Action,  &ActionBlend,
+                 &Contacts, &ToComponent, &Lean,       &CopyL,   &CopyR,
+                 &Feet,     &LegL,        &LegR,       &ToLocal, &History};
     }
     virtual void PreUpdate(UAnimInstance *Instance, float Dt) override
     {
         FAnimInstanceProxy::PreUpdate(Instance, Dt);
         auto *State = CastChecked<UCultivatorLocomotion>(Instance);
         History.TransformTrajectory = State->Trajectory;
+        if (Carry.GetSequence() != State->CarryClip)
+            Carry.SetSequence(State->CarryClip);
+        Carry.SetLoopAnimation(true);
+        CarryLayer.BlendWeights[0] = State->bHasSword ? 1.f : 0.f;
         if (Action.GetSequence() != State->ActionClip)
         {
             Action.SetSequence(State->ActionClip);
             Action.SetAccumulatedTime(0);
         }
         Action.SetLoopAnimation(State->bActionLoop);
+        ActionBlend.bSword = State->bSwordAction;
         ActionBlend.Alpha = FMath::FInterpConstantTo(
-            ActionBlend.Alpha, State->bActionActive && State->ActionClip ? 1.f : 0.f, Dt, 6.f);
+            ActionBlend.Alpha,
+            State->bActionActive && State->ActionClip ? State->ActionBlendTarget : 0.f, Dt, 6.f);
         if (State->Database)
             Matching.SetDatabaseToSearch(
                 State->Database,
@@ -148,7 +228,8 @@ struct FCultivatorProxy : FAnimInstanceProxy
         const FVector A = State->LocalAcceleration;
         Lean.Rotation = FRotator(FMath::Clamp(A.X * -.003f, -7.f, 7.f), 0,
                                  FMath::Clamp(A.Y * .004f, -9.f, 9.f));
-        Feet.Alpha = LegL.Alpha = LegR.Alpha = State->bAirborne || State->bActionActive ? 0.f : 1.f;
+        Feet.Alpha = LegL.Alpha = LegR.Alpha =
+            State->bAirborne || (State->bActionActive && !State->bSwordAction) ? 0.f : 1.f;
         Lean.Alpha = State->bActionActive ? 0.f : 1.f;
     }
     virtual void PostUpdate(UAnimInstance *Instance) const override
@@ -160,6 +241,10 @@ struct FCultivatorProxy : FAnimInstanceProxy
         if (Name != State->SelectedAnimation)
             ++State->PoseSelections;
         State->SelectedAnimation = Name;
+        const auto &Result = Matching.GetMotionMatchingState().SearchResult;
+        State->SelectedSequenceTime = Result.SelectedTime;
+        State->ActionSequenceTime = Action.GetAccumulatedTime();
+        State->ActionBlendWeight = ActionBlend.Alpha;
     }
 };
 } // namespace
@@ -179,6 +264,7 @@ void UCultivatorLocomotion::NativeInitializeAnimation()
 {
     Super::NativeInitializeAnimation();
     Chooser = LoadObject<UChooserTable>(nullptr, TEXT("/Game/DaoVoTan/Locomotion/CHT_Locomotion"));
+    CarryClip = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Visual11/AS_SwordIdle"));
 }
 void UCultivatorLocomotion::NativeUpdateAnimation(float Dt)
 {
@@ -187,16 +273,28 @@ void UCultivatorLocomotion::NativeUpdateAnimation(float Dt)
     if (!C)
         return;
     auto *Move = C->GetCharacterMovement();
-    bAirborne = Move->IsFalling();
-    if (bWasAirborne && !bAirborne)
-        LandingAge = .45f;
-    else
-        LandingAge = FMath::Max(0.f, LandingAge - Dt);
-    bWasAirborne = bAirborne;
-    bLanding = !bAirborne && LandingAge > 0;
+    auto *Gate = Cast<AGateCharacter>(C);
+    bHasSword = Gate && Gate->Blade->IsVisible();
     Speed = C->GetVelocity().Size2D();
     bRunning = Move->MaxWalkSpeed > 400;
     bMoving = Speed > 10 || !Move->GetCurrentAcceleration().IsNearlyZero();
+    bAirborne = Move->IsFalling();
+    if (bWasAirborne && !bAirborne)
+    {
+        // Retain an impact beat (three 30Hz samples under movement), rather
+        // than holding a standing landing tail while the capsule keeps moving.
+        LandingElapsed = 0;
+        LandingAge = bMoving ? .10f : .18f;
+    }
+    else
+    {
+        LandingElapsed += Dt;
+        LandingAge = FMath::Max(0.f, LandingAge - Dt);
+        if (bMoving)
+            LandingAge = FMath::Min(LandingAge, FMath::Max(0.f, .10f - LandingElapsed));
+    }
+    bWasAirborne = bAirborne;
+    bLanding = !bAirborne && LandingAge > 0;
     const float Yaw = C->GetActorRotation().Yaw;
     if (bMoving)
         TurnHoldRemaining = 0;

@@ -1,4 +1,5 @@
 #include "Visual11AuthorCommandlet.h"
+#include "PresentationAnimationAuthoring.h"
 #if WITH_EDITOR
 #include "Animation/AnimData/IAnimationDataController.h"
 #include "Animation/AnimSequence.h"
@@ -274,63 +275,6 @@ struct FVisualGeometry
         Save(M);
     }
 };
-void SwordAnimation(USkeletalMesh *Rig)
-{
-    auto *Idle = LoadObject<UAnimSequence>(
-        nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/MM_Idle"));
-    for (int32 Mode = 0; Mode < 2; ++Mode)
-    {
-        auto *A = Asset<UAnimSequence>(Mode ? TEXT("AS_SwordAttackA") : TEXT("AS_SwordIdle"));
-        A->SetSkeleton(Rig->GetSkeleton());
-        auto &Ctrl = A->GetController();
-        Ctrl.OpenBracket(FText::FromString(TEXT("Original jian guard / diagonal cut")), false);
-        Ctrl.InitializeModel();
-        Ctrl.SetFrameRate(FFrameRate(30, 1), false);
-        const int32 Frames = Mode ? 36 : 60;
-        Ctrl.SetNumberOfFrames(FFrameNumber(Frames), false);
-        const auto &Ref = Rig->GetRefSkeleton();
-        for (int32 B = 0; B < Ref.GetNum(); ++B)
-        {
-            FName Bone = Ref.GetBoneName(B);
-            FTransform Base = Ref.GetRefBonePose()[B];
-            int32 SB = Rig->GetSkeleton()->GetReferenceSkeleton().FindBoneIndex(Bone);
-            if (SB != INDEX_NONE)
-                Idle->GetBoneTransform(Base, FSkeletonPoseBoneIndex(SB), FAnimExtractContext(0.),
-                                       true);
-            TArray<FVector3f> P, S;
-            TArray<FQuat4f> Q;
-            FString N = Bone.ToString();
-            for (int32 F = 0; F <= Frames; ++F)
-            {
-                float T = float(F) / Frames,
-                      Wind = Mode ? FMath::Sin(FMath::Clamp(T / .42f, 0.f, 1.f) * PI / 2) : 0,
-                      Strike = Mode ? FMath::SmoothStep(.32f, .62f, T) : 0,
-                      Recover = Mode ? FMath::SmoothStep(.72f, 1.f, T) : 0;
-                FRotator R = FRotator::ZeroRotator;
-                float Cut = (Wind - Strike) * 80;
-                if (N == TEXT("upperarm_r"))
-                    R = FRotator(0, -30 + Cut, -25 - Strike * 65 + Recover * 65);
-                if (N == TEXT("lowerarm_r"))
-                    R = FRotator(0, 0, 55 - Cut * .35f);
-                if (N == TEXT("hand_r"))
-                    R = FRotator(-12, 0, -15);
-                if (N == TEXT("spine_02"))
-                    R = FRotator(0, (Wind - Strike) * 22, 0);
-                if (N == TEXT("upperarm_l"))
-                    R = FRotator(0, 15, 12);
-                P.Add(FVector3f(Base.GetTranslation()));
-                S.Add(FVector3f(Base.GetScale3D()));
-                Q.Add(FQuat4f((Base.GetRotation() * R.Quaternion()).GetNormalized()));
-            }
-            Ctrl.AddBoneCurve(Bone, false);
-            Ctrl.SetBoneTrackKeys(Bone, P, Q, S, false);
-        }
-        Ctrl.NotifyPopulated();
-        Ctrl.CloseBracket(false);
-        A->PostEditChange();
-        Save(A);
-    }
-}
 void Niagara(UMaterial *Mat)
 {
     auto *System = Asset<UNiagaraSystem>(TEXT("NS_CultivationAura"));
@@ -612,7 +556,8 @@ int32 UVisual11AuthorCommandlet::Main(const FString &Params)
         R->FactionColor = R->TrimColor;
         Save(R);
     }
-    SwordAnimation(Rig);
+    if (!PresentationAnimationAuthoring::BakeJian())
+        return 5;
     Niagara(Aura);
     UWorld *W = UEditorLoadingAndSavingUtils::LoadMap(TEXT("/Game/DaoVoTan/Maps/StillwaterValley"));
     if (!W)

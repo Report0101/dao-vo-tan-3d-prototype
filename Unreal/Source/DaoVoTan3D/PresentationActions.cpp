@@ -1,11 +1,10 @@
 #include "PresentationActions.h"
-#include "PresentationRecipe.h"
 #include "Animation/AnimSequence.h"
-#include "Animation/AnimSingleNodeInstance.h"
 #include "AuraComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GateCharacter.h"
+#include "CultivatorLocomotion.h"
 UPresentationActions::UPresentationActions()
 {
     PrimaryComponentTick.bCanEverTick = true;
@@ -13,15 +12,19 @@ UPresentationActions::UPresentationActions()
 void UPresentationActions::BeginPlay()
 {
     Super::BeginPlay();
-    Locomotion = LoadObject<UAnimationAsset>(
-        nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/BS_Idle_Walk_Run"));
-    Fall = LoadObject<UAnimSequence>(
-        nullptr, TEXT("/Game/Characters/Mannequins/Anims/Unarmed/Jump/MM_Fall_Loop"));
     Sword = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Visual11/AS_SwordAttackA"));
-    SwordIdle = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Visual11/AS_SwordIdle"));
     Enter = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Animation/AS_MeditationEnter"));
     Loop = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Animation/AS_MeditationLoop"));
     Exit = LoadObject<UAnimSequence>(nullptr, TEXT("/Game/DaoVoTan/Animation/AS_MeditationExit"));
+    SetPhase(EPresentationPhase::Locomotion);
+}
+void UPresentationActions::ResetToLocomotionPresentation()
+{
+    // An explicit snapshot/receipt reset retains its accepted grounded-preview
+    // contract, including when a fresh pawn has not yet settled onto the floor.
+    // Ordinary sword transitions below preserve an ongoing fall.
+    if (auto *C = Cast<AGateCharacter>(GetOwner()))
+        C->GetCharacterMovement()->SetMovementMode(MOVE_Walking);
     SetPhase(EPresentationPhase::Locomotion);
 }
 void UPresentationActions::SetPhase(EPresentationPhase Next)
@@ -31,16 +34,15 @@ void UPresentationActions::SetPhase(EPresentationPhase Next)
         return;
     Phase = Next;
     PhaseAge = 0;
-    bArmedIdle = false;
     auto *Move = C->GetCharacterMovement();
     if (IsMeditating())
     {
         Move->StopMovementImmediately();
         Move->DisableMovement();
     }
-    else
+    else if (Move->MovementMode == MOVE_None)
         Move->SetMovementMode(MOVE_Walking);
-    UAnimationAsset *Clip = Locomotion;
+    UAnimationAsset *Clip = nullptr;
     bool Repeat = true;
     switch (Phase)
     {
@@ -62,7 +64,17 @@ void UPresentationActions::SetPhase(EPresentationPhase Next)
     default:
         break;
     }
-    C->GetMesh()->PlayAnimation(Clip, Repeat);
+    if (!Cast<UCultivatorLocomotion>(C->GetMesh()->GetAnimInstance()))
+        C->GetMesh()->SetAnimInstanceClass(UCultivatorLocomotion::StaticClass());
+    if (auto *Animation = Cast<UCultivatorLocomotion>(C->GetMesh()->GetAnimInstance()))
+    {
+        if (Phase != EPresentationPhase::Locomotion)
+        {
+            Animation->ActionClip = Cast<UAnimSequence>(Clip);
+            Animation->bActionLoop = Repeat;
+        }
+        Animation->bActionActive = Phase != EPresentationPhase::Locomotion;
+    }
     C->Aura->SetEmitting(Phase == EPresentationPhase::MeditationLoop);
     UE_LOG(LogTemp, Display, TEXT("GATE1 phase actor=%s phase=%d (presentation only)"),
            *C->GetName(), int32(Phase));
@@ -96,22 +108,4 @@ void UPresentationActions::TickComponent(float Dt, ELevelTick Tick, FActorCompon
         SetPhase(EPresentationPhase::Locomotion);
     if (Phase == EPresentationPhase::Sword && PhaseAge >= (Sword ? Sword->GetPlayLength() : 1.f))
         SetPhase(EPresentationPhase::Locomotion);
-    if (Phase == EPresentationPhase::Locomotion)
-    {
-        bool Air = C->GetCharacterMovement()->IsFalling();
-        const bool ArmedIdle =
-            !Air && C->Recipe && C->Recipe->bSword && C->GetVelocity().Size2D() < 5;
-        if (Air != bFalling || ArmedIdle != bArmedIdle)
-        {
-            bFalling = Air;
-            bArmedIdle = ArmedIdle;
-            C->GetMesh()->PlayAnimation(Air         ? Cast<UAnimationAsset>(Fall)
-                                        : ArmedIdle ? Cast<UAnimationAsset>(SwordIdle)
-                                                    : Locomotion.Get(),
-                                        true);
-        }
-        if (!Air && !bArmedIdle)
-            if (auto *Instance = C->GetMesh()->GetSingleNodeInstance())
-                Instance->SetBlendSpacePosition(FVector(C->GetVelocity().Size2D(), 0, 0));
-    }
 }

@@ -1,6 +1,6 @@
-# Asset provenance — Gate 1 and Visual Gate 1.1
+# Asset provenance — visual and animation gates
 
-External content is limited to installed Epic Examples and referenced engine primitives. No QCBH content, unknown-license content, marketplace download or paid generation was used.
+External content is limited to installed Epic Examples, referenced engine primitives and the bounded installed Epic Game Animation Sample subset documented below. No QCBH content, unknown-license content or paid generation was used. Earlier gate records are preserved below.
 
 | Asset | Source | License | Purpose | Status |
 |---|---|---|---|---|
@@ -32,3 +32,9 @@ No Fab/Marketplace downloads, QCBH assets, unknown-license content or paid asset
 The installed template source is `Engine/Plugins/FX/Niagara/Content/DefaultAssets/Templates/Emitters/Fountain.uasset`. Engine Niagara modules are referenced through the installed plugin; no engine binary/source is copied into the repository. The per-file Visual Gate 1.1 manifest records hashes and source categories for new/modified content.
 
 The [official Unreal Engine EULA](https://www.unrealengine.com/eula/unreal) was checked on 2026-10-16: sections 1–2 cover installed Epic content and development, sections 4–5 cover distribution. Epic content is not relicensed as unrestricted project art. No license agreement was accepted by automation.
+
+## Animation & Play-Feel Gate
+
+The user's installed Epic Game Animation Sample at `C:\Users\Le Anh Hoang\OneDrive\Documents\Unreal Projects\GameAnimationSample` is the sole read-only source. Exactly 86 standing locomotion/turn/jump/landing sequences are retargeted to the existing Manny skeleton. The existing sample retargeter is an offline reference; its rigs, meshes, maps, character/controller Blueprints, notifies, audio and unrelated systems are not migrated. Per-source/per-destination hashes and modifications are recorded in `../animation-play-feel/migration-manifest.json`. Applicable Epic sample/Unreal license terms and notices remain in force; these assets are not relicensed as unrestricted original project content.
+
+Six small Pose Search databases, one schema and one Chooser are authored in this project. Runtime architecture is a bounded adaptation of the inspected sample and installed engine APIs. The sample source's .uproject, Config and Content are checked against a before/after SHA256 inventory. No sample package is saved. Existing visual asset files remain unchanged.

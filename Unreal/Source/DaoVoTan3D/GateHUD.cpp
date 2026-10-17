@@ -91,8 +91,8 @@ void AGateHUD::DrawHUD()
         ++Index;
     }
     DrawRect(Ink, 22, H - 69, W - 44, 47);
-    Line(TEXT("WASD Move   Shift Walk / Run   Space Jump   LMB Sword   1 Qi palette"), 36, H - 59,
-         Text, .95f);
+    Line(TEXT("WASD Move   Shift Walk / Run   Q Strafe   Space Jump   LMB Sword   1 Qi palette"),
+         36, H - 59, Text, .95f);
     Line(S ? TEXT("Simulation owns outcomes. Movement / sword / aura are cosmetic.")
            : TEXT("OFFLINE FIXTURE / no authoritative outcome"),
          36, H - 39, Jade, .85f);

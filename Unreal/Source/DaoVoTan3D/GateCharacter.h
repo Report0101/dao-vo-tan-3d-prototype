@@ -30,6 +30,11 @@ class DAOVOTAN3D_API AGateCharacter : public ACharacter
     void ToggleMeditation();
     void SwordAction();
     void ToggleRun();
+    void ToggleStrafe();
+    bool IsStrafing() const
+    {
+        return bStrafing;
+    }
     void TryJump();
 
   private:
@@ -39,6 +44,7 @@ class DAOVOTAN3D_API AGateCharacter : public ACharacter
     void LookPitch(const struct FInputActionValue &Value);
     int32 AuraIndex = 0;
     bool bRun = false;
+    bool bStrafing = false;
     UPROPERTY() TObjectPtr<class UInputMappingContext> InputContext;
     UPROPERTY() TArray<TObjectPtr<class UInputAction>> InputActions;
 };

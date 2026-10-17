@@ -4,5 +4,11 @@
   "Category": "Games",
   "Description": "Dao Vo Tan presentation client. Simulation authority remains external.",
   "Modules": [{ "Name": "DaoVoTan3D", "Type": "Runtime", "LoadingPhase": "Default" }],
-  "Plugins": [{"Name":"Niagara","Enabled":true}]
+  "Plugins": [
+    {"Name":"Niagara","Enabled":true},
+    {"Name":"PoseSearch","Enabled":true},
+    {"Name":"Chooser","Enabled":true},
+    {"Name":"AnimationWarping","Enabled":true},
+    {"Name":"IKRig","Enabled":true}
+  ]
 }

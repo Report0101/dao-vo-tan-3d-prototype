@@ -169,10 +169,7 @@ class FVisual11Exercise : public IAutomationLatentCommand
         case 3:
             if (T > 1)
             {
-                C->GetMesh()->PlayAnimation(
-                    LoadObject<UAnimSequence>(nullptr,
-                                              TEXT("/Game/DaoVoTan/Visual11/AS_SwordIdle")),
-                    true);
+                C->Actions->ResetToLocomotionPresentation();
                 Shot(TEXT("03-sword-idle.png"));
                 Next();
             }

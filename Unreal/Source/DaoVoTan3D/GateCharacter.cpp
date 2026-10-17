@@ -142,6 +142,7 @@ void AGateCharacter::SetupPlayerInputComponent(UInputComponent *Input)
     };
     Button(EKeys::SpaceBar, &AGateCharacter::TryJump);
     Button(EKeys::LeftShift, &AGateCharacter::ToggleRun);
+    Button(EKeys::Q, &AGateCharacter::ToggleStrafe);
     Button(EKeys::LeftMouseButton, &AGateCharacter::SwordAction);
     if (FParse::Param(FCommandLine::Get(), TEXT("GateDeveloperPreview")))
     {
@@ -184,6 +185,12 @@ void AGateCharacter::ToggleRun()
 {
     bRun = !bRun;
     GetCharacterMovement()->MaxWalkSpeed = bRun ? 600 : 240;
+}
+void AGateCharacter::ToggleStrafe()
+{
+    bStrafing = !bStrafing;
+    GetCharacterMovement()->bOrientRotationToMovement = !bStrafing;
+    GetCharacterMovement()->bUseControllerDesiredRotation = bStrafing;
 }
 void AGateCharacter::SwordAction()
 {

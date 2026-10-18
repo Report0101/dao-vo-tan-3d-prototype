@@ -39,7 +39,10 @@ concurrency:
 jobs:
   static-guard:
     name: Authority + anti-spaghetti guard
-    runs-on: [self-hosted, windows, x64, dao-vo-tan-3d]
+    # Static checks do not require Unreal Engine. Keep this generic so any
+    # self-hosted Windows runner can execute them; native Unreal build remains
+    # pinned to the dedicated dao-vo-tan-3d runner in vs1-native-unreal.yml.
+    runs-on: [self-hosted, windows, x64]
     timeout-minutes: 15
     steps:
       - name: Checkout exact HEAD

@@ -1,0 +1,54 @@
+name: V1 playable gate static guard
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+      - 'Docs/PLAYABLE_FIRST_V2.md'
+      - 'Docs/CHARACTER_QUALITY_GATE.md'
+      - 'Docs/V1_EXECUTION_GATE.md'
+      - 'Docs/V1_GATE_MANIFEST.json'
+      - 'Bridge/**'
+      - 'Unreal/Source/**'
+      - 'Unreal/Config/**'
+      - 'Scripts/Verify-V1Gate.ps1'
+      - '.github/workflows/vs1-playable-v1-gate.yml'
+  push:
+    branches:
+      - 'vs1/**'
+    paths:
+      - 'AGENTS.md'
+      - 'Docs/PLAYABLE_FIRST_V2.md'
+      - 'Docs/CHARACTER_QUALITY_GATE.md'
+      - 'Docs/V1_EXECUTION_GATE.md'
+      - 'Docs/V1_GATE_MANIFEST.json'
+      - 'Bridge/**'
+      - 'Unreal/Source/**'
+      - 'Unreal/Config/**'
+      - 'Scripts/Verify-V1Gate.ps1'
+      - '.github/workflows/vs1-playable-v1-gate.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v1-playable-guard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-guard:
+    name: Authority + anti-spaghetti guard
+    runs-on: [self-hosted, windows, x64, dao-vo-tan-3d]
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact HEAD
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          clean: true
+
+      - name: Verify V1 structural gate
+        shell: powershell -NoProfile -ExecutionPolicy Bypass -File {0}
+        run: |
+          & ./Scripts/Verify-V1Gate.ps1 -VerboseReport

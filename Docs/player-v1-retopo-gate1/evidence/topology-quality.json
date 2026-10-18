@@ -1,0 +1,195 @@
+{
+  "Body_Underbody": {
+    "connectedComponents": [
+      2017
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 32.58270200228786,
+    "trianglesAspectOver20": 4,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "UpperRobe": {
+    "connectedComponents": [
+      2252
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 26.001803158491793,
+    "trianglesAspectOver20": 14,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 14,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Hands": {
+    "connectedComponents": [
+      900,
+      900
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 17.573799481585787,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Head": {
+    "connectedComponents": [
+      2240,
+      122,
+      122
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 68.73964676290554,
+    "trianglesAspectOver20": 98,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Boots": {
+    "connectedComponents": [
+      818,
+      818
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 19.853464751070785,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Hair": {
+    "connectedComponents": [
+      1090,
+      502,
+      502,
+      502,
+      502,
+      502,
+      502,
+      202,
+      142,
+      142
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 25.827989083311927,
+    "trianglesAspectOver20": 20,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "LowerRobe_FrontL": {
+    "connectedComponents": [
+      870
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 7.629237785691951,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "LowerRobe_FrontR": {
+    "connectedComponents": [
+      870
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 7.626374426979571,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "LowerRobe_BackL": {
+    "connectedComponents": [
+      870
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 8.044083833701066,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "LowerRobe_BackR": {
+    "connectedComponents": [
+      870
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 8.044558966707736,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "LowerRobe_SideL": {
+    "connectedComponents": [
+      870
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 11.775990809259484,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "LowerRobe_SideR": {
+    "connectedComponents": [
+      870
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 11.780449136268698,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Belt": {
+    "connectedComponents": [
+      768
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 2.927971727287506,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Sash": {
+    "connectedComponents": [
+      114
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 24.730060469346192,
+    "trianglesAspectOver20": 26,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  },
+  "Accessory_Jade": {
+    "connectedComponents": [
+      122
+    ],
+    "looseVertices": 0,
+    "duplicateIndexFaces": 0,
+    "maxTriangleAspectLongestEdgeOverAltitude": 10.455947731469465,
+    "trianglesAspectOver20": 0,
+    "trianglesAspectOver100": 0,
+    "uvFoldRepairOriginalFaces": 0,
+    "geometricSelfIntersectionCertification": false
+  }
+}

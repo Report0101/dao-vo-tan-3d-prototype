@@ -1,0 +1,257 @@
+{
+  "Body_Underbody": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.004911394789814949,
+      0.004911359399557114
+    ],
+    "uvMax": [
+      0.9777796864509583,
+      0.9950886368751526
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 33,
+    "sumPairOverlapArea": 0.00044146434081674193,
+    "occupiedTriangleArea": 0.408243711410486
+  },
+  "UpperRobe": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.006671481765806675,
+      0.006671489216387272
+    ],
+    "uvMax": [
+      0.9801295399665833,
+      0.9933283925056458
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 110,
+    "sumPairOverlapArea": 0.0009437571040874747,
+    "occupiedTriangleArea": 0.4447774850278591
+  },
+  "Hands": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0036865253932774067,
+      0.0036861984990537167
+    ],
+    "uvMax": [
+      0.9963138699531555,
+      0.9653379917144775
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 4334,
+    "sumPairOverlapArea": 0.20700146055281743,
+    "occupiedTriangleArea": 0.7105316244753113
+  },
+  "Head": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.002188449027016759,
+      0.0021864771842956543
+    ],
+    "uvMax": [
+      0.9975665211677551,
+      0.9978126883506775
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 12638,
+    "sumPairOverlapArea": 1.0196900200815135,
+    "occupiedTriangleArea": 1.4227703684393744
+  },
+  "Boots": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0026700885500758886,
+      0.0026700403541326523
+    ],
+    "uvMax": [
+      0.9973299503326416,
+      0.9452795386314392
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 3156,
+    "sumPairOverlapArea": 0.452908600048495,
+    "occupiedTriangleArea": 0.9058185901049445
+  },
+  "Hair": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0014414236648008227,
+      0.0014411968877539039
+    ],
+    "uvMax": [
+      0.9977900385856628,
+      0.998558521270752
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 108223,
+    "sumPairOverlapArea": 5.569653656054062,
+    "occupiedTriangleArea": 2.4588380093196336
+  },
+  "LowerRobe_FrontL": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0019131116569042206,
+      0.0019129669526591897
+    ],
+    "uvMax": [
+      0.9691241383552551,
+      0.9980869889259338
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.7220283660282283
+  },
+  "LowerRobe_FrontR": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0019135178299620748,
+      0.0019133813912048936
+    ],
+    "uvMax": [
+      0.9695152044296265,
+      0.9980863332748413
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.7223461988972617
+  },
+  "LowerRobe_BackL": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0018109387019649148,
+      0.0018109146039932966
+    ],
+    "uvMax": [
+      0.8816279768943787,
+      0.9981890320777893
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.6566175093767257
+  },
+  "LowerRobe_BackR": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0018112753750756383,
+      0.001811279566027224
+    ],
+    "uvMax": [
+      0.881982147693634,
+      0.9981887936592102
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.6569057191418688
+  },
+  "LowerRobe_SideL": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.001096078078262508,
+      0.001096062595024705
+    ],
+    "uvMax": [
+      0.362112820148468,
+      0.9989039301872253
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.26938277528206983
+  },
+  "LowerRobe_SideR": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0010960849467664957,
+      0.001096081454306841
+    ],
+    "uvMax": [
+      0.3621138334274292,
+      0.9989039301872253
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.26938336437998484
+  },
+  "Belt": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0030373705085366964,
+      0.0030375905334949493
+    ],
+    "uvMax": [
+      0.9969626069068909,
+      0.9292788505554199
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.7848295171176854
+  },
+  "Sash": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0012619452318176627,
+      0.0012616735184565187
+    ],
+    "uvMax": [
+      0.30573222041130066,
+      0.998738169670105
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.20445373598379432
+  },
+  "Accessory_Jade": {
+    "channels": 1,
+    "channel0": "UV0_BakeFoundation",
+    "packing": "unique per module, smart projected, no intentional mirrors; foundation islands require later seam/texel polish",
+    "uvMin": [
+      0.0020322140771895647,
+      0.0020321449264883995
+    ],
+    "uvMax": [
+      0.992116391658783,
+      0.9979671239852905
+    ],
+    "zeroUVAreaTriangles": 0,
+    "positiveAreaOverlapPairs": 0,
+    "sumPairOverlapArea": 0,
+    "occupiedTriangleArea": 0.4898932889978794
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "Idle": {
+    "result": "MINOR ISSUE",
+    "finding": "Elbow/sleeve creases and cuff fit need cleanup; coherent body silhouette."
+  },
+  "Walk": {
+    "result": "MAJOR ISSUE",
+    "finding": "Thigh/underbody shows through panel roots; waist coverage and panel distribution need rework."
+  },
+  "Run": {
+    "result": "MAJOR ISSUE",
+    "finding": "Visible thigh protrusion and rigid panel lift; upper-robe strain reaches 4.06x."
+  },
+  "Strafe": {
+    "result": "MAJOR ISSUE",
+    "finding": "Lateral panel clearance/waist gaps; sleeve strain reaches 3.98x."
+  },
+  "Pivot": {
+    "result": "MAJOR ISSUE",
+    "finding": "Panel separation and sleeve/torso deformation; upper-robe edge stretch reaches 4.97x."
+  },
+  "Jump": {
+    "result": "MAJOR ISSUE",
+    "finding": "Upper robe reaches 5.14x and underbody 3.79x edge stretch; joint topology/weights need refinement."
+  },
+  "Landing": {
+    "result": "MAJOR ISSUE",
+    "finding": "Upper robe reaches 4.40x and underbody 3.32x; panel/leg clearance not accepted."
+  },
+  "SwordGuard": {
+    "result": "BLOCKER",
+    "finding": "Separate fingers exist, but the hand remains open below the unchanged jian hilt. Plausible closed grip NOT achieved."
+  },
+  "SwordAttack": {
+    "result": "BLOCKER",
+    "finding": "Same grip failure; upper-robe stretch reaches 4.83x at other sampled attack times. Sword/socket unchanged."
+  },
+  "Meditation": {
+    "result": "MAJOR ISSUE",
+    "finding": "Torso/hair remain readable, but panel concertina folds and leg/waist intersections fail clean seated/kneeling clearance."
+  }
+}

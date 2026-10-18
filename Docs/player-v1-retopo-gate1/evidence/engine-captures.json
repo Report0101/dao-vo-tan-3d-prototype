@@ -1,0 +1,17 @@
+{
+  "clips": [
+    "Idle",
+    "Walk",
+    "Run",
+    "Strafe",
+    "Pivot",
+    "Jump",
+    "Landing",
+    "SwordGuard",
+    "SwordAttack",
+    "Meditation"
+  ],
+  "source": "UE imported LOD0 CPU-skinned OBJ, fraction 0.5; accepted animation assets; existing JianGripTransform exported by validator; Blender neutral lighting only",
+  "normals": "OBJ does not export UE tangent basis. Coincident UV-split vertices are merged at 1e-7m for smooth inspection normals; positions/silhouette unchanged. Not a UE shading-quality test.",
+  "notRuntimeGraphPlayback": true
+}

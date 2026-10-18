@@ -1,0 +1,22 @@
+{
+  "RetopoGate1BaselineFull": {
+    "succeeded": 12,
+    "succeededWithWarnings": 1,
+    "failed": 0
+  },
+  "RetopoGate1BaselineOffline": {
+    "succeeded": 0,
+    "succeededWithWarnings": 1,
+    "failed": 0
+  },
+  "RetopoGate1BaselineLive": {
+    "succeeded": 0,
+    "succeededWithWarnings": 1,
+    "failed": 0
+  },
+  "RetopoGate1FinalFull": {
+    "succeeded": 13,
+    "succeededWithWarnings": 0,
+    "failed": 0
+  }
+}

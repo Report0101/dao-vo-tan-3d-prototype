@@ -1,0 +1,25 @@
+{
+  "branch": "feat/player-v1-mesh-feasibility",
+  "head": "6965030d1fe79d1706a2b0a377af360eaf1ffa4d",
+  "status": [
+    "?? ArtSource/Meshy_AI_Jade_Warden_1017231731_generate.fbx",
+    "?? \"ArtSource/T-pose character 2D.png\""
+  ],
+  "engine": {
+    "MajorVersion": 5,
+    "MinorVersion": 8,
+    "PatchVersion": 3,
+    "Changelist": 58210709,
+    "CompatibleChangelist": 55116800,
+    "IsLicenseeVersion": 0,
+    "IsPromotedBuild": 1,
+    "BranchName": "++UE5+Release-5.8"
+  },
+  "compilerDirectory": "14.44.35207",
+  "compilerProductVersion": "14.44.35229.0",
+  "sourceSHA256": "faa4aada36218026646fbaccc8e28226629797f8d89b5eb543ca58d13b5261b3",
+  "unusedPngSHA256": "af563c4a956b3d2e03110776380d5e4949751087435e569e4f8016e1ae35c484",
+  "simulationHEAD": "57d84b3dec06d22fe3f250902db7d7cbe79c54f7",
+  "simulationStatus": [],
+  "recordedAt": "2026-10-18T02:28:54.2323457+02:00"
+}

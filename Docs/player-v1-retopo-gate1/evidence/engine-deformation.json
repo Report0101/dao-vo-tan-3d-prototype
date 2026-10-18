@@ -1,0 +1,7093 @@
+{
+	"modules": [
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Accessory_Jade.SK_Accessory_Jade",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 252,
+			"triangles": 240,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 252,
+					"triangles": 240,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Belt.SK_Belt",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1238,
+			"triangles": 1536,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1238,
+					"triangles": 1536,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Body_Underbody.SK_Body_Underbody",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 3421,
+			"triangles": 4030,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 3421,
+					"triangles": 4030,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Boots.SK_Boots",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 2486,
+			"triangles": 3264,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 2486,
+					"triangles": 3264,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hair.SK_Hair",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 7354,
+			"triangles": 9136,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 7354,
+					"triangles": 9136,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hands.SK_Hands",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 4007,
+			"triangles": 3592,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 4007,
+					"triangles": 3592,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Head.SK_Head",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 3508,
+			"triangles": 4956,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 3508,
+					"triangles": 4956,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackL.SK_LowerRobe_BackL",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1108,
+			"triangles": 1736,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1108,
+					"triangles": 1736,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackR.SK_LowerRobe_BackR",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1108,
+			"triangles": 1736,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1108,
+					"triangles": 1736,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontL.SK_LowerRobe_FrontL",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1106,
+			"triangles": 1736,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1106,
+					"triangles": 1736,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontR.SK_LowerRobe_FrontR",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1106,
+			"triangles": 1736,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1106,
+					"triangles": 1736,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideL.SK_LowerRobe_SideL",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1111,
+			"triangles": 1736,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1111,
+					"triangles": 1736,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideR.SK_LowerRobe_SideR",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 1111,
+			"triangles": 1736,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 1111,
+					"triangles": 1736,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Sash.SK_Sash",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 199,
+			"triangles": 224,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 199,
+					"triangles": 224,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		},
+		{
+			"mesh": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_UpperRobe.SK_UpperRobe",
+			"bones": 89,
+			"unknownReferenceBones": [],
+			"maxReferencePositionErrorCm": 0.00020673507990346798,
+			"maxReferenceRotationErrorDegrees": 0.00028962941812630432,
+			"maxReferenceScaleError": 5.4240169760078061e-06,
+			"importedVertices": 5012,
+			"triangles": 4500,
+			"UVChannels": 1,
+			"materialSlots": 1,
+			"sections": [
+				{
+					"vertices": 5012,
+					"triangles": 4500,
+					"materialIndex": 0
+				}
+			],
+			"unweightedVertices": 0,
+			"referenceCompatible": true
+		}
+	],
+	"clips": [
+		{
+			"name": "Idle",
+			"clip": "/Game/Characters/Mannequins/Anims/Unarmed/MM_Idle",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-30.2121957790865,
+						-26.657084396005295,
+						1.2556220079050762
+					],
+					"boundsMaxCm": [
+						32.987347718288973,
+						30.931856459355469,
+						180.44738684181954
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.911346722140574,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714548,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414058078,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.3966050270154344,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437760765618965,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490127471314599,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875055561778,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646223562469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266220140871265,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071825130806,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1395212299064683,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159880908802935,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.048696187860219,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435401398428,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.911346722140574,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 1.2611111005147297,
+					"boundsMinCm": [
+						-32.784811382962289,
+						-26.937420901904893,
+						1.3500099662236889
+					],
+					"boundsMaxCm": [
+						33.625339668089794,
+						30.636764268274977,
+						180.89632952968557
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.8382212629450856,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714362,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999881040031857,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.4090136667694138,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3842699810365915,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0372069670497066,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1389842872514864,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.118298967465357,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2308625295191362,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0608074646763481,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1309195247448152,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1097488448529986,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0480404327376476,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0259011307523109,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247307,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.8382212629450856,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 2.5222222010294595,
+					"boundsMinCm": [
+						-30.262776265907601,
+						-26.754292713785258,
+						1.2962840519453445
+					],
+					"boundsMaxCm": [
+						33.650445813574464,
+						30.829900610185486,
+						180.40292216698185
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.9529782207262409,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714593,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999945277371094,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.3995720120851434,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3871488335895461,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.060365740194908,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1469774706147113,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1038274810751898,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2270026886640606,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0484978494240695,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1357278003872575,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1130202539083667,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0476254472696951,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0267194899615266,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247416,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.9529782207262409,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 3.7833333015441895,
+					"boundsMinCm": [
+						-29.740030525969292,
+						-26.44616738203927,
+						1.2448465306323373
+					],
+					"boundsMaxCm": [
+						32.920000448588326,
+						31.155080126200563,
+						180.2497314267691
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.9964363319809344,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714451,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999774257654839,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.3995296057307272,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3488972071572038,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.066414768562749,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1469984975497276,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1189194097757655,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2284200037733211,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0521623797964526,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1405023259299727,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1179253589703222,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0488507985632947,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0277587663177599,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247458,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.9964363319809344,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						-24.865641441960555,
+						-9.468391095057525,
+						85.803844240881588
+					],
+					"swordX": [
+						0.060964875356109172,
+						-0.040864644450871013,
+						0.99730304562190075
+					],
+					"swordY": [
+						0.99568725829562055,
+						0.072491128821112749,
+						-0.057895767634537576
+					],
+					"swordZ": [
+						-0.069929733594270294,
+						0.99653154344262784,
+						0.045107818427515212
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 5.044444402058919,
+					"boundsMinCm": [
+						-32.152873104816464,
+						-26.814298534865951,
+						1.3319142725398536
+					],
+					"boundsMaxCm": [
+						32.639579482608397,
+						30.675243456011817,
+						180.74262560069832
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.8781419435933742,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714519,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999670650820205,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.4054000372233924,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3664417834409326,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0651437918989266,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.145418217325799,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1084886677765942,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.234513990279775,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0598175662323759,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1308002416251743,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1106467791937342,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0512686046971416,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0262427592992103,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247633,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.8781419435933742,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 6.3055555025736494,
+					"boundsMinCm": [
+						-31.147905541010974,
+						-26.780359755122426,
+						1.2886776861308598
+					],
+					"boundsMaxCm": [
+						33.119573464223308,
+						30.852387108372024,
+						180.67221475917734
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.8634452920239033,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714402,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999846525725422,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.4032822403121594,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3562713856390118,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0550015177891165,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.143922137276725,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1016784447174495,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2305833934673356,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.054068141457456,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1369563354433545,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1137836493048228,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0490227011087507,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0268180495195576,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247294,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.8634452920239033,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 7.5666666030883789,
+					"boundsMinCm": [
+						-30.205518544039975,
+						-26.652327800600318,
+						1.2527831302120616
+					],
+					"boundsMaxCm": [
+						32.990792289080375,
+						30.935071368129009,
+						180.44519985651266
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.910283808911186,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714479,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999969592532589,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.3966510765230815,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3438119687826648,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490712075085429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429674809708052,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1064931926663104,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2267003379743227,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.051335092691337,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1393695283018788,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1158023801096102,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0487382860689758,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0271966956205782,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247438,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.910283808911186,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Walk",
+			"clip": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Walk_Loop_F",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-37.09109198181288,
+						-54.130576064662996,
+						1.2895820195252341
+					],
+					"boundsMaxCm": [
+						34.406834880537808,
+						60.590007262196409,
+						173.0624388168487
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.9151587386763416,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714533,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000002031750876,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.6602351085322131,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.353050616716154,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0108164533580981,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2884945730593846,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.0432036067839958,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5831905954621832,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0145605241653837,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1649424087399951,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2031778575646133,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2677251967920802,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0641622043420556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247476,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.9151587386763416,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.66666666666666663,
+					"boundsMinCm": [
+						-36.171377507806469,
+						88.058307701197037,
+						2.2667369944262248
+					],
+					"boundsMaxCm": [
+						34.516901996268039,
+						175.14284292736983,
+						177.1554574431533
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.9467577589400324,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714773,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000002310028027,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.7118564144266564,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.9467577589400324,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0107837552791608,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2602244403658138,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1466262115777555,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.0274970886313035,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2361790353865192,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3468456091844485,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2379076141345431,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0948579388356692,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.190869221723611,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247436,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.4891223033135277,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 1.3333333333333333,
+					"boundsMinCm": [
+						-34.634621943643509,
+						240.05880345701783,
+						3.6852379246345039
+					],
+					"boundsMaxCm": [
+						35.881285143856893,
+						307.16735304687984,
+						181.99684717019704
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.6856889509984907,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714837,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000001054648464,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.5425145485583087,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.4569171793129665,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0307266752328872,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2290157043022696,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1913282077741265,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.0844076228984585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2461352980908209,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1134366285049353,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2698886611843907,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1031905356373557,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1752712465954307,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247522,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.6856889509984907,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 2,
+					"boundsMinCm": [
+						-37.189808299308126,
+						348.25430887199337,
+						2.5290145734333684
+					],
+					"boundsMaxCm": [
+						35.609429274620609,
+						461.50547308598823,
+						173.13458001737666
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.1146965303523348,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714577,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000001985514819,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.7571985199607847,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.5813352635257678,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0116753288979095,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.255522886903925,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.0579974881455405,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6443312321902779,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0991787621102513,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2889865539536747,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4057230583971665,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3122004821177293,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1729184543945708,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572248481,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.1146965303523348,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						-31.018175482244473,
+						442.93684624067936,
+						88.866666731586832
+					],
+					"swordX": [
+						-0.24252403660286181,
+						-0.72469393483872369,
+						0.64498123420594577
+					],
+					"swordY": [
+						0.60294833011779614,
+						-0.63342935483337759,
+						-0.48499542641507126
+					],
+					"swordZ": [
+						0.76002329101022847,
+						0.27126730957368123,
+						0.59057484189443699
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 2.6666666666666665,
+					"boundsMinCm": [
+						-37.54399874997285,
+						496.7601561483782,
+						2.2817229424053824
+					],
+					"boundsMaxCm": [
+						33.109382479547342,
+						579.04182154861371,
+						178.15106668591963
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.777520935699044,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568715266,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000002423670544,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.6132939581572123,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.777520935699044,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0163997709258887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2423883351362757,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1549529747962042,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.0057757055656291,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1173949210441645,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3013555339333449,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.21214860883911,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0783202456682119,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1215773192838416,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247731,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.5951024734553041,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 3.3333333333333335,
+					"boundsMinCm": [
+						-32.843432098133682,
+						644.71110226517351,
+						4.2206369914176367
+					],
+					"boundsMaxCm": [
+						36.962456014949304,
+						718.77524708775252,
+						181.61933853106532
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.7276322279507572,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714948,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.000000143496657,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.4838649587082418,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.4453559907768658,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0377981598607864,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1599737649273736,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2048966146420483,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.1583292999808339,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1444591352076077,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2492393651532228,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2479138218751791,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2008124703266256,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0799014218921488,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572248817,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.7276322279507572,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 4,
+					"boundsMinCm": [
+						-37.092577486321574,
+						754.66660774943784,
+						2.3263074270502635
+					],
+					"boundsMaxCm": [
+						34.405682796912529,
+						870.27029285943104,
+						173.06235092230233
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.2257545504695542,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714728,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.000000203142728,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.7479340794782532,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.2257545504695542,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0108181281914936,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2884831343990506,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.0432257983276725,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5796861124716954,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.156006123039212,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3713675815549105,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4937609341764782,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2642812726664276,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2300560166163184,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572248337,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.9155196467514009,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Run",
+			"clip": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Run_Loop_F",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-39.337360153633831,
+						-83.593380418375531,
+						3.948796268679736
+					],
+					"boundsMaxCm": [
+						35.60557243102641,
+						37.274848428979531,
+						173.43653767090547
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.2827767967074264,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714428,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000021582252,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.9212160621420298,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.9169762229962242,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0451813623270645,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2498226136415886,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2708303031893484,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5323113498210779,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0074838489638134,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2204666777410471,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3962277210168492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3214894314221599,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1022527335873631,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247476,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.2827767967074264,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.41666666666666663,
+					"boundsMinCm": [
+						-39.160699825642531,
+						154.03533243084945,
+						1.0809437370673507
+					],
+					"boundsMaxCm": [
+						34.847395590325881,
+						244.41745934149742,
+						164.87215605782495
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4188628851247547,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714306,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999247009561043,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.1553336022509515,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.6063928220140611,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0375739266754067,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2401198310643546,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2452369033241804,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2890772723498041,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1906785866683109,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5690607134447923,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2331263676994295,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1662893640080958,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1915596978245624,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572248077,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4188628851247547,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 0.83333333333333326,
+					"boundsMinCm": [
+						-34.881057659193992,
+						347.77261127295384,
+						6.9295229372509262
+					],
+					"boundsMaxCm": [
+						40.777117683130378,
+						466.02196572568573,
+						170.76330760820991
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.4645913086867979,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568715639,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999929088444361,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.1605927880754554,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.3005775636221459,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0366296052008568,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3653472725301048,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2547975817755419,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.0974353686115861,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.7084618092979169,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.216760585752376,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4646287612986386,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1439895753104796,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.5345876075529827,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247835,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.4645913086867979,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 1.25,
+					"boundsMinCm": [
+						-36.752786253120846,
+						542.57337222697015,
+						4.9051746941114924
+					],
+					"boundsMaxCm": [
+						30.703022999093275,
+						683.16164616054357,
+						171.38356204419998
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.0606894310383765,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.000000356871674,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000920979422,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2175838785639135,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.6030569498837206,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0424258890604106,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2405702286357154,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2938146745358639,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.547169848093066,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1696896920830484,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2994515010876468,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4668724760670224,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3047728127901699,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2449986704174392,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572245797,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.0606894310383765,
+							"triangleEdgesOver3x": 4
+						}
+					],
+					"swordRootCm": [
+						-12.328195982431813,
+						677.77741476166307,
+						108.41836452924795
+					],
+					"swordX": [
+						-0.56850772187541421,
+						-0.72437333090938516,
+						-0.38997723989390204
+					],
+					"swordY": [
+						0.80530397460510228,
+						-0.39309659716027689,
+						-0.44380240398879456
+					],
+					"swordZ": [
+						0.16817989967070562,
+						-0.56635531494658953,
+						0.80681917340783393
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 1.6666666666666665,
+					"boundsMinCm": [
+						-33.479883547633662,
+						781.23319716465301,
+						2.0815580492784647
+					],
+					"boundsMaxCm": [
+						34.073415407768756,
+						887.46187917232226,
+						166.25486101666479
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4262922062472172,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568713678,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99998424576537026,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.0621873998726787,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.5630917868329011,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0324591346400644,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2173986552529732,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.3053911558047495,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.0689484702016288,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0440543482524081,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5401390987762986,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.142355875467234,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1121727314882324,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0776473918217471,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572246152,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4262922062472172,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 2.0833333333333335,
+					"boundsMinCm": [
+						-35.016296484546224,
+						988.28969570541278,
+						13.62494576143953
+					],
+					"boundsMaxCm": [
+						40.469202761652348,
+						1111.8784410466476,
+						173.87522116603449
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.9379393992995242,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714533,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999948217599,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2978906549670723,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.7812817565778287,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0383018752743882,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.350537886980518,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2636029566049052,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.159823107711085,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2430359150976924,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3534327393663106,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4160063471849389,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2207771801739939,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2205822911387898,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247251,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.9379393992995242,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 2.5,
+					"boundsMinCm": [
+						-39.337360153633831,
+						1188.3372697428483,
+						4.0657031412907561
+					],
+					"boundsMaxCm": [
+						35.60557243102641,
+						1328.5876955664303,
+						173.43653767090547
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.2827767967073798,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568713247,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.000000002158236,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.9212160621420193,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.5243158381743207,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.045181362327344,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2498226136415922,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2708303031893249,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2061728765337492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2702228406193312,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.222723910855311,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.589144047060604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1451475395246615,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.3394938770098139,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247651,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.2827767967073798,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Strafe",
+			"clip": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Run_Loop_LL",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-50.319664959573736,
+						-36.073562478072965,
+						1.2966172467441315
+					],
+					"boundsMaxCm": [
+						46.683667190295537,
+						37.755282969487936,
+						178.89581399353193
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.8907798127745159,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714344,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000001368654681,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.8965334093025998,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.808199595738917,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.091214962963523,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3304811808505297,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2908899017379953,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.3597793327835181,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.4806058327858691,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2945176653164912,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.273783771627276,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1128339615462632,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1665088212093464,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247484,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.8907798127745159,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.39444442590077716,
+					"boundsMinCm": [
+						108.73835663714442,
+						-31.942888497911934,
+						2.2861757518758168
+					],
+					"boundsMaxCm": [
+						174.57830954463881,
+						39.409602539226107,
+						174.63882717736126
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4700740895270861,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714393,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999919919948788,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.9378442398158486,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.7115475546815213,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.035354612416741,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3465284439198544,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1103354583075586,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5299143300665656,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1438471125308516,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4520595746136387,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3138222343609829,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3157963934644337,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0729338803427522,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247531,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4700740895270861,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 0.78888885180155432,
+					"boundsMinCm": [
+						249.31723181474348,
+						-29.233728642458338,
+						3.9026580356974421
+					],
+					"boundsMaxCm": [
+						324.96831142891858,
+						35.170161503572331,
+						178.7598036341966
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.9821284857176282,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714424,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000639985824,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2654123519461375,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.794701869131119,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0075192958323427,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3810799789867949,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1193870602366298,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.3883818260982521,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.3280740459894111,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.17203750763006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4169305867780007,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2923412181220695,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1402692662850191,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247353,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.9821284857176282,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 1.1833332777023315,
+					"boundsMinCm": [
+						357.76116450609913,
+						-33.305404599641371,
+						1.3306578188786804
+					],
+					"boundsMaxCm": [
+						465.48508730115157,
+						37.519071222526847,
+						177.65257617078157
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.8287417680043974,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714377,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000002974513875,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.9315075654732137,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.2241401921198731,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0516242441792545,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3032434858311912,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1948386057253495,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5162213769394703,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.5254970190150179,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3068134266466513,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2398392133291731,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2082287762051258,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1621744731746739,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247647,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.8287417680043974,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						397.02720478707181,
+						-12.129524398948341,
+						103.79943291377333
+					],
+					"swordX": [
+						0.46325826057507813,
+						-0.75531331334534979,
+						0.46356615783750166
+					],
+					"swordY": [
+						0.72823993091372663,
+						0.026354561268243537,
+						-0.68481533286217455
+					],
+					"swordZ": [
+						0.50503305538521404,
+						0.6548337466743982,
+						0.56225828334018035
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 1.5777777036031086,
+					"boundsMinCm": [
+						535.59906239129805,
+						-30.797128469813305,
+						1.1534021637014522
+					],
+					"boundsMaxCm": [
+						604.17570686537454,
+						40.60743544558693,
+						173.62796976701776
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4870813370951947,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.000000356871557,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999920051870261,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.9334033865671381,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.8014822822401761,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0317405422328811,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3471173504026039,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1539771328558874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6139991142030372,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2158238072597611,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4446312645266672,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.287143446008554,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3704137298818646,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1043451409483751,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.000000357224778,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4870813370951947,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 1.972222129503886,
+					"boundsMinCm": [
+						664.13926234840335,
+						-21.50247432041569,
+						4.3402616292697092
+					],
+					"boundsMaxCm": [
+						750.3564457600296,
+						41.362131994973993,
+						178.95760527141948
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.7973927792404725,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714955,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000923497978,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.1978403248907146,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.4162071615168528,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0134473178545405,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4198040032124974,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1568003976263632,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.4044542576477896,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.4306379853564519,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2294997649796002,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4533970914563459,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3582303286840585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1807466023856972,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247866,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.7973927792404725,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 2.3666665554046631,
+					"boundsMinCm": [
+						783.86818249626322,
+						-36.0735624726913,
+						1.2960823164028723
+					],
+					"boundsMaxCm": [
+						888.45185719246103,
+						40.770753634140178,
+						178.8958139933992
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.8907798130587739,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568715234,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000001368654288,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.8965334093026289,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.7087662237205588,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0912149629635026,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3304811808506456,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2908899017378745,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5073560500150838,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.582093455795367,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3283404017812579,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2660333677577482,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2053236881431237,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1896005864036538,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572246889,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.8907798130587739,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pivot",
+			"clip": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Run_Pivot_F_B_Rfoot",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-36.059679043960152,
+						-488.72288836096618,
+						2.1522894259381187
+					],
+					"boundsMaxCm": [
+						27.685430272378355,
+						-388.04977403055466,
+						168.91786243242791
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.4438776904170578,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568715778,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999798872036205,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.1679377402849203,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.306257396188562,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0395085967860707,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2560029778314756,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.277421622069596,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5253857291227912,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1461318615028022,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1981366302512328,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.54108391476555,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.302815711339564,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1363888310507073,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.000000357224911,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.4438776904170578,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.52222224076588941,
+					"boundsMinCm": [
+						-38.997944088273172,
+						-230.66122860609809,
+						9.8508290975312889
+					],
+					"boundsMaxCm": [
+						33.678564582731134,
+						-112.49309858807845,
+						173.44960511433544
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.9672899448300925,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714797,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999934015445235,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.6280779983797311,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.6299646324275852,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.044281814493377,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2388654515563791,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2558620110143524,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.7352567105849641,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0899561641643027,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3180156890124488,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3045266493744994,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.441100461503763,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1156741366365606,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572246801,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.9672899448300925,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 1.0444444815317788,
+					"boundsMinCm": [
+						-47.971482593246655,
+						-39.885609692759289,
+						0.66107518825575962
+					],
+					"boundsMaxCm": [
+						36.556807788817807,
+						38.054617866290045,
+						150.48636903808844
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.0117948137925534,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714524,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99998624057710395,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.7082332410701895,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.6823046604646579,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0318708428753474,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3966015217187846,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2489686943789489,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.4119359794580058,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.5136994665553165,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5145064264156196,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3479571680792219,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2032665852537958,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.3421042638483196,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247622,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.0117948137925534,
+							"triangleEdgesOver3x": 2
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 1.5666667222976685,
+					"boundsMinCm": [
+						-39.701382860158901,
+						-171.74182845225178,
+						4.2633539313794557
+					],
+					"boundsMaxCm": [
+						39.921465063860317,
+						-85.999803201095673,
+						171.44521969779916
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.0248034471094494,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714493,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999213692989031,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.9989393203758652,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.2070977099518028,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0139876238878853,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3926849869460467,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.13266944661453,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.1396430307581866,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.3133000446876619,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4854682923054572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1040709624803211,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.117409693665204,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1527194874690569,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247844,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.0248034471094494,
+							"triangleEdgesOver3x": 2
+						}
+					],
+					"swordRootCm": [
+						-38.036012332532579,
+						-156.8177950986863,
+						91.018059357868808
+					],
+					"swordX": [
+						0.01454562438982776,
+						-0.57031139174663847,
+						0.82129978768725187
+					],
+					"swordY": [
+						0.64478657384688476,
+						-0.62244005452233653,
+						-0.44364248298943487
+					],
+					"swordZ": [
+						0.76422424653887333,
+						0.53601613312497165,
+						0.35867534907189513
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 2.0888889630635576,
+					"boundsMinCm": [
+						-35.451281936652933,
+						-334.01149177511388,
+						3.3655701963802422
+					],
+					"boundsMaxCm": [
+						37.522271732488974,
+						-250.26972769613104,
+						177.30544473055025
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.5747354146924395,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.000000356871503,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999957473705237,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.0889549548627366,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.4110410227434613,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0266549391096071,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2856874604926658,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1459302212830935,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.255901473089724,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.3481893642001777,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4364357728926407,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1842966476301306,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1657357560543589,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2579037697169286,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247782,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.5747354146924395,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 2.6111112038294477,
+					"boundsMinCm": [
+						-39.786176700283121,
+						-479.57337237999286,
+						1.1844017640570055
+					],
+					"boundsMaxCm": [
+						33.617500915513595,
+						-415.92179416560839,
+						176.70108295996673
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.6521907129414029,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568715012,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000001696914536,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.8855494381884548,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.009564026344377,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0106921259620931,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4670144214603553,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1436693560605242,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5252424630355843,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2990133185789334,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4327357123600264,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3324390501416714,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3157207903754184,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2473546079553735,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572246186,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.6521907129414029,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 3.1333334445953369,
+					"boundsMinCm": [
+						-41.328248223591551,
+						-659.32701017722206,
+						2.3993350522893468
+					],
+					"boundsMaxCm": [
+						29.321450697106702,
+						-563.57586659785579,
+						183.11047430810544
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.9330147178985664,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568716542,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000002190711728,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.6116857196043703,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.5096845421020775,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0263142129935707,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4606063694530615,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1581925534937199,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.4244127523207784,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.3184140571965126,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1828075773164626,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3643733225019539,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2691267661664105,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2663312630284145,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572248961,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.9330147178985664,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Jump",
+			"clip": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Jump_F_Start_Stand_Rfoot",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-46.282560121755566,
+						-25.06191872042157,
+						2.5559663668311696
+					],
+					"boundsMaxCm": [
+						37.372302425492094,
+						42.155296157119437,
+						145.19334849973774
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.2823245782180686,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714497,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999787884289637,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.1192804548393127,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.7711995385486878,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0312680299839696,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4346133424214864,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.082727751628654,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.9589076951238913,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.68235380419853,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4500178102086652,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4983154636605718,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.5251538524168078,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.2618040306653335,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247489,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.2823245782180686,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.40555556615193683,
+					"boundsMinCm": [
+						-54.088429095092103,
+						-40.230942233589175,
+						58.204407949351591
+					],
+					"boundsMaxCm": [
+						44.634212414958697,
+						60.981847691323573,
+						226.2497929359038
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 5.1365301752548627,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714335,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99998907120650138,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 3.793302099703951,
+							"triangleEdgesOver3x": 8
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.6143918622399616,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0746290823986167,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2859273758051741,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1681004423272767,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 2.1513632736211168,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.3803971850384285,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5295440506319959,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3421416396129475,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.5338228296073573,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1046971944170347,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247516,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 5.1365301752548627,
+							"triangleEdgesOver3x": 38
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 0.81111113230387366,
+					"boundsMinCm": [
+						-58.115346301790005,
+						-33.210103865947879,
+						75.376418454640898
+					],
+					"boundsMaxCm": [
+						46.462059576618991,
+						55.918245609424176,
+						219.95749295548544
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.3961742952131408,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714513,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999986817916031,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.9976280392900447,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.2216063430929445,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.058041752702616,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3608844160052282,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1886358452170143,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.8006446340277447,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 2.1092338858851489,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2921760617043943,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.5160496853209009,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.4123995791194448,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.5130969224789599,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247484,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.3961742952131408,
+							"triangleEdgesOver3x": 10
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 1.2166666984558105,
+					"boundsMinCm": [
+						-55.431588067022496,
+						-53.820393130379522,
+						-78.944790741551671
+					],
+					"boundsMaxCm": [
+						65.439738313624986,
+						36.308074066714795,
+						73.604426183395262
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.8910905256458497,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.9999970355529888,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.8910905256458497,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.4657675281811253,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.1212095509616209,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2607381302496676,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.3038501538588323,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2897027658014972,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.7929724913922411,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4326615365668955,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.3365294401067502,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.11135066410077,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.459713564837986,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247498,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.7156484520932747,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						-51.118214331734158,
+						-27.546302472641681,
+						15.794416935760786
+					],
+					"swordX": [
+						0.6418454715617703,
+						-0.058414642726747845,
+						0.76460585934895597
+					],
+					"swordY": [
+						0.63499066299456697,
+						-0.51851164742703304,
+						-0.57265393510585927
+					],
+					"swordZ": [
+						0.42990841878866398,
+						0.85307291657724771,
+						-0.29571160013942621
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 1.6222222646077473,
+					"boundsMinCm": [
+						-72.622827177509905,
+						-33.250870610365524,
+						-310.8409224703276
+					],
+					"boundsMaxCm": [
+						64.977682600544199,
+						46.244124107719564,
+						-149.60805474431328
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.3127390409121502,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714548,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999974711798556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.6824209189957728,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.4622693494760879,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.1018392727361479,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4551332116757818,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2785579803842049,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.7260509926639065,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.4042689570848828,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4336443175793174,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.5162643173353603,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.4217185099061171,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1596347104711147,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247487,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.3127390409121502,
+							"triangleEdgesOver3x": 8
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 2.0277778307596845,
+					"boundsMinCm": [
+						-85.781455272666761,
+						-37.733119662769717,
+						-584.61736336842318
+					],
+					"boundsMaxCm": [
+						80.416938099248412,
+						42.647374587752921,
+						-431.01241543074082
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.9977702450880903,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714517,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000320462705,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.1175561464552635,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.5400737759325291,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0847946096029668,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.313758490258774,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.097741253562059,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.3645326861237606,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.7853439421844124,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5123366330378269,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4974623620327994,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2171939243965628,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.3652654543267013,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247382,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.9977702450880903,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 2.4333333969116211,
+					"boundsMinCm": [
+						-54.352240212537716,
+						-23.582352358926943,
+						-885.30002528152227
+					],
+					"boundsMaxCm": [
+						46.167937887828856,
+						54.659193508971185,
+						-738.68878199673725
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4428448351442329,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.000000356871467,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999988874900958,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2413318737815389,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.5873708177715322,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0875331459123021,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3067079700939432,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.131642963234639,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.7407423115703764,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6993895194698667,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5334355706946887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.5477106060663937,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.387065368895787,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.3587359408015891,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.00000035722475,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4428448351442329,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Landing",
+			"clip": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Jump_LL_Land_Stand_Light_Lfoot",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-424.09630721219446,
+						-34.647676994103307,
+						488.28264706916002
+					],
+					"boundsMaxCm": [
+						-319.03070905490983,
+						49.050725169955953,
+						641.40916077457814
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.401327685244139,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999623152623773,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 3.3195169918340439,
+							"triangleEdgesOver3x": 2
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 2.1362046986169245,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.1366823363577034,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3033256369134949,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.3374784095048271,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 2.0585627382650036,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6989098393628757,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.5400854307922975,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4185442545735054,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.6357741419494414,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.3016808500869335,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572246958,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.401327685244139,
+							"triangleEdgesOver3x": 26
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.52222224076588941,
+					"boundsMinCm": [
+						-54.710184805384401,
+						-28.633039664852678,
+						1.6870432811514955
+					],
+					"boundsMaxCm": [
+						49.022304001280034,
+						61.028630287218817,
+						170.41859509844247
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.0101688998346905,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714462,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999983860729424,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2797878088997661,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3548347750727858,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0326126009841146,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.7690754182481685,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.0828257346765426,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.5966542604861864,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6522053729785182,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2916686810404852,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4801660958805083,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.3761383878350935,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.306480376935941,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247447,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.0101688998346905,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 1.0444444815317788,
+					"boundsMinCm": [
+						-38.020791653553957,
+						-34.976358263045483,
+						1.4430517002092862
+					],
+					"boundsMaxCm": [
+						40.441209655693989,
+						54.984989123363547,
+						152.58226293488809
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.0401092842625013,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714508,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999357951961887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.8583241884526676,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.6139149831267838,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0607026807760762,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4342447781364696,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.0843466171935741,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.7809132457131716,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.2426361170050593,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.3626743031504822,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2701663979869633,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.4923966729616136,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1114281175941609,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247551,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.0401092842625013,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 1.5666667222976685,
+					"boundsMinCm": [
+						-42.132338306765462,
+						-25.540911630036803,
+						1.9837756000990969
+					],
+					"boundsMaxCm": [
+						39.856610902529461,
+						37.290043943618905,
+						174.59092862898763
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 1.6040551397982343,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714539,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.9999994583286459,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.5412558325618777,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3916804186220493,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0492009483896414,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3218696172453719,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1068726577867012,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.4678285128424355,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1731673600150805,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.2424747809400125,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.2626177411378861,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2443944962449645,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0708171815802296,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247498,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 1.6040551397982343,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						-37.711141726566204,
+						11.647004056681597,
+						93.013948668072274
+					],
+					"swordX": [
+						0.437584742832684,
+						-0.71929077579823264,
+						0.53957425132379411
+					],
+					"swordY": [
+						0.80886680740719774,
+						0.052778608172095565,
+						-0.58561839656410042
+					],
+					"swordZ": [
+						0.3927519327959364,
+						0.69270137748599669,
+						0.60490554710141375
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 2.0888889630635576,
+					"boundsMinCm": [
+						-32.353170750900723,
+						-26.862698771187844,
+						1.9739341795092211
+					],
+					"boundsMaxCm": [
+						36.08517531562206,
+						33.143459569838633,
+						179.70382047570982
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4279902996831737,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714615,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000991752527,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.5335064736172208,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3545945851585286,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.056496196018003,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.16306931891543,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2519653334820458,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.3084708316884217,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1033576739333393,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1731069295301377,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1650735929963159,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1386623563612976,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0329284989017347,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247522,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4279902996831737,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 2.6111112038294477,
+					"boundsMinCm": [
+						-31.686155041531435,
+						-26.927674248078059,
+						1.9585046968056639
+					],
+					"boundsMaxCm": [
+						37.010788856589201,
+						32.253708888922596,
+						180.27474203315663
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4340391253465712,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714448,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.000000003132939,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.5350649019995051,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3323722069341706,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0645197791641843,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.0879627412928048,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2566136157777053,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2631059819382209,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.104432688779778,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1502366249542733,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1566603031597731,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1073848085657527,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0254412825190566,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4340391253465712,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 3.1333334445953369,
+					"boundsMinCm": [
+						-31.846030476145465,
+						-27.138755297461177,
+						1.9624912000178203
+					],
+					"boundsMaxCm": [
+						36.401401602354063,
+						31.983160318614893,
+						180.36244062928597
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.515403736474346,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714384,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 1.0000000038300201,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 1.5666516543822286,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.333726608167509,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0615762205853723,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.0875420977965082,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.2411070620792124,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2616734103886531,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.1056223272070802,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.144992024503656,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1573130883396241,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.1045190048344575,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0255252215810282,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247511,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.515403736474346,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SwordGuard",
+			"clip": "/Game/DaoVoTan/Visual11/AS_SwordIdle",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.16666666666666666,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 0.33333333333333331,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 0.5,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						-33.626688035400761,
+						29.20005863850308,
+						110.38796517690862
+					],
+					"swordX": [
+						0.055486738229678201,
+						-0.41614967727374519,
+						0.90760160201797335
+					],
+					"swordY": [
+						0.99122788734093126,
+						0.13216382015374117,
+						-7.8455788532494353e-08
+					],
+					"swordZ": [
+						-0.11995206225100086,
+						0.89964002286877487,
+						0.41983250471396794
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 0.66666666666666663,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 0.83333333333333337,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 1,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SwordAttack",
+			"clip": "/Game/DaoVoTan/Visual11/AS_SwordAttackA",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.23333332935969034,
+					"boundsMinCm": [
+						-50.671429173246914,
+						-25.671205895906791,
+						1.3624910914250521
+					],
+					"boundsMaxCm": [
+						34.718297352879347,
+						41.030803032685,
+						180.45166767052231
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.205405388012601,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714413,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352843,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.4893395217647818,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583993,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313372,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.3298397044743617,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.106264665660986,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989523,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427026,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1395211489685859,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908733,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.048696299973868,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132358,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247496,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.205405388012601,
+							"triangleEdgesOver3x": 2
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 0.46666665871938068,
+					"boundsMinCm": [
+						-50.410437239430202,
+						-25.822862843231071,
+						1.3445436868548377
+					],
+					"boundsMaxCm": [
+						35.517343820957976,
+						42.241849430133037,
+						180.40642533344993
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.9605523152435245,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714453,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352776,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.544104156846287,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745584029,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313436,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.4427703907428557,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609676,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989561,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.051307110742697,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1395211489685879,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908773,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738663,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132398,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247462,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.9605523152435245,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 0.69999998807907104,
+					"boundsMinCm": [
+						-25.327463701245044,
+						-28.312253509193955,
+						1.095272622510078
+					],
+					"boundsMaxCm": [
+						30.329547935417892,
+						40.620690638069064,
+						180.3225122156224
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.3526870941397258,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714508,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.7870662701786983,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583993,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313468,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2507821338834015,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609971,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989543,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107426986,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1395211489685897,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.115988190790876,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738607,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132356,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.000000357224738,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.3526870941397258,
+							"triangleEdgesOver3x": 12
+						}
+					],
+					"swordRootCm": [
+						-10.739398891174304,
+						33.306925658806136,
+						114.72712149887494
+					],
+					"swordX": [
+						0.13852141886952229,
+						0.14122525371889838,
+						0.98023836092371353
+					],
+					"swordY": [
+						0.71390820161214763,
+						-0.70023930171827731,
+						-1.0607705286380664e-07
+					],
+					"swordZ": [
+						0.68640141038992986,
+						0.69980022009223086,
+						-0.19782000852689841
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 0.93333331743876136,
+					"boundsMinCm": [
+						-24.757268776650484,
+						-28.69717531269956,
+						1.0572127212814491
+					],
+					"boundsMaxCm": [
+						29.651495085317581,
+						36.599848659404628,
+						180.2485308646221
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 4.8300911331915772,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714591,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352843,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.8250856485956328,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558396,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313352,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2301232171142709,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609825,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.226622215498961,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.051307110742697,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1395211489685888,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908742,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738663,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132365,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247465,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 4.8300911331915772,
+							"triangleEdgesOver3x": 14
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 1.1666666467984519,
+					"boundsMinCm": [
+						-32.978251414291535,
+						-27.506446732853217,
+						1.1717172877198927
+					],
+					"boundsMaxCm": [
+						31.613673924683354,
+						42.655090831931467,
+						180.4188062210784
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 3.0312053025708146,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714486,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.9999996541435251,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.4493004389973505,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745584,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313339,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1944725871598605,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609805,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989468,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107426988,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.1395211489685828,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908795,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738603,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132356,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247518,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 3.0312053025708146,
+							"triangleEdgesOver3x": 4
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 1.3999999761581421,
+					"boundsMinCm": [
+						-43.202150620437031,
+						-26.657085944445981,
+						1.2556278689011537
+					],
+					"boundsMaxCm": [
+						32.987332915399286,
+						42.343622324847914,
+						180.44739370871187
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.4398800628393529,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714437,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352887,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.2056719403953178,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.3437764745583973,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313556,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.2570604650294332,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609967,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.2266222154989563,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.0513071107427006,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.139521148968585,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.1159881907908737,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.0486962999738614,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.0270435503132345,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.4398800628393529,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Meditation",
+			"clip": "/Game/DaoVoTan/Animation/AS_MeditationLoop",
+			"frames": [
+				{
+					"fraction": 0,
+					"timeSeconds": 0,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.4473937087119
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.565728535833077,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313414,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949059,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609789,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.565728535833077,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.16666666666666666,
+					"timeSeconds": 0.33333333333333331,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.44279214849249
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.565728535833077,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313461,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949183,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609696,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.565728535833077,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.33333333333333331,
+					"timeSeconds": 0.66666666666666663,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.44279214849249
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.565728535833077,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313461,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949183,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609696,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.565728535833077,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.5,
+					"timeSeconds": 1,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.4473937087119
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.565728535833077,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313414,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949059,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609789,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.565728535833077,
+							"triangleEdgesOver3x": 0
+						}
+					],
+					"swordRootCm": [
+						-31.151286921169529,
+						4.1326034243957857,
+						40.364183404899222
+					],
+					"swordX": [
+						0.30811752851654561,
+						-0.28247092963471498,
+						0.90844579504346723
+					],
+					"swordY": [
+						0.68930424393455159,
+						-0.59184957894637114,
+						-0.41782021874823605
+					],
+					"swordZ": [
+						0.65568532690206949,
+						0.75493327507290831,
+						0.012349181066831361
+					]
+				},
+				{
+					"fraction": 0.66666666666666663,
+					"timeSeconds": 1.3333333333333333,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.41413796594725
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.5657285358330788,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313463,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949021,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609785,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.5657285358330788,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 0.83333333333333337,
+					"timeSeconds": 1.6666666666666667,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.41413796594725
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.5657285358330788,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313463,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949021,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609785,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.5657285358330788,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				},
+				{
+					"fraction": 1,
+					"timeSeconds": 2,
+					"boundsMinCm": [
+						-44.75507016937464,
+						-27.658277521078485,
+						-45.962158343230172
+					],
+					"boundsMaxCm": [
+						48.612858701251653,
+						36.328327831018186,
+						132.4473937087119
+					],
+					"nonFiniteVertices": 0,
+					"maxEdgeStretch": 2.565728535833077,
+					"modules": [
+						{
+							"module": "SK_Accessory_Jade",
+							"maxEdgeStretch": 1.0000003568714446,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Belt",
+							"maxEdgeStretch": 0.99999965414352798,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Body_Underbody",
+							"maxEdgeStretch": 2.185293235376669,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Boots",
+							"maxEdgeStretch": 1.343776474558394,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hair",
+							"maxEdgeStretch": 1.0490125474313414,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Hands",
+							"maxEdgeStretch": 1.1429875667949059,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Head",
+							"maxEdgeStretch": 1.1062646656609789,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackL",
+							"maxEdgeStretch": 1.6786538143441572,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_BackR",
+							"maxEdgeStretch": 1.6801660698590406,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontL",
+							"maxEdgeStretch": 1.4321157829712874,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_FrontR",
+							"maxEdgeStretch": 1.4397926361929492,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideL",
+							"maxEdgeStretch": 1.2498697454223469,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_LowerRobe_SideR",
+							"maxEdgeStretch": 1.1779940738710604,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_Sash",
+							"maxEdgeStretch": 1.0000003572247429,
+							"triangleEdgesOver3x": 0
+						},
+						{
+							"module": "SK_UpperRobe",
+							"maxEdgeStretch": 2.565728535833077,
+							"triangleEdgesOver3x": 0
+						}
+					]
+				}
+			]
+		}
+	],
+	"structuralChecksPassed": true,
+	"method": "Read-only UE imported LOD0 CPU linear-blend skinning, seven times per accepted clip. No runtime graph or gameplay edits. Visual clipping/grip assessment remains separate."
+}

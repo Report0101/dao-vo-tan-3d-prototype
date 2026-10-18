@@ -1,0 +1,563 @@
+{
+  "modules": {
+    "SK_Accessory_Jade": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Accessory_Jade.SK_Accessory_Jade",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 5.2663421630859375,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Accessory_Jade.SK_Accessory_Jade"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Belt": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Belt.SK_Belt",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 5.5,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Belt.SK_Belt"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Body_Underbody": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Body_Underbody.SK_Body_Underbody",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 145.76237201690674,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Body_Underbody.SK_Body_Underbody"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Boots": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Boots.SK_Boots",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 21.62030863761902,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Boots.SK_Boots"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Hair": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hair.SK_Hair",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 59.704803466796875,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hair.SK_Hair"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Hands": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hands.SK_Hands",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 15.013832092285156,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hands.SK_Hands"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Head": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Head.SK_Head",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 29.20001220703125,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Head.SK_Head"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_LowerRobe_BackL": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackL.SK_LowerRobe_BackL",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 65.18220901489258,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackL.SK_LowerRobe_BackL"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_LowerRobe_BackR": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackR.SK_LowerRobe_BackR",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 65.18218994140625,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackR.SK_LowerRobe_BackR"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_LowerRobe_FrontL": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontL.SK_LowerRobe_FrontL",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 59.195960998535156,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontL.SK_LowerRobe_FrontL"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_LowerRobe_FrontR": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontR.SK_LowerRobe_FrontR",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 59.19593048095703,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontR.SK_LowerRobe_FrontR"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_LowerRobe_SideL": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideL.SK_LowerRobe_SideL",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 71.17378234863281,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideL.SK_LowerRobe_SideL"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_LowerRobe_SideR": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideR.SK_LowerRobe_SideR",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 71.17378807067871,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideR.SK_LowerRobe_SideR"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_Sash": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Sash.SK_Sash",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 31.361106872558594,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Sash.SK_Sash"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    },
+    "SK_UpperRobe": {
+      "asset": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_UpperRobe.SK_UpperRobe",
+      "skeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+      "materialSlots": 1,
+      "boundsHeightCm": 55.69196319580078,
+      "importedObjects": [
+        "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_UpperRobe.SK_UpperRobe"
+      ],
+      "boneCount": 89,
+      "jointPositionsCm": {
+        "pelvis": [
+          -3.4314998759166215e-17,
+          2.2808662581444423,
+          95.89678229298828
+        ],
+        "head": [
+          -2.718513264311393e-06,
+          0.6631285923630865,
+          162.5750752424571
+        ],
+        "hand_r": [
+          -47.76833823247367,
+          15.698705230282654,
+          104.46652427287118
+        ],
+        "calf_l": [
+          12.332342077345425,
+          2.5957147794419955,
+          50.26596809187269
+        ],
+        "foot_l": [
+          14.087673156152222,
+          -0.9942585287614074,
+          8.23762268033503
+        ]
+      }
+    }
+  },
+  "map": "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/L_RetopoGate1",
+  "expectedSkeleton": "/Game/Characters/Mannequins/Meshes/SK_Mannequin.SK_Mannequin",
+  "newSkeletonCreated": false,
+  "productionDefaultsChanged": false
+}

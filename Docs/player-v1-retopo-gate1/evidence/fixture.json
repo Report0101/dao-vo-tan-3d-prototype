@@ -1,0 +1,32 @@
+{
+  "referenceMesh": "/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple",
+  "modules": [
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Accessory_Jade.SK_Accessory_Jade",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Belt.SK_Belt",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Body_Underbody.SK_Body_Underbody",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Boots.SK_Boots",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hair.SK_Hair",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Hands.SK_Hands",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Head.SK_Head",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackL.SK_LowerRobe_BackL",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_BackR.SK_LowerRobe_BackR",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontL.SK_LowerRobe_FrontL",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_FrontR.SK_LowerRobe_FrontR",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideL.SK_LowerRobe_SideL",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_LowerRobe_SideR.SK_LowerRobe_SideR",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_Sash.SK_Sash",
+    "/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/SK_UpperRobe.SK_UpperRobe"
+  ],
+  "clips": {
+    "Idle": "/Game/Characters/Mannequins/Anims/Unarmed/MM_Idle",
+    "Walk": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Walk_Loop_F",
+    "Run": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Run_Loop_F",
+    "Strafe": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Run_Loop_LL",
+    "Pivot": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Run_Pivot_F_B_Rfoot",
+    "Jump": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Jump_F_Start_Stand_Rfoot",
+    "Landing": "/Game/DaoVoTan/Locomotion/Clips/M_Neutral_Jump_LL_Land_Stand_Light_Lfoot",
+    "SwordGuard": "/Game/DaoVoTan/Visual11/AS_SwordIdle",
+    "SwordAttack": "/Game/DaoVoTan/Visual11/AS_SwordAttackA",
+    "Meditation": "/Game/DaoVoTan/Animation/AS_MeditationLoop"
+  }
+}

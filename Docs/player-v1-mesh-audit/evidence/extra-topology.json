@@ -1,0 +1,6 @@
+{
+  "inconsistentDirectedEdgePairs": 0,
+  "nonCycleVertexLinks": 0,
+  "testedVertices": 51339,
+  "limitations": "Does not certify geometric self-intersection or anatomical separation."
+}

@@ -1,0 +1,13 @@
+{
+  "paths": {
+    "accepted": "outputs/INTEGRATION_GATE2/simulation/expected-completed-session.json",
+    "baseline": "R:/Unreal/Saved/PlayerV1BaselineFullBridge/session.json",
+    "final": "R:/Unreal/Saved/PlayerV1FinalFullRetryBridge/session.json"
+  },
+  "hashes": {
+    "accepted": "c29ee1837b4e89a662fc7172f37b05014df57d5403341eba1df089992d664fa4",
+    "baseline": "c29ee1837b4e89a662fc7172f37b05014df57d5403341eba1df089992d664fa4",
+    "final": "c29ee1837b4e89a662fc7172f37b05014df57d5403341eba1df089992d664fa4"
+  },
+  "identical": true
+}

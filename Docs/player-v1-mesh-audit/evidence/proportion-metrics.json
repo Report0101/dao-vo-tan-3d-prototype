@@ -1,0 +1,76 @@
+{
+  "MannyBoneCountExported": 89,
+  "MannyHeightBoundsCm": 180.54390167817473,
+  "MeshyHeightCm": 190.0123062133789,
+  "MeshyWidthCm": 154.369140625,
+  "MeshyDepthCm": 56.054452896118164,
+  "globalFit": {
+    "uniformScale": 0.9501695194174876,
+    "rotationDegrees": [
+      0,
+      0,
+      0
+    ],
+    "translationCm": [
+      0,
+      0,
+      90.42210026971279
+    ]
+  },
+  "MannyLeftChainsCm": {
+    "upperArm": 27.771139144897464,
+    "forearm": 27.251073837280273,
+    "thigh": 43.34130859375001,
+    "calf": 42.217914581298835
+  },
+  "MannyShoulderJointWidthCm": 38.01976159064142,
+  "MannyHipJointWidthCm": 19.938294410705566,
+  "MannyLandmarksCm": {
+    "pelvis": [
+      -3.4314998759166215e-17,
+      2.2808661460876465,
+      95.89678192138672
+    ],
+    "neck_01": [
+      -1.6063049870264356e-12,
+      -1.5667103417368207,
+      152.80448203371722
+    ],
+    "head": [
+      -6.550896592761105e-11,
+      0.6631226955238572,
+      162.57510097379765
+    ],
+    "upperarm_l": [
+      19.009879109617955,
+      -2.5572333114819594,
+      143.5834999461284
+    ],
+    "lowerarm_l": [
+      35.006987526056236,
+      -1.9070059199488703,
+      120.89196196261402
+    ],
+    "hand_l": [
+      47.768600955409006,
+      15.698892566810501,
+      104.4665369623716
+    ],
+    "thigh_l": [
+      9.969202995300293,
+      2.54059723457792,
+      93.54279829123482
+    ],
+    "calf_l": [
+      12.332340632842367,
+      2.5957158865213295,
+      50.26599650252926
+    ],
+    "foot_l": [
+      14.087671352642225,
+      -0.9942570599016975,
+      8.237634413317146
+    ]
+  },
+  "measurementLimits": "Meshy has no joints; covered pelvis/knee/head interiors cannot be measured as homologous bones. Bounding boxes include bun, hair and garments; A-pose versus near-T-pose changes apparent arm span."
+}

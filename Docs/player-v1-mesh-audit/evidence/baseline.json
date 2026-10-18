@@ -1,0 +1,38 @@
+{
+  "repository": "C:\\Users\\Le Anh Hoang\\Documents\\Codex\\2026-10-15\\files-pasted-by-the-user-you\\work\\dao-vo-tan-3d-prototype",
+  "branch": "feat/ue58-cultivation-bridge-stabilization",
+  "head": "88f6f6f086325cd18596c645be2d9628cecb80b1",
+  "statusPorcelain": "?? ArtSource/Meshy_AI_Jade_Warden_1017231731_generate.fbx\n?? \"ArtSource/T-pose character 2D.png\"",
+  "engineRoot": "C:\\Program Files\\Epic Games\\UE_5.8",
+  "engine": {
+    "MajorVersion": 5,
+    "MinorVersion": 8,
+    "PatchVersion": 3,
+    "Changelist": 58210709,
+    "CompatibleChangelist": 55116800,
+    "IsLicenseeVersion": 0,
+    "IsPromotedBuild": 1,
+    "BranchName": "++UE5+Release-5.8"
+  },
+  "compiler": {
+    "directory": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.44.35207",
+    "productVersion": "14.44.35229.0",
+    "UBTSelected": "14.44.35229",
+    "WindowsSDK": "10.0.26100.0",
+    "evidence": "player-v1-baseline-editor.log"
+  },
+  "source": {
+    "exactPath": "C:\\Users\\Le Anh Hoang\\Documents\\Codex\\2026-10-15\\files-pasted-by-the-user-you\\work\\dao-vo-tan-3d-prototype\\ArtSource\\Meshy_AI_Jade_Warden_1017231731_generate.fbx",
+    "bytes": 3264956,
+    "sha256": "faa4aada36218026646fbaccc8e28226629797f8d89b5eb543ca58d13b5261b3",
+    "modifiedUTC": "2026-10-17T23:17:38.390176+00:00",
+    "createdUTC": "2026-10-17T23:17:37.468751+00:00",
+    "tracked": false,
+    "intentionalAuditInput": true
+  },
+  "otherInput": {
+    "path": "ArtSource/T-pose character 2D.png",
+    "disposition": "User explicitly said preserve but do not use in audit",
+    "sha256": "af563c4a956b3d2e03110776380d5e4949751087435e569e4f8016e1ae35c484"
+  }
+}

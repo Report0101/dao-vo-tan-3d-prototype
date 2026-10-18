@@ -1,0 +1,767 @@
+{
+  "source": "R:\\ArtSource\\Meshy_AI_Jade_Warden_1017231731_generate.fbx",
+  "bytes": 3264956,
+  "sha256": "faa4aada36218026646fbaccc8e28226629797f8d89b5eb543ca58d13b5261b3",
+  "fbxVersion": 7400,
+  "objectTypes": {
+    "Geometry": 1,
+    "Model": 1
+  },
+  "objectCount": 2,
+  "objects": [
+    {
+      "type": "Geometry",
+      "identity": [
+        511658636,
+        "mesh\u0000\u0001Geometry",
+        "Mesh"
+      ]
+    },
+    {
+      "type": "Model",
+      "identity": [
+        268535598,
+        "mesh_node\u0000\u0001Model",
+        "Mesh"
+      ]
+    }
+  ],
+  "geometry": [
+    {
+      "id": [
+        511658636,
+        "mesh\u0000\u0001Geometry",
+        "Mesh"
+      ],
+      "vertices": 51339,
+      "polygons": 102722,
+      "polygonSizes": {
+        "3": 102722
+      },
+      "trianglesAfterFanTriangulation": 102722,
+      "components": [
+        {
+          "vertices": 51339,
+          "boundsMin": [
+            -0.7736988067626953,
+            -0.2846931219100952,
+            -0.9516417980194092
+          ],
+          "boundsMax": [
+            0.7699925899505615,
+            0.27585139870643616,
+            0.9484813213348389
+          ]
+        }
+      ],
+      "componentCount": 1,
+      "degenerateIndexFaces": 0,
+      "zeroAreaFaces": 0,
+      "boundaryEdges": 0,
+      "nonManifoldEdgesOverTwoFaces": 0,
+      "duplicatePositionVertices": 0,
+      "edgeCount": 154083,
+      "EulerCharacteristic": -22,
+      "signedVolumeLocalUnits3": 0.10438503280910358,
+      "boundsMin": [
+        -0.7736988067626953,
+        -0.2846931219100952,
+        -0.9516417980194092
+      ],
+      "boundsMax": [
+        0.7699925899505615,
+        0.27585139870643616,
+        0.9484813213348389
+      ],
+      "layers": [
+        {
+          "type": "LayerElementNormal",
+          "layer": [
+            0
+          ],
+          "fields": {
+            "Version": [
+              101
+            ],
+            "Name": [
+              ""
+            ],
+            "MappingInformationType": [
+              "ByPolygonVertex"
+            ],
+            "ReferenceInformationType": [
+              "IndexToDirect"
+            ],
+            "Normals": 308163,
+            "NormalsIndex": 308166
+          },
+          "normalLengths": {
+            "count": 102721,
+            "nonFinite": 0,
+            "zero": 0,
+            "min": 0.9999999547145259,
+            "max": 1.0000000458810543
+          },
+          "cornerNormalsOpposedToWinding": {
+            "tested": 308166,
+            "negativeDot": 0
+          }
+        }
+      ]
+    }
+  ],
+  "globalSettings": {
+    "name": "GlobalSettings",
+    "properties": [],
+    "children": [
+      {
+        "name": "Version",
+        "properties": [
+          1000
+        ],
+        "children": []
+      },
+      {
+        "name": "Properties70",
+        "properties": [],
+        "children": [
+          {
+            "name": "P",
+            "properties": [
+              "UpAxis",
+              "int",
+              "Integer",
+              "",
+              1
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "UpAxisSign",
+              "int",
+              "Integer",
+              "",
+              1
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "FrontAxis",
+              "int",
+              "Integer",
+              "",
+              2
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "FrontAxisSign",
+              "int",
+              "Integer",
+              "",
+              1
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "CoordAxis",
+              "int",
+              "Integer",
+              "",
+              0
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "CoordAxisSign",
+              "int",
+              "Integer",
+              "",
+              1
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "OriginalUpAxis",
+              "int",
+              "Integer",
+              "",
+              -1
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "OriginalUpAxisSign",
+              "int",
+              "Integer",
+              "",
+              1
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "UnitScaleFactor",
+              "double",
+              "Number",
+              "",
+              1.0
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "OriginalUnitScaleFactor",
+              "double",
+              "Number",
+              "",
+              1.0
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "AmbientColor",
+              "ColorRGB",
+              "Color",
+              "",
+              0.0,
+              0.0,
+              0.0
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "DefaultCamera",
+              "KString",
+              "",
+              "",
+              "Producer Perspective"
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "TimeMode",
+              "enum",
+              "",
+              "",
+              11
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "TimeSpanStart",
+              "KTime",
+              "Time",
+              "",
+              0
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "TimeSpanStop",
+              "KTime",
+              "Time",
+              "",
+              46186158000
+            ],
+            "children": []
+          },
+          {
+            "name": "P",
+            "properties": [
+              "CustomFrameRate",
+              "double",
+              "Number",
+              "",
+              24.0
+            ],
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "connections": {
+    "name": "Connections",
+    "properties": [],
+    "children": [
+      {
+        "name": "C",
+        "properties": [
+          "OO",
+          268535598,
+          0
+        ],
+        "children": []
+      },
+      {
+        "name": "C",
+        "properties": [
+          "OO",
+          511658636,
+          268535598
+        ],
+        "children": []
+      }
+    ]
+  },
+  "modelDetails": [
+    {
+      "name": "Model",
+      "properties": [
+        268535598,
+        "mesh_node\u0000\u0001Model",
+        "Mesh"
+      ],
+      "children": [
+        {
+          "name": "Version",
+          "properties": [
+            232
+          ],
+          "children": []
+        },
+        {
+          "name": "Properties70",
+          "properties": [],
+          "children": [
+            {
+              "name": "P",
+              "properties": [
+                "Lcl Rotation",
+                "Lcl Rotation",
+                "",
+                "A",
+                -90.0,
+                0.0,
+                0.0
+              ],
+              "children": []
+            },
+            {
+              "name": "P",
+              "properties": [
+                "Lcl Scaling",
+                "Lcl Scaling",
+                "",
+                "A",
+                100.0,
+                100.0,
+                100.0
+              ],
+              "children": []
+            },
+            {
+              "name": "P",
+              "properties": [
+                "DefaultAttributeIndex",
+                "int",
+                "Integer",
+                "",
+                0
+              ],
+              "children": []
+            },
+            {
+              "name": "P",
+              "properties": [
+                "InheritType",
+                "enum",
+                "",
+                "",
+                1
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "MultiLayer",
+          "properties": [
+            0
+          ],
+          "children": []
+        },
+        {
+          "name": "MultiTake",
+          "properties": [
+            0
+          ],
+          "children": []
+        },
+        {
+          "name": "Shading",
+          "properties": [
+            true
+          ],
+          "children": []
+        },
+        {
+          "name": "Culling",
+          "properties": [
+            "CullingOff"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "header": {
+    "name": "FBXHeaderExtension",
+    "properties": [],
+    "children": [
+      {
+        "name": "FBXHeaderVersion",
+        "properties": [
+          1003
+        ],
+        "children": []
+      },
+      {
+        "name": "FBXVersion",
+        "properties": [
+          7400
+        ],
+        "children": []
+      },
+      {
+        "name": "EncryptionType",
+        "properties": [
+          0
+        ],
+        "children": []
+      },
+      {
+        "name": "CreationTimeStamp",
+        "properties": [],
+        "children": [
+          {
+            "name": "Version",
+            "properties": [
+              1000
+            ],
+            "children": []
+          },
+          {
+            "name": "Year",
+            "properties": [
+              2026
+            ],
+            "children": []
+          },
+          {
+            "name": "Month",
+            "properties": [
+              10
+            ],
+            "children": []
+          },
+          {
+            "name": "Day",
+            "properties": [
+              17
+            ],
+            "children": []
+          },
+          {
+            "name": "Hour",
+            "properties": [
+              23
+            ],
+            "children": []
+          },
+          {
+            "name": "Minute",
+            "properties": [
+              17
+            ],
+            "children": []
+          },
+          {
+            "name": "Second",
+            "properties": [
+              31
+            ],
+            "children": []
+          },
+          {
+            "name": "Millisecond",
+            "properties": [
+              0
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Creator",
+        "properties": [
+          "Blender (stable FBX IO) dialect - mblend native FBX writer - 5.12.7"
+        ],
+        "children": []
+      },
+      {
+        "name": "SceneInfo",
+        "properties": [
+          "GlobalInfo\u0000\u0001SceneInfo",
+          "UserData"
+        ],
+        "children": [
+          {
+            "name": "Type",
+            "properties": [
+              "UserData"
+            ],
+            "children": []
+          },
+          {
+            "name": "Version",
+            "properties": [
+              100
+            ],
+            "children": []
+          },
+          {
+            "name": "MetaData",
+            "properties": [],
+            "children": [
+              {
+                "name": "Version",
+                "properties": [
+                  100
+                ],
+                "children": []
+              },
+              {
+                "name": "Title",
+                "properties": [
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "Subject",
+                "properties": [
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "Author",
+                "properties": [
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "Keywords",
+                "properties": [
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "Revision",
+                "properties": [
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "Comment",
+                "properties": [
+                  ""
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Properties70",
+            "properties": [],
+            "children": [
+              {
+                "name": "P",
+                "properties": [
+                  "DocumentUrl",
+                  "KString",
+                  "Url",
+                  "",
+                  "/foobar.fbx"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "SrcDocumentUrl",
+                  "KString",
+                  "Url",
+                  "",
+                  "/foobar.fbx"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original",
+                  "Compound",
+                  "",
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original|ApplicationVendor",
+                  "KString",
+                  "",
+                  "",
+                  "Meshy"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original|ApplicationName",
+                  "KString",
+                  "",
+                  "",
+                  "mblend"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original|ApplicationVersion",
+                  "KString",
+                  "",
+                  "",
+                  "Blender (stable FBX IO) dialect - mblend native FBX writer - 5.12.7"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original|DateTime_GMT",
+                  "DateTime",
+                  "",
+                  "",
+                  "01/01/1970 00:00:00.000"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original|FileName",
+                  "KString",
+                  "",
+                  "",
+                  "/foobar.fbx"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "LastSaved",
+                  "Compound",
+                  "",
+                  ""
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "LastSaved|ApplicationVendor",
+                  "KString",
+                  "",
+                  "",
+                  "Meshy"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "LastSaved|ApplicationName",
+                  "KString",
+                  "",
+                  "",
+                  "mblend"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "LastSaved|ApplicationVersion",
+                  "KString",
+                  "",
+                  "",
+                  "Blender (stable FBX IO) dialect - mblend native FBX writer - 5.12.7"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "LastSaved|DateTime_GMT",
+                  "DateTime",
+                  "",
+                  "",
+                  "01/01/1970 00:00:00.000"
+                ],
+                "children": []
+              },
+              {
+                "name": "P",
+                "properties": [
+                  "Original|ApplicationNativeFile",
+                  "KString",
+                  "",
+                  "",
+                  ""
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

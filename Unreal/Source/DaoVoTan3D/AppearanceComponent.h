@@ -13,9 +13,19 @@ class DAOVOTAN3D_API UAppearanceComponent : public UActorComponent
     UPROPERTY(Transient) TObjectPtr<class USkeletalMeshComponent> Garment;
     int32 ModuleCount() const
     {
-        return Modules.Num();
+        return Modules.Num() + SkinnedModules.Num();
     }
 
+    /** Local editor PIE selection only; never changes actor Recipe or simulation state. */
+    bool ToggleExperimentalPreview();
+    bool IsExperimentalPreview() const { return bExperimentalPreview; }
+    const TArray<TObjectPtr<class USkeletalMeshComponent>>& GetSkinnedModules() const
+    { return SkinnedModules; }
+
   private:
+    bool RebuildVisuals(UPresentationRecipe *VisualRecipe);
+    bool bExperimentalPreview = false;
+    UPROPERTY(Transient) TObjectPtr<UPresentationRecipe> ExperimentalRecipe;
+    UPROPERTY(Transient) TArray<TObjectPtr<class USkeletalMeshComponent>> SkinnedModules;
     UPROPERTY(Transient) TArray<TObjectPtr<UStaticMeshComponent>> Modules;
 };

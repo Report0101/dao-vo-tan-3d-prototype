@@ -1,4 +1,5 @@
 #include "GateHUD.h"
+#include "AppearanceComponent.h"
 #include "CultivationCommandAdapter.h"
 #include "Engine/Canvas.h"
 #include "Engine/Engine.h"
@@ -48,6 +49,16 @@ void AGateHUD::DrawHUD()
     }
     else
         Line(TEXT("OFFLINE VISUAL FIXTURE"), 142, 98, Jade, .95f);
+#if WITH_EDITOR
+    if (GetWorld()->WorldType == EWorldType::PIE)
+    {
+        DrawRect(Ink, 22, 184, 370, 26);
+        Line(C->Appearance->IsExperimentalPreview()
+                 ? TEXT("PLAYER V1 EXPERIMENTAL  /  F7 CURRENT")
+                 : TEXT("CURRENT PLAYER  /  F7 EXPERIMENTAL PREVIEW"),
+             34, 190, C->Appearance->IsExperimentalPreview() ? Gold : Jade, .85f);
+    }
+#endif
     auto *Commands =
         GetOwningPlayerController()->FindComponentByClass<UCultivationCommandAdapter>();
     if (Commands)

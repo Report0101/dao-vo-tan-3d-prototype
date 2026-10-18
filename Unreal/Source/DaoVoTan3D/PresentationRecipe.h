@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "PresentationRecipe.generated.h"
+class UMaterialInterface;
 USTRUCT(BlueprintType)
 struct FAuraStyle
 {
@@ -36,6 +37,10 @@ class DAOVOTAN3D_API UPresentationRecipe : public UDataAsset
     FLinearColor HairColor = FLinearColor(.016f, .022f, .026f);
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
     FLinearColor FactionColor = FLinearColor(.58f, .36f, .10f);
+    /** Optional modular presentation; empty retains the accepted variant-based appearance. */
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<TSoftObjectPtr<USkeletalMesh>> SkeletalModules;
+    /** Slot overrides are component-only; source meshes remain unchanged. */
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) TMap<FName, TSoftObjectPtr<UMaterialInterface>> SkeletalSlotMaterials;
     void ApplyAppearanceSeed(const FString &Seed);
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
     FLinearColor GarmentColor = FLinearColor(0.06f, 0.22f, 0.24f);

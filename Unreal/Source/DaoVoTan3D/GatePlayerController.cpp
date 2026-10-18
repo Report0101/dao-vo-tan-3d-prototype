@@ -1,4 +1,8 @@
 #include "GatePlayerController.h"
+#include "GateCharacter.h"
+#include "AppearanceComponent.h"
+#include "Components/InputComponent.h"
+#include "Engine/World.h"
 #include "Camera/PlayerCameraManager.h"
 #include "CultivationCommandAdapter.h"
 #include "EnhancedInputComponent.h"
@@ -20,6 +24,11 @@ AGatePlayerController::AGatePlayerController()
 void AGatePlayerController::SetupInputComponent()
 {
     Super::SetupInputComponent();
+#if WITH_EDITOR
+    if (GetWorld() && GetWorld()->WorldType == EWorldType::PIE)
+        InputComponent->BindKey(EKeys::F7, IE_Pressed, this,
+                               &AGatePlayerController::ToggleExperimentalAppearance);
+#endif
     CultivationCommands->BindInputs(Cast<UEnhancedInputComponent>(InputComponent));
 }
 void AGatePlayerController::BeginPlay()
@@ -30,4 +39,12 @@ void AGatePlayerController::BeginPlay()
     SetControlRotation(FRotator(-12, 0, 0));
     PlayerCameraManager->ViewPitchMin = -65;
     PlayerCameraManager->ViewPitchMax = 30;
+}
+
+void AGatePlayerController::ToggleExperimentalAppearance()
+{
+#if WITH_EDITOR
+    if (auto *C = Cast<AGateCharacter>(GetPawn()))
+        C->Appearance->ToggleExperimentalPreview();
+#endif
 }

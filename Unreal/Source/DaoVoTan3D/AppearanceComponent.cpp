@@ -3,25 +3,99 @@
 #include "Components/StaticMeshComponent.h"
 #include "Engine/SkeletalMesh.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/World.h"
 #include "GameFramework/Character.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInterface.h"
 void UAppearanceComponent::Apply(UPresentationRecipe *R)
 {
+    if (!R) return;
+    Recipe = R; // Keep the latest seeded/current recipe for exact restoration after resync.
+    RebuildVisuals(bExperimentalPreview ? ExperimentalRecipe.Get() : R);
+}
+bool UAppearanceComponent::ToggleExperimentalPreview()
+{
+#if WITH_EDITOR
     auto *C = Cast<ACharacter>(GetOwner());
-    if (!C || !R)
-        return;
-    for (auto M : Modules)
-        if (M)
-            M->DestroyComponent();
+    if (!C || !GetWorld() || GetWorld()->WorldType != EWorldType::PIE ||
+        !C->IsPlayerControlled() || !C->IsLocallyControlled() || !Recipe)
+        return false;
+    if (!bExperimentalPreview && !ExperimentalRecipe)
+        ExperimentalRecipe = LoadObject<UPresentationRecipe>(nullptr,
+            TEXT("/Game/DaoVoTan/Experimental/PlayerV1/DA_PlayerV1Experimental"));
+    auto *Next = bExperimentalPreview ? Recipe.Get() : ExperimentalRecipe.Get();
+    if (!Next || (!bExperimentalPreview && Next->SkeletalModules.IsEmpty()) || !RebuildVisuals(Next))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("PLAYER_V1_PREVIEW visual assets unavailable; selection unchanged"));
+        return false;
+    }
+    bExperimentalPreview = !bExperimentalPreview;
+    UE_LOG(LogTemp, Display, TEXT("PLAYER_V1_PREVIEW owner=%s state=%s"), *GetOwner()->GetName(),
+        bExperimentalPreview ? TEXT("PLAYER V1 EXPERIMENTAL") : TEXT("CURRENT PLAYER"));
+    return true;
+#else
+    return false;
+#endif
+}
+bool UAppearanceComponent::RebuildVisuals(UPresentationRecipe *R)
+{
+    auto *C = Cast<ACharacter>(GetOwner());
+    if (!C || !R) return false;
+    auto *Leader = LoadObject<USkeletalMesh>(nullptr,
+        TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple"));
+    if (!Leader) return false;
+    // Resolve and validate the complete replacement before touching the visible appearance.
+    TArray<USkeletalMesh *> LoadedModules;
+    for (const auto &Asset : R->SkeletalModules)
+    {
+        auto *Mesh = Asset.LoadSynchronous();
+        if (!Mesh || Mesh->GetSkeleton() != Leader->GetSkeleton()) return false;
+        LoadedModules.Add(Mesh);
+    }
+    TMap<FName, UMaterialInterface *> LoadedMaterials;
+    for (const auto &Entry : R->SkeletalSlotMaterials)
+    {
+        auto *Material = Entry.Value.LoadSynchronous();
+        if (!Material) return false;
+        LoadedMaterials.Add(Entry.Key, Material);
+    }
+    auto Remove = [&](UActorComponent *M)
+    {
+        if (M) { C->RemoveInstanceComponent(M); M->DestroyComponent(); }
+    };
+    for (auto M : Modules) Remove(M);
     Modules.Empty();
-    if (Garment)
-        Garment->DestroyComponent();
-    Recipe = R;
-    C->GetMesh()->SetSkeletalMeshAsset(LoadObject<USkeletalMesh>(
-        nullptr, TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple")));
+    for (auto M : SkinnedModules) Remove(M);
+    SkinnedModules.Empty();
+    Remove(Garment);
+    Garment = nullptr;
+    // The hidden Manny remains the single animation/IK leader; do not reset its instance.
+    if (C->GetMesh()->GetSkeletalMeshAsset() != Leader)
+        C->GetMesh()->SetSkeletalMeshAsset(Leader);
     C->GetMesh()->SetVisibility(false, false);
     C->GetMesh()->VisibilityBasedAnimTickOption =
         EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones;
+    if (!LoadedModules.IsEmpty())
+    {
+        for (auto *Mesh : LoadedModules)
+        {
+            auto *Part = NewObject<USkeletalMeshComponent>(C);
+            C->AddInstanceComponent(Part);
+            Part->SetSkeletalMeshAsset(Mesh);
+            for (int32 I = 0; I < Mesh->GetMaterials().Num(); ++I)
+                if (auto **Material = LoadedMaterials.Find(Mesh->GetMaterials()[I].MaterialSlotName))
+                    Part->SetMaterial(I, *Material);
+            Part->SetupAttachment(C->GetMesh());
+            Part->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+            Part->SetGenerateOverlapEvents(false);
+            Part->SetCanEverAffectNavigation(false);
+            Part->SetLightingChannels(true, true, false);
+            Part->RegisterComponent();
+            Part->SetLeaderPoseComponent(C->GetMesh());
+            SkinnedModules.Add(Part);
+        }
+        return true;
+    }
     auto Tint = [](UMeshComponent *M, int32 Slot, const TCHAR *Path, FLinearColor Color)
     {
         auto *MID =
@@ -68,4 +142,5 @@ void UAppearanceComponent::Apply(UPresentationRecipe *R)
         Add(FString::Printf(TEXT("/Game/DaoVoTan/Visual11/SM_Accessory%d"),
                             FMath::Clamp(R->AccessoryVariant, 0, 1)),
             TEXT("pelvis"), FVector(0, 22, -8));
+    return true;
 }

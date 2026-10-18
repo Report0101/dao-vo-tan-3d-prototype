@@ -10,6 +10,12 @@
 #include "Misc/Paths.h"
 #include "Serialization/JsonSerializer.h"
 #include "GateCharacter.h"
+#include "Animation/AnimSingleNodeInstance.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Animation/SkeletalMeshActor.h"
+#include "Engine/World.h"
+#include "Editor.h"
+#include "Misc/PackageName.h"
 namespace
 {
 TSharedPtr<FJsonValue> V(FVector P)
@@ -63,6 +69,24 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
     const auto &MR = Manny->GetRefSkeleton();
     const auto MG = Globals(MR);
     const FString Boundary = TEXT("/Game/DaoVoTan/Experimental/PlayerV1/RetopoGate1/");
+    FString BeforeRoot;
+    if (FParse::Value(*Params, TEXT("BeforeRoot="), BeforeRoot))
+        FPackageName::RegisterMountPoint(TEXT("/Gate1BBefore/"), BeforeRoot / TEXT(""));
+    const bool bComponentPose = FParse::Param(*Params, TEXT("ComponentPose"));
+    ASkeletalMeshActor *PoseActor = nullptr;
+    USkeletalMeshComponent *PoseComponent = nullptr;
+    if (bComponentPose)
+    {
+        UWorld *World = GEditor->GetEditorWorldContext().World();
+        if (!World)
+            return 12;
+        PoseActor = World->SpawnActor<ASkeletalMeshActor>();
+        PoseComponent = PoseActor->GetSkeletalMeshComponent();
+        PoseComponent->SetSkeletalMeshAsset(Manny);
+        PoseComponent->VisibilityBasedAnimTickOption =
+            EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones;
+        PoseComponent->SetAnimationMode(EAnimationMode::AnimationSingleNode);
+    }
     IFileManager::Get().MakeDirectory(*Output, true);
     TArray<USkeletalMesh *> Meshes;
     TArray<TSharedPtr<FJsonValue>> Modules;
@@ -70,7 +94,7 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
     for (const auto &A : Config->GetArrayField(TEXT("modules")))
     {
         const FString Path = A->AsString();
-        if (!Path.StartsWith(Boundary))
+        if (!Path.StartsWith(Boundary) && !(BeforeRoot.Len() && Path.StartsWith(TEXT("/Gate1BBefore/"))))
             return 6;
         auto *M = LoadObject<USkeletalMesh>(nullptr, *Path);
         if (!M || M->GetSkeleton() != Manny->GetSkeleton())
@@ -135,18 +159,42 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
     }
     auto Result = MakeShared<FJsonObject>();
     Result->SetArrayField(TEXT("modules"), Modules);
+    auto ReferenceHand = MakeShared<FJsonObject>();
+    const int32 ReferenceHandIndex = MR.FindBoneIndex(TEXT("hand_r"));
+    for (int32 I = 0; I < MR.GetNum(); ++I)
+    {
+        const FString Name = MR.GetBoneName(I).ToString();
+        if (Name.EndsWith(TEXT("_r")) && (Name.Contains(TEXT("hand")) || Name.StartsWith(TEXT("index")) ||
+                                          Name.StartsWith(TEXT("middle")) || Name.StartsWith(TEXT("ring")) ||
+                                          Name.StartsWith(TEXT("pinky")) || Name.StartsWith(TEXT("thumb"))))
+        {
+            auto B = MakeShared<FJsonObject>();
+            B->SetField(TEXT("componentCm"), V(MG[I].GetTranslation()));
+            B->SetField(TEXT("handLocalCm"),
+                        V(MG[ReferenceHandIndex].InverseTransformPosition(MG[I].GetTranslation())));
+            ReferenceHand->SetObjectField(Name, B);
+        }
+    }
+    Result->SetObjectField(TEXT("referenceRightHand"), ReferenceHand);
     TArray<TSharedPtr<FJsonValue>> Clips;
     for (const auto &E : Config->GetObjectField(TEXT("clips"))->Values)
     {
         auto *Clip = LoadObject<UAnimSequence>(nullptr, *E.Value->AsString());
         if (!Clip || Clip->GetSkeleton() != Manny->GetSkeleton())
             return 8;
+        if (bComponentPose)
+        {
+            PoseComponent->PlayAnimation(Clip, false);
+            PoseComponent->GetSingleNodeInstance()->SetRootMotionMode(
+                ERootMotionMode::NoRootMotionExtraction);
+        }
         auto C = MakeShared<FJsonObject>();
         C->SetStringField(TEXT("name"), E.Key);
         C->SetStringField(TEXT("clip"), E.Value->AsString());
         TArray<TSharedPtr<FJsonValue>> Frames;
         for (int32 F = 0; F <= 6; ++F)
         {
+            const bool bExport = F == 1 || F == 3 || F == 5;
             const double Fraction = F / 6.;
             const double T = Clip->GetPlayLength() * Fraction;
             const auto &SR = Clip->GetSkeleton()->GetReferenceSkeleton();
@@ -157,6 +205,19 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
                 Clip->GetBoneTransform(Local, FSkeletonPoseBoneIndex(I), FAnimExtractContext(T), true);
                 const int32 P = SR.GetParentIndex(I);
                 Pose.Add(P < 0 ? Local : Local * Pose[P]);
+            }
+            if (bComponentPose)
+            {
+                PoseComponent->SetPosition(T, false);
+                PoseComponent->TickAnimation(0.f, false);
+                PoseComponent->RefreshBoneTransforms();
+                const auto &Evaluated = PoseComponent->GetComponentSpaceTransforms();
+                for (int32 I = 0; I < SR.GetNum(); ++I)
+                {
+                    const int32 B = MR.FindBoneIndex(SR.GetBoneName(I));
+                    if (Evaluated.IsValidIndex(B))
+                        Pose[I] = Evaluated[B];
+                }
             }
             FString OBJ;
             int32 Base = 1;
@@ -202,6 +263,8 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
                         Verts[S.BaseVertexIndex + I] = P;
                     }
                 double Stretch = 0;
+                FVector WorstRestA = FVector::ZeroVector, WorstRestB = FVector::ZeroVector;
+                FVector WorstPoseA = FVector::ZeroVector, WorstPoseB = FVector::ZeroVector;
                 int32 Over3 = 0;
                 for (const auto &S : L.Sections)
                     for (uint32 I = 0; I < S.NumTriangles; ++I)
@@ -220,28 +283,43 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
                             }
                             const double Ratio =
                                 FVector::Dist(Verts[A], Verts[B]) / FMath::Max(1e-5, FVector::Dist(PA, PB));
-                            Stretch = FMath::Max(Stretch, Ratio);
+                            if (Ratio > Stretch)
+                            {
+                                Stretch = Ratio;
+                                WorstRestA = PA;
+                                WorstRestB = PB;
+                                WorstPoseA = Verts[A];
+                                WorstPoseB = Verts[B];
+                            }
                             if (Ratio > 3)
                                 ++Over3;
                         }
                 auto D = MakeShared<FJsonObject>();
                 D->SetStringField(TEXT("module"), M->GetName());
                 D->SetNumberField(TEXT("maxEdgeStretch"), Stretch);
+                D->SetField(TEXT("worstRestEdgeA_Cm"), V(WorstRestA));
+                D->SetField(TEXT("worstRestEdgeB_Cm"), V(WorstRestB));
+                D->SetField(TEXT("worstPosedEdgeA_Cm"), V(WorstPoseA));
+                D->SetField(TEXT("worstPosedEdgeB_Cm"), V(WorstPoseB));
                 D->SetNumberField(TEXT("triangleEdgesOver3x"), Over3);
                 PerModule.Add(MakeShared<FJsonValueObject>(D));
                 WorstStretch = FMath::Max(WorstStretch, Stretch);
-                if (F == 3)
+                if (bExport)
                 {
                     OBJ += TEXT("o ") + M->GetName() + TEXT("\n");
                     for (FVector P : Verts)
                         OBJ +=
                             FString::Printf(TEXT("v %.6f %.6f %.6f\n"), P.X / 100., -P.Y / 100., P.Z / 100.);
                     for (const auto &S : L.Sections)
+                    {
+                        OBJ += TEXT("usemtl ") +
+                               M->GetMaterials()[S.MaterialIndex].MaterialSlotName.ToString() + TEXT("\n");
                         for (uint32 I = 0; I < S.NumTriangles; ++I)
                             OBJ += FString::Printf(TEXT("f %d %d %d\n"),
                                                    Base + L.IndexBuffer[S.BaseIndex + I * 3],
                                                    Base + L.IndexBuffer[S.BaseIndex + I * 3 + 1],
                                                    Base + L.IndexBuffer[S.BaseIndex + I * 3 + 2]);
+                    }
                     Base += Verts.Num();
                 }
             }
@@ -255,7 +333,7 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
             D->SetArrayField(TEXT("modules"), PerModule);
             Frames.Add(MakeShared<FJsonValueObject>(D));
             Fatal |= NonFinite > 0;
-            if (F == 3)
+            if (bExport)
             {
                 const int32 Hand = SR.FindBoneIndex(TEXT("hand_r"));
                 const FTransform Sword = AGateCharacter::JianGripTransform() * Pose[Hand];
@@ -263,7 +341,25 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
                 D->SetField(TEXT("swordX"), V(Sword.GetUnitAxis(EAxis::X)));
                 D->SetField(TEXT("swordY"), V(Sword.GetUnitAxis(EAxis::Y)));
                 D->SetField(TEXT("swordZ"), V(Sword.GetUnitAxis(EAxis::Z)));
-                if (!FFileHelper::SaveStringToFile(OBJ, *(Output / TEXT("pose_") + E.Key + TEXT(".obj"))))
+                auto Fingers = MakeShared<FJsonObject>();
+                for (int32 B = 0; B < SR.GetNum(); ++B)
+                {
+                    const FString Name = SR.GetBoneName(B).ToString();
+                    if (!Name.EndsWith(TEXT("_r")) ||
+                        !(Name.StartsWith(TEXT("index")) || Name.StartsWith(TEXT("middle")) ||
+                          Name.StartsWith(TEXT("ring")) || Name.StartsWith(TEXT("pinky")) ||
+                          Name.StartsWith(TEXT("thumb"))))
+                        continue;
+                    const FTransform Relative = Pose[B].GetRelativeTransform(Pose[Hand]);
+                    auto Bone = MakeShared<FJsonObject>();
+                    Bone->SetField(TEXT("handLocalCm"), V(Relative.GetTranslation()));
+                    Bone->SetField(TEXT("handLocalEulerDegrees"), V(Relative.GetRotation().Euler()));
+                    Fingers->SetObjectField(Name, Bone);
+                }
+                D->SetObjectField(TEXT("rightFingerPose"), Fingers);
+                const FString Suffix = F == 3 ? TEXT("") : FString::Printf(TEXT("_f%d"), F);
+                if (!FFileHelper::SaveStringToFile(OBJ,
+                                                   *(Output / TEXT("pose_") + E.Key + Suffix + TEXT(".obj"))))
                     return 9;
             }
         }
@@ -272,10 +368,16 @@ int32 URetopoGate1ValidateCommandlet::Main(const FString &Params)
     }
     Result->SetArrayField(TEXT("clips"), Clips);
     Result->SetBoolField(TEXT("structuralChecksPassed"), !Fatal);
+    Result->SetBoolField(TEXT("componentEvaluatedPose"), bComponentPose);
     Result->SetStringField(
         TEXT("method"),
-        TEXT("Read-only UE imported LOD0 CPU linear-blend skinning, seven times per accepted clip. No "
-             "runtime graph or gameplay edits. Visual clipping/grip assessment remains separate."));
+        bComponentPose ? TEXT("UE single-node component evaluation on existing Manny (including "
+                              "retargeting), imported LOD0 CPU linear-blend skinning, seven times per "
+                              "accepted clip. Editor-only fixture, no runtime graph edits.")
+                       : TEXT("Legacy raw-track pose evaluation, imported LOD0 CPU linear-blend skinning. "
+                              "Historical comparison only; does not apply bone-container retargeting."));
+    if (PoseActor)
+        PoseActor->Destroy();
     if (!Write(Result, Output / TEXT("engine-deformation.json")))
         return 10;
     return Fatal ? 11 : 0;

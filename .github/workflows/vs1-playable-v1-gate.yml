@@ -39,11 +39,10 @@ concurrency:
 jobs:
   static-guard:
     name: Authority + anti-spaghetti guard
-    # Static checks do not require Unreal Engine. Keep this generic so any
-    # self-hosted Windows runner can execute them; native Unreal build remains
-    # pinned to the dedicated dao-vo-tan-3d runner in vs1-native-unreal.yml.
-    runs-on: [self-hosted, windows, x64]
-    timeout-minutes: 15
+    # This is a text/source policy check and does not require Unreal Engine.
+    # Keep native Unreal build on the dedicated Windows self-hosted workflow.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout exact HEAD
         uses: actions/checkout@v4
@@ -52,6 +51,6 @@ jobs:
           clean: true
 
       - name: Verify V1 structural gate
-        shell: powershell -NoProfile -ExecutionPolicy Bypass -File {0}
+        shell: pwsh
         run: |
           & ./Scripts/Verify-V1Gate.ps1 -VerboseReport

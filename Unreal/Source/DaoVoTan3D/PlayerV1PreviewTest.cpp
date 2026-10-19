@@ -11,6 +11,7 @@
 #include "PresentationRecipe.h"
 #include "PresentationEvidence.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/GameModeBase.h"
@@ -117,6 +118,7 @@ class FPlayerV1PreviewExercise : public IAutomationLatentCommand
     int64 BeforeTick = 0;
     int32 BeforeResults = 0, BeforeCompletions = 0, Days = 1;
     bool SawLanding = false, MeditationCaptured = false;
+    bool MeditationEnterCaptured = false, MeditationExitCaptured = false;
     uint32 ActionRevision = 0;
     TArray<double> CurrentMs, PreviewMs;
     void Next(UWorld *W) { ++Stage; Since = W->GetTimeSeconds(); }
@@ -216,6 +218,7 @@ class FPlayerV1PreviewExercise : public IAutomationLatentCommand
         PC->CultivationCommands->SelectCultivationDays(Days);
         Pulse(PC, Session == 2 || Command == 1 ? EKeys::M : EKeys::E);
         MeditationCaptured = false;
+        MeditationEnterCaptured = MeditationExitCaptured = false;
     }
   public:
     FPlayerV1PreviewExercise(FAutomationTestBase *T, TSharedRef<FPlayerV1PreviewProof> P, int32 S)
@@ -241,6 +244,14 @@ class FPlayerV1PreviewExercise : public IAutomationLatentCommand
             C->Boom->SocketOffset.Z = C->Actions->IsMeditating() ? -50.f : 58.f; // Observer framing above HUD only.
         const double T = W->GetTimeSeconds() - Since;
         if (Anim->bLanding || Anim->SelectedDatabase.Contains(TEXT("Landing"))) SawLanding = true;
+        if(C->Appearance->IsExperimentalPreview() && Anim->ActionBlendWeight>.98f &&
+           Anim->ActionSequenceTime>.4f && Anim->ActionSequenceTime<.8f)
+        {
+            if(C->Actions->GetPhase()==EPresentationPhase::MeditationEnter && !MeditationEnterCaptured)
+            { Shot(C,TEXT("meditation-enter")); MeditationEnterCaptured=true; }
+            if(C->Actions->GetPhase()==EPresentationPhase::MeditationExit && !MeditationExitCaptured)
+            { Shot(C,TEXT("meditation-exit")); MeditationExitCaptured=true; }
+        }
         switch (Stage)
         {
         case 0:
@@ -369,11 +380,26 @@ class FPlayerV1PreviewExercise : public IAutomationLatentCommand
             }
             break;
         case 20:
-            if(C->Actions->GetPhase()==EPresentationPhase::MeditationLoop && !MeditationCaptured)
-            { Test->TestTrue(TEXT("Preview active during meditation"),C->Appearance->IsExperimentalPreview()); Shot(C,TEXT("meditation")); MeditationCaptured=true; }
+            if(C->Actions->GetPhase()==EPresentationPhase::MeditationLoop &&
+               Anim->ActionBlendWeight>.98f && Anim->ActionSequenceTime>.2f && !MeditationCaptured)
+            {
+                Test->TestTrue(TEXT("Preview active during meditation"),C->Appearance->IsExperimentalPreview());
+                const float FloorZ=C->GetActorLocation().Z-C->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+                for(const FName Bone : {FName(TEXT("calf_l")),FName(TEXT("calf_r")),
+                                       FName(TEXT("foot_l")),FName(TEXT("foot_r")),
+                                       FName(TEXT("ball_l")),FName(TEXT("ball_r"))})
+                {
+                    const float Clearance=C->GetMesh()->GetSocketLocation(Bone).Z-FloorZ;
+                    Test->TestTrue(FString::Printf(TEXT("Meditation %s above floor"),*Bone.ToString()),Clearance>=-3.f);
+                    Proof->Trace+=FString::Printf(TEXT("meditation bone=%s floor_clearance_cm=%.3f\n"),*Bone.ToString(),Clearance);
+                }
+                Shot(C,TEXT("meditation")); MeditationCaptured=true;
+            }
             if(Commands->Receipt.Status==TEXT("completed") && C->Actions->GetPhase()==EPresentationPhase::Locomotion && T>3)
             {
                 Test->TestTrue(TEXT("Live meditation loop captured"),MeditationCaptured);
+                Test->TestTrue(TEXT("Live meditation enter captured"),MeditationEnterCaptured);
+                Test->TestTrue(TEXT("Live meditation exit captured"),MeditationExitCaptured);
                 Test->TestEqual(TEXT("Authoritative completion once"),Commands->LogicalResultCount,BeforeResults+1);
                 Test->TestEqual(TEXT("Meditation presentation completion once"),C->Actions->MeditationCompletionCount,BeforeCompletions+1);
                 Test->TestEqual(TEXT("Expected simulation progress"),A->Snapshot().WorldTick,BeforeTick+Days);

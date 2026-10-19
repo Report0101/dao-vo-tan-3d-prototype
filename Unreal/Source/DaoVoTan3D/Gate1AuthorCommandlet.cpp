@@ -118,14 +118,20 @@ static void Meditation(const TCHAR *Name, USkeletalMesh *Mesh, UAnimSequence *Id
             FTransform P = Base;
             FRotator Bend = FRotator::ZeroRotator;
             FString N = Bone.ToString();
-            // Kneeling meditation: hips lower, thighs fold forward, shins tuck back; original
-            // local-space keys.
+            // Solved against MM_Idle in component space. Mirrored bones have different
+            // local axes; applying the same roll to both legs twists rather than folds them.
+            // Keep this target in sync with Tools/PlayerQ1Recovery/meditation-pose.json.
+            FQuat LegTarget = Base.GetRotation();
+            bool bLegTarget = true;
+            if (N == TEXT("thigh_l")) LegTarget = FQuat(-.166291473, -.156067716, -.289374313, .929651828);
+            else if (N == TEXT("calf_l")) LegTarget = FQuat(-.021975139, -.085987629, .905177982, .415663376);
+            else if (N == TEXT("foot_l")) LegTarget = FQuat(.163307981, .115409775, -.681042680, .704408941);
+            else if (N == TEXT("thigh_r")) LegTarget = FQuat(.087286798, .043001791, -.895640338, -.434004892);
+            else if (N == TEXT("calf_r")) LegTarget = FQuat(.045225800, -.475945340, .786412522, .391134256);
+            else if (N == TEXT("foot_r")) LegTarget = FQuat(-.043069483, .470957931, -.416029017, .776700395);
+            else bLegTarget = false;
             if (N == TEXT("pelvis"))
-                P.AddToTranslation(FVector(0, 0, -48 * Alpha));
-            if (N == TEXT("thigh_l") || N == TEXT("thigh_r"))
-                Bend = FRotator(0, 0, -70 * Alpha);
-            if (N == TEXT("calf_l") || N == TEXT("calf_r"))
-                Bend = FRotator(0, 0, 125 * Alpha);
+                P.AddToTranslation(FVector(0, 0, -48 * Alpha + 36 * Alpha * (1 - Alpha)));
             if (N == TEXT("upperarm_l"))
                 Bend = FRotator(0, -12 * Alpha, 15 * Alpha);
             if (N == TEXT("upperarm_r"))
@@ -137,6 +143,8 @@ static void Meditation(const TCHAR *Name, USkeletalMesh *Mesh, UAnimSequence *Id
             if (N == TEXT("spine_02") && Mode == 1)
                 Bend.Pitch = FMath::Sin(T * 2 * PI) * 1.5f;
             P.SetRotation((Base.GetRotation() * Bend.Quaternion()).GetNormalized());
+            if (bLegTarget)
+                P.SetRotation(FQuat::Slerp(Base.GetRotation(), LegTarget, Alpha).GetNormalized());
             Pos.Add(FVector3f(P.GetTranslation()));
             Rot.Add(FQuat4f(P.GetRotation()));
             Scale.Add(FVector3f(P.GetScale3D()));

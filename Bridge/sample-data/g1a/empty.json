@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "worldId": "g1abridge",
+  "rulesetVersion": "rules-v2",
+  "simulationVersion": "0.0.2",
+  "streamId": "g1a-empty",
+  "sequence": 1,
+  "worldTick": 4380,
+  "throughEventId": "g1abridge:event:00000050",
+  "controlledActorId": null,
+  "actors": [],
+  "actions": []
+}

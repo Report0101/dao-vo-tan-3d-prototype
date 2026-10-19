@@ -84,6 +84,8 @@ bool SnapshotV1::Parse(const FString &Json, FWorldPresentationSnapshot &Out, FSt
         !Str(O, TEXT("simulationVersion"), S.SimulationVersion) || !Str(O, TEXT("streamId"), S.StreamId) ||
         !Num(O, TEXT("sequence"), S.Sequence, 1) || !Num(O, TEXT("worldTick"), S.WorldTick))
         return Fail(TEXT("Invalid metadata"));
+    if (S.RulesetVersion!=TEXT("rules-v2") || S.SimulationVersion!=TEXT("0.0.2"))
+        return Fail(TEXT("Incompatible simulation versions: expected rules-v2 / 0.0.2"));
     if (!NullableId(O, TEXT("throughEventId"), S.ThroughEventId, S.WorldId, TEXT("event")) ||
         !NullableId(O, TEXT("controlledActorId"), S.ControlledActorId, S.WorldId, TEXT("agent")))
         return Fail(TEXT("Invalid envelope entity ID"));

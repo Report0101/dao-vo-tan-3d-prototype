@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "rulesetVersion": "rules-v2",
+  "simulationVersion": "0.0.2",
+  "controlledAgentId": "g1abridge:agent:00000001",
+  "before": [
+    "g1abridge:agent:00000001",
+    "g1abridge:agent:00000002",
+    "g1abridge:agent:00000003",
+    "g1abridge:agent:00000004",
+    "g1abridge:agent:00000005",
+    "g1abridge:agent:00000006",
+    "g1abridge:agent:00000007",
+    "g1abridge:agent:00000008",
+    "g1abridge:agent:00000009",
+    "g1abridge:agent:00000010"
+  ],
+  "after": [
+    "g1abridge:agent:00000001",
+    "g1abridge:agent:00000002",
+    "g1abridge:agent:00000003",
+    "g1abridge:agent:00000004",
+    "g1abridge:agent:00000005",
+    "g1abridge:agent:00000006",
+    "g1abridge:agent:00000007",
+    "g1abridge:agent:00000008",
+    "g1abridge:agent:00000009",
+    "g1abridge:agent:00000011"
+  ],
+  "removed": "g1abridge:agent:00000010",
+  "added": "g1abridge:agent:00000011",
+  "reload": [
+    "g1abridge:agent:00000001",
+    "g1abridge:agent:00000002",
+    "g1abridge:agent:00000003",
+    "g1abridge:agent:00000004",
+    "g1abridge:agent:00000005",
+    "g1abridge:agent:00000006",
+    "g1abridge:agent:00000007",
+    "g1abridge:agent:00000008",
+    "g1abridge:agent:00000009",
+    "g1abridge:agent:00000010"
+  ],
+  "saveSchema": 4
+}

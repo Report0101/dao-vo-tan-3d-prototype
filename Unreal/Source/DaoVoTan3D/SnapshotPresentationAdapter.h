@@ -9,7 +9,7 @@ class DAOVOTAN3D_API USnapshotPresentationAdapter : public UActorComponent
     GENERATED_BODY()
   public:
     USnapshotPresentationAdapter();
-    void SetSlots(class AGateCharacter *Player, const TArray<AGateCharacter *> &NPCs);
+    void SetPlayerActor(class AGateCharacter *Player);
     bool ApplyJson(const FString &Json, bool bFullResync, FString &Error);
     UFUNCTION(BlueprintCallable) bool LoadSnapshotFile(const FString &Path, bool bFullResync);
     virtual void TickComponent(float Dt, ELevelTick Tick, FActorComponentTickFunction *Fn) override;
@@ -26,6 +26,7 @@ class DAOVOTAN3D_API USnapshotPresentationAdapter : public UActorComponent
     {
         return Bindings.Num();
     }
+    int32 SpawnedProxyCount = 0, RetiredProxyCount = 0;
     int32 UniqueCueCount = 0, PlayedPreviewCount = 0, DuplicateCueCount = 0, RejectedCount = 0;
     double LastParseMs = 0, LastApplyMs = 0;
     int64 LastSequence() const
@@ -38,7 +39,9 @@ class DAOVOTAN3D_API USnapshotPresentationAdapter : public UActorComponent
     }
 
   private:
-    UPROPERTY() TArray<TObjectPtr<AGateCharacter>> Slots;
+    UPROPERTY() TObjectPtr<AGateCharacter> PlayerActor;
+    UPROPERTY() TArray<TObjectPtr<class UPresentationRecipe>> BaseRecipes;
+    UPROPERTY() TArray<TObjectPtr<UObject>> CachedVisualAssets;
     UPROPERTY() TMap<FString, TObjectPtr<AGateCharacter>> Bindings;
     FWorldPresentationSnapshot Current;
     TMap<FString, FString> SeenCues;
@@ -48,5 +51,6 @@ class DAOVOTAN3D_API USnapshotPresentationAdapter : public UActorComponent
     TMap<FString, float> Playing;
     FString FilePath, LastFileContent;
     float PollAge = 0;
+    UPresentationRecipe *RecipeForSeed(const FString &Seed);
     void ApplyAppearance(AGateCharacter *Actor, const FString &Seed);
 };

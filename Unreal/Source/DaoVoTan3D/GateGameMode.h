@@ -10,4 +10,7 @@ class DAOVOTAN3D_API AGateGameMode : public AGameModeBase
     AGateGameMode();
     UPROPERTY(VisibleAnywhere) TObjectPtr<class USnapshotPresentationAdapter> SnapshotAdapter;
     virtual void BeginPlay() override;
+    void RetireOfflinePreviewActors();
+  private:
+    UPROPERTY() TArray<TObjectPtr<class AGateCharacter>> OfflinePreviewActors;
 };

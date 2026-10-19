@@ -24,6 +24,6 @@
     "acknowledged": 1675,
     "resync": 1677
   },
-  "parseValidationMeanMs": 0.033909599999999984,
+  "parseValidationMeanMs": 0.030994,
   "parseIterations": 1000
 }

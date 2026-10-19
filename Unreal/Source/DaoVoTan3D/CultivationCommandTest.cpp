@@ -87,7 +87,8 @@ class FCommandExercise : public IAutomationLatentCommand
         {
         case 0:
         {
-            if (A->Snapshot().WorldId != TEXT("command1") || A->BindingCount() != 3 ||
+            if (A->Snapshot().WorldId != TEXT("command1") || A->Snapshot().ControlledActorId.IsEmpty() ||
+                A->BindingCount() != A->Snapshot().Actors.Num() ||
                 !C->CultivateInputAction())
                 return false;
             BeforeTick = A->Snapshot().WorldTick;

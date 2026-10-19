@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "worldId": "bridge1",
-  "rulesetVersion": "rules-v1",
-  "simulationVersion": "0.0.1",
+  "rulesetVersion": "rules-v2",
+  "simulationVersion": "0.0.2",
   "streamId": "integration-gate1-live",
   "sequence": 1,
   "worldTick": 1460,

@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "worldId": "g1abridge",
+  "rulesetVersion": "rules-v2",
+  "simulationVersion": "0.0.2",
+  "streamId": "g1a-dynamic-live",
+  "sequence": 2,
+  "worldTick": 4380,
+  "throughEventId": "g1abridge:event:00000050",
+  "controlledActorId": "g1abridge:agent:00000001",
+  "actors": [
+    {
+      "actorId": "g1abridge:agent:00000001",
+      "displayName": "g1abridge:agent:00000001",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "d4c9146f6f43cfac87ed63dc29b3bd42452092f816e56c8a71bf7960f174020b",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000002",
+      "displayName": "g1abridge:agent:00000002",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "b9e9188ea446effdb7af81e867525493bfb6dc7d03c5642a09d408f654e55449",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000003",
+      "displayName": "g1abridge:agent:00000003",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "80cd092560c355d6ea023ddf79f4e88dc4dc6a2a6b196004c9d93c36ca8ad333",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000004",
+      "displayName": "g1abridge:agent:00000004",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "7d24d8aacc5b45b121ef68f0e0f6c821a712dadc9a3f84e2d44916efa5f171b9",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000005",
+      "displayName": "g1abridge:agent:00000005",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "299e623b3b8d53301929a7999766f89aae623fafc9b4ab80069e653a91ca9599",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000006",
+      "displayName": "g1abridge:agent:00000006",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "8705afd26ffc4ba7105973ab3c2b845977e8f66e5441c5eb901494d3926e0404",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000007",
+      "displayName": "g1abridge:agent:00000007",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "d2867e3abfb87b6f1396336c08628485496285a58657d2f119e4443e810f8c05",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000008",
+      "displayName": "g1abridge:agent:00000008",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "3b9585627a93d7086a9fe993d377319f5ad4cbc28e06e3f4254546ea2e3c6599",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000009",
+      "displayName": "g1abridge:agent:00000009",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "313d3110dbc55ae184c717f1b8306c609f9bf96f91e1eb10de98d6df264f4e3c",
+      "currentAction": null
+    },
+    {
+      "actorId": "g1abridge:agent:00000011",
+      "displayName": "g1abridge:agent:00000011",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "7c7ecf14a46c299d3e2f53b5aa70059169cb255ce7c6b61afcfac710ba970f73",
+      "currentAction": null
+    }
+  ],
+  "actions": []
+}

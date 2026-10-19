@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "worldId": "g1abridge",
+  "rulesetVersion": "rules-v2",
+  "simulationVersion": "0.0.2",
+  "streamId": "g1a-count-1",
+  "sequence": 1,
+  "worldTick": 4380,
+  "throughEventId": "g1abridge:event:00000050",
+  "controlledActorId": "g1abridge:agent:00000001",
+  "actors": [
+    {
+      "actorId": "g1abridge:agent:00000001",
+      "displayName": "g1abridge:agent:00000001",
+      "location": {
+        "regionId": "g1abridge:region:00000001"
+      },
+      "behaviorStatus": "active",
+      "lifeStatus": "alive",
+      "cultivation": {
+        "hasMethod": false,
+        "completedSessions": 0
+      },
+      "appearanceSeed": "d4c9146f6f43cfac87ed63dc29b3bd42452092f816e56c8a71bf7960f174020b",
+      "currentAction": null
+    }
+  ],
+  "actions": []
+}

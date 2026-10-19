@@ -254,8 +254,8 @@ class FSnapshotExercise : public IAutomationLatentCommand
                                A->ApplyJson(Json, false, Error));
                 Test->TestEqual(TEXT("Missing actor unbound"), A->BindingCount(), 2);
                 Test->TestNull(TEXT("No binding for absent actor"), A->ActorFor(Removed));
-                Test->TestTrue(TEXT("Unbound slot hidden without death inference"),
-                               Original[Removed]->IsHidden());
+                Test->TestTrue(TEXT("Absent proxy retired without death inference"),
+                               !IsValid(Original[Removed]));
                 TSharedPtr<FJsonObject> Full;
                 FJsonSerializer::Deserialize(TJsonReaderFactory<>::Create(Fixture(TEXT("resync"))),
                                              Full);

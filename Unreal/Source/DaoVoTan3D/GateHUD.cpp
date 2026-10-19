@@ -90,6 +90,14 @@ void AGateHUD::DrawHUD()
                              Commands->GetSelectedCultivationDays()),
              36, StatusY + 62, Gold, .78f);
     }
+    if (FParse::Param(FCommandLine::Get(),TEXT("DynamicAgentBridgeEvidence")) && A) {
+        DrawRect(Ink,22,215,420,32+A->Snapshot().Actors.Num()*22);
+        Line(FString::Printf(TEXT("G1A: %d identities / player + NPC proxies"),A->BindingCount()),32,222,Gold);
+        int32 Row=0;
+        for (const auto &State : A->Snapshot().Actors)
+            Line((State.ActorId==A->Snapshot().ControlledActorId?TEXT("PLAYER  "):TEXT("NPC     "))+State.ActorId,
+                 32,246+22*Row++,Text,.85f);
+    }
     int32 Index = 0;
     TArray<AGateCharacter *> PortraitActors = {C};
     for (TActorIterator<AGateCharacter> I(GetWorld()); I && PortraitActors.Num() < 3; ++I)

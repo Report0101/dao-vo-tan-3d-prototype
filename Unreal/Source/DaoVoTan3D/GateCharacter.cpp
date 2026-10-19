@@ -23,8 +23,8 @@ FTransform AGateCharacter::JianGripTransform()
 {
     // Jian blade is +Z, edge width +X; Manny hand +Z points out of the palm.
     // The hilt spans -5..14 cm: its centre is 4.5 cm along the blade axis.
-    // Place that centre 3 cm into the prototype glove, along hand -X.
-    return FTransform(FQuat::Identity, FVector(-3, 0, -4.5f));
+    // Align the hilt with the articulated palm/finger arc, not the old rigid glove.
+    return FTransform(FQuat::Identity, FVector(-8, 2.5f, -4.5f));
 }
 AGateCharacter::AGateCharacter()
 {

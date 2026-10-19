@@ -283,7 +283,10 @@ class FPlayerV1PreviewExercise : public IAutomationLatentCommand
             }
             break;
         case 4:
-            if(T>.7) { Shot(C,TEXT("front")); PC->SetControlRotation(FRotator(-12,90,0)); Next(W); }
+            if(T>.7) { Shot(C,TEXT("front")); PC->SetControlRotation(FRotator(-12,135,0)); Stage=24; Since=W->GetTimeSeconds(); }
+            break;
+        case 24:
+            if(T>.7) { Shot(C,TEXT("three-quarter")); PC->SetControlRotation(FRotator(-12,90,0)); Stage=5; Since=W->GetTimeSeconds(); }
             break;
         case 5:
             if(T>.7) { Shot(C,TEXT("side")); PC->SetControlRotation(FRotator(-12,0,0)); Next(W); }

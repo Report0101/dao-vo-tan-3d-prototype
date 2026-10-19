@@ -22,8 +22,15 @@ try {
     if($InspectionCamera){$previewArgs+='-PreviewInspectionCamera'}
     $previewProcess=Start-Process $previewEditor -ArgumentList $previewArgs -WindowStyle Hidden -PassThru
     $previewProcess.WaitForExit()
+    if($previewProcess.ExitCode -ne 0){throw "Preview editor exited with code $($previewProcess.ExitCode)"}
     $previewResult=Get-Content -LiteralPath (Join-Path $previewReport 'index.json') -Raw|ConvertFrom-Json
     if($previewResult.failed -ne 0){throw "Preview tests failed: $previewReport"}
+    foreach($previewRequired in @('DaoVoTan.Preview.AssetContract','DaoVoTan.Preview.LivePIE')){
+        $previewEntry=@($previewResult.tests|Where-Object fullTestPath -eq $previewRequired)
+        if($previewEntry.Count -ne 1 -or $previewEntry[0].state -notin @('Success','SuccessWithWarnings')){
+            throw "Required preview test did not execute successfully: $previewRequired"
+        }
+    }
     if($previewWorker.HasExited){throw 'Worker exited before PIE lifecycle finished'}
     $previewCaptureFolder=if($InspectionCamera){'PlayerV1PreviewWideEvidence'}else{'PlayerV1PreviewEvidence'}
     Write-Output "PASS: $previewReport; live screenshots: $previewSaved/$previewCaptureFolder"

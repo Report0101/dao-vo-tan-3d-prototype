@@ -8,6 +8,7 @@
     {"Name":"Niagara","Enabled":true},
     {"Name":"PoseSearch","Enabled":true},
     {"Name":"Chooser","Enabled":true},
+    {"Name":"BlendStack","Enabled":true},
     {"Name":"AnimationWarping","Enabled":true},
     {"Name":"IKRig","Enabled":true}
   ]

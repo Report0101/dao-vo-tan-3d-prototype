@@ -15,6 +15,7 @@ Unreal/**/Saved/
 
 # IDE / build artifacts
 *.sln
+*.slnx
 *.suo
 *.opensdf
 *.sdf

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "strategic-npc-projection.v1",
+  "worldTick": 120,
+  "agentId": "mock:agent:survey-scholar",
+  "regionId": "mock:region:northern-valley",
+  "mock": true,
+  "presentationState": "studying",
+  "visibleActivity": "Comparing cultivation notes at a roadside desk",
+  "publiclyKnown": true,
+  "causalEventIds": []
+}
